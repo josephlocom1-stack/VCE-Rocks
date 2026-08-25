@@ -166,7 +166,7 @@ const CaptionWord: React.FC<{item:TimedWord; frame:number}> = ({item,frame}) => 
   const rise = s.entry==='rise' ? interpolate(age,[0,5],[18,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}) : 0;
   const scale = s.entry==='punch' ? interpolate(age,[0,2,7],[.80,1.08,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}) : 1;
   const blur = s.entry==='blur' ? interpolate(age,[0,5],[10,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'}) : 0;
-  return <span style={{display:'inline-block', fontFamily:s.font, fontSize:s.size, fontWeight:s.weight, lineHeight:.95, letterSpacing:-1.5, color:s.color, opacity:s.entry==='hard'?1:reveal, transform:`translateY(${rise}px) scale(${scale})`, filter:`blur(${blur}px)`, textShadow:'0 3px 12px rgba(0,0,0,.86), WebkitTextStroke:'0.5px rgba(0,0,0,.35)'}}>{item.word}</span>;
+  return <span style={{display:'inline-block', fontFamily:s.font, fontSize:s.size, fontWeight:s.weight, lineHeight:.95, letterSpacing:-1.5, color:s.color, opacity:s.entry==='hard'?1:reveal, transform:`translateY(${rise}px) scale(${scale})`, filter:`blur(${blur}px)`, textShadow:'0 3px 12px rgba(0,0,0,.86)', WebkitTextStroke:'0.5px rgba(0,0,0,.35)'}}>{item.word}</span>;
 };
 
 const Captions: React.FC = () => {
