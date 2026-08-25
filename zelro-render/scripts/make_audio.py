@@ -43,7 +43,6 @@ def download_candidate(name: str, url: str):
 
 
 def make_fallback():
-    # A restrained pulse/pad fallback prevents a transient music-host failure from blocking delivery.
     destination = MUSIC / 'generated-fallback.wav'
     subprocess.check_call([
         'ffmpeg', '-y',
@@ -52,8 +51,8 @@ def make_fallback():
         '-f', 'lavfi', '-i', 'anoisesrc=d=28:c=pink:r=48000',
         '-filter_complex',
         '[0:a]volume=0.20,tremolo=f=3.1:d=0.72[b];'
-        '[1:a]volume=0.035,tremolo=f=1.55:d=0.58[p];'
-        '[2:a]highpass=f=2500,lowpass=f=8000,volume=0.018[n];'
+        '[1:a]volume=0.045,tremolo=f=1.55:d=0.58[p];'
+        '[2:a]highpass=f=2500,lowpass=f=8000,volume=0.022[n];'
         '[b][p][n]amix=inputs=3,acompressor=threshold=-22dB:ratio=2.5:attack=12:release=170[out]',
         '-map', '[out]', str(destination),
     ])
@@ -77,10 +76,12 @@ else:
     selected_duration = probe_duration(selected_path)
     start_offset = '0'
 
+# Preserve more mid/high energy so the bed remains perceptible on iPad/phone speakers.
 subprocess.check_call([
-    'ffmpeg', '-y', '-ss', start_offset, '-i', str(selected_path), '-t', '27',
-    '-af', 'highpass=f=55,lowpass=f=15000,acompressor=threshold=-20dB:ratio=2.5:attack=12:release=150,'
-           'volume=0.72,afade=t=in:st=0:d=0.16,afade=t=out:st=25.0:d=1.7',
+    'ffmpeg', '-y', '-ss', start_offset, '-i', str(selected_path), '-t', '30',
+    '-af', 'highpass=f=70,lowpass=f=15500,equalizer=f=1900:t=q:w=1.2:g=1.6,'
+           'acompressor=threshold=-20dB:ratio=2.2:attack=12:release=150,'
+           'volume=0.82,afade=t=in:st=0:d=0.12,afade=t=out:st=28.0:d=1.6',
     '-c:a', 'aac', '-b:a', '192k', str(OUT / 'music.m4a'),
 ])
 
@@ -89,22 +90,39 @@ report = [
     *[f'{name}: duration={duration:.2f}s source=Mixkit' for name, _, duration in downloaded],
     f'selected={selected_name} duration={selected_duration:.2f}s',
     'reason=clean first beat, no vocals, modern technology pulse, editable build under narration',
+    'mix_change=midrange presence preserved for phone/iPad audibility; final level automated in Remotion rather than buried at one static gain',
 ]
 (OUT / 'MUSIC_AUDITION_REPORT.txt').write_text('\n'.join(report) + '\n', encoding='utf-8')
 print('\n'.join(report))
 
-# Motivated SFX palette. Each sound has one declared story/motion job.
+# Motivated SFX palette. Effects include mid/high-frequency information so they
+# survive tablet/phone playback instead of relying on sub-bass alone.
+subprocess.check_call([
+    'ffmpeg', '-y',
+    '-f', 'lavfi', '-i', 'sine=frequency=78:duration=0.42:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=430:duration=0.23:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'anoisesrc=d=0.11:c=white:r=48000',
+    '-filter_complex',
+    '[0:a]volume=0.70,afade=t=out:st=0.05:d=0.34[lo];'
+    '[1:a]volume=0.30,afade=t=out:st=0.03:d=0.18[mid];'
+    '[2:a]highpass=f=1400,lowpass=f=7000,volume=0.09,afade=t=out:st=0.02:d=0.08[hi];'
+    '[lo][mid][hi]amix=inputs=3,alimiter=limit=0.92[out]',
+    '-map', '[out]', str(OUT / 'impact.wav'),
+])
+
 commands = [
-    ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=68:duration=0.42:sample_rate=48000',
-     '-af', 'volume=0.82,afade=t=out:st=0.04:d=0.36', str(OUT / 'impact.wav')],
     ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'anoisesrc=d=0.42:c=pink:r=48000',
-     '-af', 'highpass=f=650,lowpass=f=7600,volume=0.34,afade=t=in:st=0:d=0.055,afade=t=out:st=0.24:d=0.17', str(OUT / 'whoosh.wav')],
+     '-af', 'highpass=f=650,lowpass=f=7600,volume=0.40,afade=t=in:st=0:d=0.045,afade=t=out:st=0.24:d=0.17', str(OUT / 'whoosh.wav')],
     ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=1320:duration=0.10:sample_rate=48000',
-     '-af', 'volume=0.30,afade=t=out:st=0.018:d=0.075', str(OUT / 'proof-click.wav')],
+     '-af', 'volume=0.40,afade=t=out:st=0.018:d=0.075', str(OUT / 'proof-click.wav')],
     ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'anoisesrc=d=0.46:c=white:r=48000',
-     '-af', 'highpass=f=1200,lowpass=f=7200,tremolo=f=21:d=0.86,volume=0.26,afade=t=out:st=0.34:d=0.11', str(OUT / 'money-roll.wav')],
+     '-af', 'highpass=f=1200,lowpass=f=7200,tremolo=f=21:d=0.86,volume=0.34,afade=t=out:st=0.34:d=0.11', str(OUT / 'money-roll.wav')],
     ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'aevalsrc=0.13*sin(2*PI*(210*t+1350*t*t)):d=0.55:s=48000',
-     '-af', 'afade=t=in:st=0:d=0.04,afade=t=out:st=0.43:d=0.11', str(OUT / 'riser.wav')],
+     '-af', 'afade=t=in:st=0:d=0.04,afade=t=out:st=0.43:d=0.11,volume=1.18', str(OUT / 'riser.wav')],
+    ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=980:duration=0.09:sample_rate=48000',
+     '-af', 'volume=0.44,afade=t=out:st=0.018:d=0.065', str(OUT / 'timeline-tick.wav')],
+    ['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=1480:duration=0.12:sample_rate=48000',
+     '-af', 'volume=0.34,afade=t=out:st=0.02:d=0.09', str(OUT / 'return-pop.wav')],
 ]
 for command in commands:
     subprocess.check_call(command)
@@ -113,6 +131,6 @@ subprocess.check_call([
     'ffmpeg', '-y',
     '-f', 'lavfi', '-i', 'sine=frequency=1760:duration=0.40:sample_rate=48000',
     '-f', 'lavfi', '-i', 'sine=frequency=2340:duration=0.40:sample_rate=48000',
-    '-filter_complex', '[0:a]volume=0.31[a];[1:a]volume=0.16[b];[a][b]amix=inputs=2,afade=t=out:st=0.07:d=0.30',
+    '-filter_complex', '[0:a]volume=0.38[a];[1:a]volume=0.20[b];[a][b]amix=inputs=2,afade=t=out:st=0.07:d=0.30',
     str(OUT / 'scale-ding.wav'),
 ])
