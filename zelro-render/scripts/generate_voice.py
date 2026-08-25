@@ -27,7 +27,16 @@ async def main():
     OUT.mkdir(parents=True, exist_ok=True)
     boundaries = []
     audio_path = OUT / 'narration.mp3'
-    comm = edge_tts.Communicate(SCRIPT, voice=VOICE, rate='+6%', pitch='-2Hz')
+
+    # edge-tts 7.x defaults to SentenceBoundary. Explicit WordBoundary mode is essential:
+    # these events are the timing authority for the one-word-at-a-time caption system.
+    comm = edge_tts.Communicate(
+        SCRIPT,
+        voice=VOICE,
+        rate='+6%',
+        pitch='-2Hz',
+        boundary='WordBoundary',
+    )
     with audio_path.open('wb') as f:
         async for chunk in comm.stream():
             if chunk['type'] == 'audio':
@@ -45,6 +54,13 @@ async def main():
         'ffprobe','-v','error','-show_entries','format=duration',
         '-of','default=nokey=1:noprint_wrappers=1', str(audio_path)
     ], text=True).strip())
+
+    # Fail loudly rather than rendering guessed caption timings.
+    expected_words = [clean(x) for x in SCRIPT.split() if clean(x)]
+    if len(boundaries) < max(35, int(len(expected_words) * 0.80)):
+        raise RuntimeError(
+            f'Word-boundary metadata incomplete: got {len(boundaries)} for {len(expected_words)} script words'
+        )
 
     rows = []
     for item in boundaries:
