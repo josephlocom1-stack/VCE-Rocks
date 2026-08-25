@@ -17,13 +17,15 @@ SENTENCES = [
     "Now her own firm, Acrew, manages one point seven billion.",
 ]
 
+# Earlier delivery used +14%/+11% and proved too fast for comfortable caption reading.
+# Keep confident delivery, but move back toward natural pace so word groups can breathe.
 CANDIDATES = [
-    {'id': 'ava', 'voice': 'en-US-AvaNeural', 'rate': '+14%', 'pitch': '-2Hz'},
-    {'id': 'emma', 'voice': 'en-US-EmmaNeural', 'rate': '+11%', 'pitch': '-1Hz'},
+    {'id': 'ava', 'voice': 'en-US-AvaNeural', 'rate': '+7%', 'pitch': '-2Hz'},
+    {'id': 'emma', 'voice': 'en-US-EmmaNeural', 'rate': '+4%', 'pitch': '-1Hz'},
 ]
 
 FPS = 30
-TARGET_SECONDS = 22.0
+TARGET_SECONDS = 23.5
 OUT = Path('public/media')
 RAW = OUT / 'voice-candidates'
 TIMING = Path('src/timings.ts')
@@ -138,10 +140,10 @@ async def main():
     for candidate in CANDIDATES:
         results.append(await build_candidate(candidate))
 
-    # Audition gate: both voices are confident neutral female voices. Select the cadence
-    # closest to the 22-second story target while rejecting out-of-band pacing.
+    # Readability-aware audition gate: select a natural, confident cadence close to
+    # 23.5 seconds. Reject deliveries that become too fast or unnecessarily slow.
     def score(item):
-        penalty = 10 if item['duration'] < 20.5 or item['duration'] > 23.3 else 0
+        penalty = 10 if item['duration'] < 22.0 or item['duration'] > 25.2 else 0
         return abs(item['duration'] - TARGET_SECONDS) + penalty
 
     chosen = min(results, key=score)
@@ -172,7 +174,7 @@ async def main():
             'confidence': 1,
         })
 
-    total_frames = max(math.ceil(final_duration * FPS) + 10, 630)
+    total_frames = max(math.ceil(final_duration * FPS) + 10, 660)
     TIMING.write_text(
         "export type TimedWord = {word: string; startFrame: number; endFrame: number};\n"
         "export const WORDS: TimedWord[] = [\n" + '\n'.join(rows) + "\n];\n"
@@ -187,9 +189,10 @@ async def main():
             f"{item['id']}: {item['voice']} {item['rate']} duration={item['duration']:.3f}s words={len(item['words'])}"
             for item in results
         ],
-        f"selected={chosen['id']} reason=closest clean cadence to {TARGET_SECONDS:.1f}s target",
+        f"selected={chosen['id']} reason=closest readable natural cadence to {TARGET_SECONDS:.1f}s target",
         f"master_duration={final_duration:.3f}s total_frames={total_frames}",
         'sentence_join=280ms equal-power crossfade; dead inter-sentence air removed',
+        'readability_change=slower than prior +14/+11 percent delivery; caption timings regenerated from exact word boundaries',
     ]
     (OUT / 'NARRATION_REPORT.txt').write_text('\n'.join(report) + '\n', encoding='utf-8')
     print('\n'.join(report))
