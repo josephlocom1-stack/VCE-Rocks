@@ -1,12 +1,12 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {ZelroV6} from './V6';
+import {ZelroAlexandrWang} from './Alexandr';
 import {TOTAL_FRAMES} from './timings';
 
 export const Root: React.FC = () => (
   <Composition
-    id="ZelroV6"
-    component={ZelroV6}
+    id="ZelroAlexandrWang"
+    component={ZelroAlexandrWang}
     durationInFrames={TOTAL_FRAMES}
     fps={30}
     width={1080}
