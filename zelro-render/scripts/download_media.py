@@ -20,11 +20,13 @@ PEXELS = {
     'acrew_team': [7224309, 7223708],
 }
 
-# Official Acrew Capital portrait. This replaces the previous aggressively cropped
-# 1280x720 interview source, which became visibly soft after vertical enlargement.
-GOUW_HEADSHOT = (
-    'https://cdn.prod.website-files.com/613d4917540d8f04e2a52466/'
-    '615898314a22b3d8fedda734_theresia-gouw.jpg'
+# Authentic Washington Post Live interview footage of Theresia Gouw. The source is
+# 1280x720, so V2 deliberately uses it inside a sub-960px editorial frame and never
+# enlarges/crops it to fill 1080x1920. This preserves real detail instead of hiding
+# softness with effects or upscaling.
+GOUW_INTERVIEW = (
+    'https://d3celq77losjk8.cloudfront.net/wapo/2026/06/02/'
+    '6a1f66c03512040280f01b3e/file_1280x720_2000_v3_1.mp4'
 )
 
 
@@ -131,33 +133,31 @@ def normalize(src: Path, dest: Path, brightness='1.08'):
     ])
 
 
-def download_gouw_headshot():
-    destination = OUT / 'gouw_headshot.jpg'
+def download_gouw_interview():
+    destination = OUT / 'gouw_wapo_contained.mp4'
     request = urllib.request.Request(
-        GOUW_HEADSHOT,
-        headers={'User-Agent': UA, 'Referer': 'https://www.acrewcapital.com/'},
+        GOUW_INTERVIEW,
+        headers={'User-Agent': UA, 'Referer': 'https://www.washingtonpost.com/'},
     )
     with urllib.request.urlopen(request, timeout=180) as response, destination.open('wb') as output:
-        output.write(response.read())
-
-    # JPEG/WebP compression can make a high-resolution portrait surprisingly small,
-    # so dimensions are the quality authority. Byte size only catches HTML/error bodies.
-    if destination.stat().st_size < 10_000:
-        raise RuntimeError('Official Gouw portrait download is too small to be a valid image')
-    dims = subprocess.check_output([
-        'ffprobe', '-v', 'error', '-select_streams', 'v:0',
-        '-show_entries', 'stream=width,height', '-of', 'csv=p=0', str(destination),
-    ], text=True).strip().split(',')
-    if len(dims) < 2 or min(int(dims[0]), int(dims[1])) < 700:
-        raise RuntimeError(f'Official Gouw portrait is below quality gate: {dims}')
-    print('official Gouw portrait', dims, 'bytes', destination.stat().st_size)
+        while True:
+            chunk = response.read(1024 * 1024)
+            if not chunk:
+                break
+            output.write(chunk)
+    if destination.stat().st_size < 500_000:
+        raise RuntimeError('Gouw interview download is unexpectedly small')
+    codec, width, height, bitrate = probe_video(destination)
+    if width < 1280 or height < 720 or (bitrate and bitrate < 1_500_000):
+        raise RuntimeError(f'Gouw interview does not meet contained-frame source gate: {(codec, width, height, bitrate)}')
+    print('Gouw interview accepted for contained-frame use only', codec, width, height, bitrate)
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
 
-    download_gouw_headshot()
+    download_gouw_interview()
     for name, ids in PEXELS.items():
         raw = download_pexels(name, ids)
         lift = '1.13' if name in {'facebook_phone', 'finance_city'} else '1.08'
@@ -179,9 +179,9 @@ def main():
             '-of', 'default=noprint_wrappers=1', str(path),
         ])
 
-    portrait = OUT / 'gouw_headshot.jpg'
-    if not portrait.exists():
-        raise RuntimeError('Missing official Gouw portrait')
+    identity = OUT / 'gouw_wapo_contained.mp4'
+    if not identity.exists():
+        raise RuntimeError('Missing authentic contained-frame Gouw identity footage')
 
 
 if __name__ == '__main__':
