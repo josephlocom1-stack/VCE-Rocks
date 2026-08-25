@@ -2,7 +2,6 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
-  Img,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -69,34 +68,30 @@ const Clip: React.FC<{from: number; to: number} & ClipProps> = ({from, to, ...pr
   </Sequence>
 );
 
-const IdentityPortrait: React.FC<{from: number; to: number}> = ({from, to}) => (
+const IdentityEditorial: React.FC<{from: number; to: number}> = ({from, to}) => (
   <Sequence from={from} durationInFrames={Math.max(MIN_HOLD, to - from)}>
-    <IdentityPortraitInner />
+    <IdentityEditorialInner />
   </Sequence>
 );
 
-const IdentityPortraitInner: React.FC = () => {
+const IdentityEditorialInner: React.FC = () => {
   const frame = useCurrentFrame();
-  const reveal = interpolate(frame, [0, 6], [0, 1], clamp);
-  const scale = interpolate(frame, [0, 95], [1.04, 1.0], clamp);
-  const panel = interpolate(frame, [2, 12], [0, 1], clamp);
+  const reveal = interpolate(frame, [0, 7], [0, 1], clamp);
+  const panelY = interpolate(frame, [0, 10], [54, 0], clamp);
+  const rule = interpolate(frame, [5, 16], [0, 1], clamp);
   return (
-    <AbsoluteFill style={{background: BLACK, overflow: 'hidden'}}>
-      <Img
-        src={staticFile('media/gouw_headshot.jpg')}
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: '50% 43%',
-          opacity: reveal,
-          transform: `scale(${scale})`,
-        }}
-      />
-      <AbsoluteFill style={{background: 'linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.02) 55%,rgba(0,0,0,.56))'}} />
-      <div style={{position: 'absolute', left: 68, bottom: 150, width: `${panel * 430}px`, height: 8, background: YELLOW}} />
+    <AbsoluteFill style={{background: BLACK, color: WHITE, padding: '130px 68px', overflow: 'hidden'}}>
+      <div style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: 27, fontWeight: 900, letterSpacing: 6, color: YELLOW, opacity: reveal}}>THERESIA GOUW</div>
+      <div style={{marginTop: 22, fontFamily: "'Arial Narrow', Arial, sans-serif", fontSize: 85, fontWeight: 950, lineHeight: .9, letterSpacing: -4, opacity: reveal}}>THE DAUGHTER<br/>WHO BUILT HER<br/>OWN FORTUNE.</div>
+      <div style={{marginTop: 38, width: `${rule * 430}px`, height: 9, background: YELLOW}} />
+      <div style={{position: 'absolute', left: 60, right: 60, bottom: 155, height: 540, background: '#1D1D1D', border: `8px solid ${CREAM}`, overflow: 'hidden', boxShadow: '0 28px 80px rgba(0,0,0,.45)', opacity: reveal, transform: `translateY(${panelY}px)`}}>
+        <OffthreadVideo
+          muted
+          src={staticFile('media/gouw_wapo_contained.mp4')}
+          startFrom={45}
+          style={{width: '100%', height: '100%', objectFit: 'contain', background: '#050505'}}
+        />
+      </div>
     </AbsoluteFill>
   );
 };
@@ -232,7 +227,7 @@ const Timeline: React.FC = () => {
     <AbsoluteFill>
       <Clip from={0} to={cuts.airportEnd} src="media/family_airport.mp4" startFrom={9} pos="50% 48%" brightness={1.09} entry="punch" />
       <Clip from={cuts.airportEnd} to={cuts.dishesEnd} src="media/dishwasher.mp4" startFrom={22} pos="50% 50%" brightness={1.12} entry="push-left" />
-      <IdentityPortrait from={cuts.dishesEnd} to={cuts.identityEnd} />
+      <IdentityEditorial from={cuts.dishesEnd} to={cuts.identityEnd} />
       <Clip from={cuts.identityEnd} to={cuts.boardEnd} src="media/startup_board.mp4" startFrom={18} pos="50% 48%" brightness={1.09} entry="push-up" />
       <CeoTimelineAnimation from={cuts.boardEnd} to={cuts.ceoAnimEnd} />
       <Clip from={cuts.ceoAnimEnd} to={cuts.pitchEnd} src="media/vc_pitch.mp4" startFrom={15} pos="50% 47%" brightness={1.10} entry="push-left" />
