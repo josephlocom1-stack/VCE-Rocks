@@ -52,8 +52,6 @@ def probe_video(path: Path):
 def high_quality_video(path: Path) -> bool:
     try:
         codec, width, height, bitrate = probe_video(path)
-        # Require at least native 1080p-class source area. A 720p source that is
-        # enlarged to 1080x1920 is rejected instead of being disguised by effects.
         area_ok = width * height >= 1920 * 1080
         short_edge_ok = min(width, height) >= 1000
         bitrate_ok = bitrate == 0 or bitrate >= 2_000_000
@@ -141,15 +139,18 @@ def download_gouw_headshot():
     )
     with urllib.request.urlopen(request, timeout=180) as response, destination.open('wb') as output:
         output.write(response.read())
-    if destination.stat().st_size < 40_000:
-        raise RuntimeError('Official Gouw portrait download is unexpectedly small')
+
+    # JPEG/WebP compression can make a high-resolution portrait surprisingly small,
+    # so dimensions are the quality authority. Byte size only catches HTML/error bodies.
+    if destination.stat().st_size < 10_000:
+        raise RuntimeError('Official Gouw portrait download is too small to be a valid image')
     dims = subprocess.check_output([
         'ffprobe', '-v', 'error', '-select_streams', 'v:0',
         '-show_entries', 'stream=width,height', '-of', 'csv=p=0', str(destination),
     ], text=True).strip().split(',')
     if len(dims) < 2 or min(int(dims[0]), int(dims[1])) < 700:
         raise RuntimeError(f'Official Gouw portrait is below quality gate: {dims}')
-    print('official Gouw portrait', dims)
+    print('official Gouw portrait', dims, 'bytes', destination.stat().st_size)
 
 
 def main():
