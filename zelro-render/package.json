@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "render": "remotion render src/index.tsx ZelroV6 out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p"
+    "render": "remotion render src/index.tsx ZelroTheresiaGouw out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p"
   },
   "dependencies": {
     "@remotion/cli": "latest",
