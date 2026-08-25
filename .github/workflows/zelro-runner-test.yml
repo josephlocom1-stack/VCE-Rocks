@@ -1,0 +1,18 @@
+name: Zelro Runner Test
+
+on:
+  push:
+    branches: [zelro-render-temp]
+    paths:
+      - '.github/workflows/zelro-runner-test.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runner alive
+        run: |
+          echo 'Zelro public runner allocated'
+          uname -a
+          ffmpeg -version | head -1 || true
