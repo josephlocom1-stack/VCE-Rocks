@@ -48,9 +48,10 @@ jobs:
           grep -q 'CeoTimelineAnimation' src/Theresia.tsx
           grep -q 'RetentionAnimation' src/Theresia.tsx
           grep -q 'PureCard' src/Theresia.tsx
-          grep -q 'gouw_headshot.jpg' src/Theresia.tsx
-          if grep -q 'gouw_wapo.mp4' src/Theresia.tsx; then
-            echo 'Rejected low-resolution Gouw interview source is still referenced'
+          grep -q 'gouw_wapo_contained.mp4' src/Theresia.tsx
+          grep -q "objectFit: 'contain'" src/Theresia.tsx
+          if grep -q 'gouw_headshot.jpg' src/Theresia.tsx; then
+            echo 'Rejected low-resolution Acrew thumbnail is still referenced'
             exit 1
           fi
 
