@@ -9,7 +9,6 @@ OUT = Path('public/media')
 RAW = OUT / 'raw'
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
 
-# One distinct source per output. No source is reused inside the Reel.
 PEXELS = {
     'family_airport': [37130585, 7429363],
     'dishwasher': [8627106, 3768941],
@@ -20,8 +19,7 @@ PEXELS = {
     'acrew_team': [7224309, 7223708],
 }
 
-# High-resolution Creative Commons identity photo. Original is 2720x3888 and is
-# licensed CC BY 2.0 via TechCrunch/Flickr, mirrored by Wikimedia Commons.
+# 2720x3888, CC BY 2.0 via TechCrunch/Flickr, mirrored by Wikimedia Commons.
 GOUW_IDENTITY = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Theresia_Gouw_2017.jpg'
 
 
@@ -129,22 +127,40 @@ def normalize(src: Path, dest: Path, brightness='1.08'):
 
 
 def download_gouw_identity():
-    destination = OUT / 'gouw_identity_2017.jpg'
+    jpg = OUT / 'gouw_identity_2017.jpg'
     request = urllib.request.Request(
         GOUW_IDENTITY,
         headers={'User-Agent': UA, 'Referer': 'https://commons.wikimedia.org/'},
     )
-    with urllib.request.urlopen(request, timeout=180) as response, destination.open('wb') as output:
+    with urllib.request.urlopen(request, timeout=180) as response, jpg.open('wb') as output:
         output.write(response.read())
-    if destination.stat().st_size < 500_000:
+    if jpg.stat().st_size < 500_000:
         raise RuntimeError('Gouw high-resolution identity image download is unexpectedly small')
     dims = subprocess.check_output([
         'ffprobe', '-v', 'error', '-select_streams', 'v:0',
-        '-show_entries', 'stream=width,height', '-of', 'csv=p=0', str(destination),
+        '-show_entries', 'stream=width,height', '-of', 'csv=p=0', str(jpg),
     ], text=True).strip().split(',')
     if len(dims) < 2 or min(int(dims[0]), int(dims[1])) < 1800:
         raise RuntimeError(f'Gouw identity image is below high-resolution gate: {dims}')
-    print('Gouw identity accepted', dims, 'bytes', destination.stat().st_size)
+    print('Gouw identity accepted', dims, 'bytes', jpg.stat().st_size)
+
+    # Keep the established renderer filename, but create it from the true high-resolution
+    # identity source. This is a crisp editorial plate with subtle camera motion, not a
+    # low-resolution clip hidden by effects.
+    identity_plate = OUT / 'gouw_wapo_contained.mp4'
+    subprocess.check_call([
+        'ffmpeg', '-y', '-loop', '1', '-i', str(jpg), '-t', '8',
+        '-vf',
+        "scale=1280:1829:flags=lanczos,"
+        "crop=1280:720:0:300,"
+        "zoompan=z='min(zoom+0.0007,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=240:s=1280x720:fps=30,"
+        "eq=brightness=0.015:contrast=1.025:saturation=1.02,format=yuv420p",
+        '-an', '-c:v', 'libx264', '-preset', 'medium', '-crf', '15', '-movflags', '+faststart', str(identity_plate),
+    ])
+    codec, width, height, bitrate = probe_video(identity_plate)
+    if width != 1280 or height != 720:
+        raise RuntimeError(f'Identity plate has wrong dimensions: {(codec, width, height, bitrate)}')
+    print('Gouw identity plate', codec, width, height, bitrate)
 
 
 def main():
@@ -173,9 +189,9 @@ def main():
             '-of', 'default=noprint_wrappers=1', str(path),
         ])
 
-    identity = OUT / 'gouw_identity_2017.jpg'
-    if not identity.exists():
-        raise RuntimeError('Missing high-resolution Gouw identity image')
+    identity = OUT / 'gouw_wapo_contained.mp4'
+    if not identity.exists() or identity.stat().st_size < 500_000:
+        raise RuntimeError('Missing crisp high-resolution-derived Gouw identity plate')
 
 
 if __name__ == '__main__':
