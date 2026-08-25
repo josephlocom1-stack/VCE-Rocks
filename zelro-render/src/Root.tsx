@@ -1,12 +1,12 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {ZelroAlexandrWang} from './Alexandr';
+import {ZelroTheresiaGouw} from './Theresia';
 import {TOTAL_FRAMES} from './timings';
 
 export const Root: React.FC = () => (
   <Composition
-    id="ZelroAlexandrWang"
-    component={ZelroAlexandrWang}
+    id="ZelroTheresiaGouw"
+    component={ZelroTheresiaGouw}
     durationInFrames={TOTAL_FRAMES}
     fps={30}
     width={1080}
