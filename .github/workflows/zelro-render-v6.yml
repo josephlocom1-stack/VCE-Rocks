@@ -50,8 +50,8 @@ jobs:
 
       - name: Master to Instagram loudness target
         run: |
-          ffmpeg -y -i out/raw.mp4 -c:v copy -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -b:a 192k -movflags +faststart out/Zelro_Theresia_Gouw_V1.mp4
-          ffprobe -v error -show_entries stream=index,codec_name,width,height,r_frame_rate:format=duration -of default=noprint_wrappers=1 out/Zelro_Theresia_Gouw_V1.mp4 | tee out/TECHNICAL_REPORT.txt
+          ffmpeg -y -i out/raw.mp4 -c:v copy -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -b:a 192k -ar 48000 -movflags +faststart out/Zelro_Theresia_Gouw_V1.mp4
+          ffprobe -v error -show_entries stream=index,codec_name,width,height,r_frame_rate,sample_rate,channels:format=duration -of default=noprint_wrappers=1 out/Zelro_Theresia_Gouw_V1.mp4 | tee out/TECHNICAL_REPORT.txt
           ffmpeg -hide_banner -i out/Zelro_Theresia_Gouw_V1.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
 
       - name: Create visual review sheets
