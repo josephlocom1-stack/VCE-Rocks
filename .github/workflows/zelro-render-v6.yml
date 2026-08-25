@@ -1,8 +1,8 @@
-name: Zelro Reel 002 Alexandr Wang Render
+name: Zelro Reel 003 Theresia Gouw Render
 
 on:
   push:
-    branches: [zelro-render-alexandr]
+    branches: [zelro-render-theresia]
     paths:
       - 'zelro-render/**'
       - '.github/workflows/zelro-render-v6.yml'
@@ -37,36 +37,38 @@ jobs:
       - name: Download and normalize unique real media
         run: python scripts/download_media.py
 
-      - name: Generate natural male narration and exact word boundaries
+      - name: Generate and audition natural narration with exact word boundaries
         run: python scripts/generate_voice.py
 
-      - name: Generate energetic classical score and sound design
+      - name: Audition music and generate motivated sound design
         run: python scripts/make_audio.py
 
       - name: Render 1080x1920 Reel
         run: |
           mkdir -p out
-          npx remotion render src/index.tsx ZelroAlexandrWang out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p
+          npx remotion render src/index.tsx ZelroTheresiaGouw out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p
 
       - name: Master to Instagram loudness target
         run: |
-          ffmpeg -y -i out/raw.mp4 -c:v copy -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -b:a 192k -movflags +faststart out/Zelro_Alexandr_Wang_V1.mp4
-          ffprobe -v error -show_entries stream=index,codec_name,width,height,r_frame_rate:format=duration -of default=noprint_wrappers=1 out/Zelro_Alexandr_Wang_V1.mp4 | tee out/TECHNICAL_REPORT.txt
-          ffmpeg -hide_banner -i out/Zelro_Alexandr_Wang_V1.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
+          ffmpeg -y -i out/raw.mp4 -c:v copy -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -b:a 192k -movflags +faststart out/Zelro_Theresia_Gouw_V1.mp4
+          ffprobe -v error -show_entries stream=index,codec_name,width,height,r_frame_rate:format=duration -of default=noprint_wrappers=1 out/Zelro_Theresia_Gouw_V1.mp4 | tee out/TECHNICAL_REPORT.txt
+          ffmpeg -hide_banner -i out/Zelro_Theresia_Gouw_V1.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
 
       - name: Create visual review sheets
         run: |
-          ffmpeg -y -i out/Zelro_Alexandr_Wang_V1.mp4 -vf "fps=2/3,scale=216:-1,tile=5x3" -frames:v 1 out/ALEXANDR_PREVIEW.jpg || true
-          ffmpeg -y -i out/Zelro_Alexandr_Wang_V1.mp4 -vf "fps=1,scale=180:-1,tile=6x4" -frames:v 1 out/ALEXANDR_1S_CONTACT.jpg || true
+          ffmpeg -y -i out/Zelro_Theresia_Gouw_V1.mp4 -vf "fps=2/3,scale=216:-1,tile=5x3" -frames:v 1 out/THERESIA_PREVIEW.jpg || true
+          ffmpeg -y -i out/Zelro_Theresia_Gouw_V1.mp4 -vf "fps=1,scale=180:-1,tile=6x4" -frames:v 1 out/THERESIA_1S_CONTACT.jpg || true
 
       - name: Upload finished Reel
         uses: actions/upload-artifact@v4
         with:
-          name: zelro-alexandr-wang-v1-final
+          name: zelro-theresia-gouw-v1-final
           path: |
-            zelro-render/out/Zelro_Alexandr_Wang_V1.mp4
-            zelro-render/out/ALEXANDR_PREVIEW.jpg
-            zelro-render/out/ALEXANDR_1S_CONTACT.jpg
+            zelro-render/out/Zelro_Theresia_Gouw_V1.mp4
+            zelro-render/out/THERESIA_PREVIEW.jpg
+            zelro-render/out/THERESIA_1S_CONTACT.jpg
             zelro-render/out/TECHNICAL_REPORT.txt
             zelro-render/out/AUDIO_REPORT.txt
+            zelro-render/public/media/NARRATION_REPORT.txt
+            zelro-render/public/media/MUSIC_AUDITION_REPORT.txt
           retention-days: 14
