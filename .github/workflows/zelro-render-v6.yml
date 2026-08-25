@@ -1,4 +1,4 @@
-name: Zelro Reel 003 Theresia Gouw Render
+name: Zelro Reel 003 Theresia Gouw V2 Render
 
 on:
   push:
@@ -34,61 +34,72 @@ jobs:
           python -m pip install edge-tts mido yt-dlp
           npm install
 
-      - name: Download and normalize unique real media
+      - name: Download and quality-gate unique real media
         run: python scripts/download_media.py
 
-      - name: Generate and audition natural narration with exact word boundaries
+      - name: Generate slower readability-tuned narration with exact word boundaries
         run: python scripts/generate_voice.py
 
-      - name: Audition music and generate motivated sound design
+      - name: Audition music and generate phone-audible motivated sound design
         run: python scripts/make_audio.py
 
-      - name: Render 1080x1920 Reel
+      - name: Verify revised construction exists
+        run: |
+          grep -q 'CeoTimelineAnimation' src/Theresia.tsx
+          grep -q 'RetentionAnimation' src/Theresia.tsx
+          grep -q 'PureCard' src/Theresia.tsx
+          grep -q 'gouw_headshot.jpg' src/Theresia.tsx
+          if grep -q 'gouw_wapo.mp4' src/Theresia.tsx; then
+            echo 'Rejected low-resolution Gouw interview source is still referenced'
+            exit 1
+          fi
+
+      - name: Render 1080x1920 Reel V2
         run: |
           mkdir -p out
-          npx remotion render src/index.tsx ZelroTheresiaGouw out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p
+          npx remotion render src/index.tsx ZelroTheresiaGouw out/raw-v2.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p
 
-      - name: Master iPad-compatible review exports
+      - name: Master iPad-compatible V2 review exports
         run: |
-          ffmpeg -y -i out/raw.mp4 \
+          ffmpeg -y -i out/raw-v2.mp4 \
             -vf "scale=1080:1920:flags=lanczos,format=yuv420p" \
             -c:v libx264 -preset medium -profile:v high -level:v 4.1 -pix_fmt yuv420p \
             -b:v 5000k -maxrate 6000k -bufsize 10000k -g 60 -keyint_min 30 -sc_threshold 0 \
             -tag:v avc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
             -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -profile:a aac_low -b:a 160k -ar 48000 -ac 2 \
-            -movflags +faststart -map_metadata -1 out/Zelro_Theresia_Gouw_V1_iPad.mp4
-          ffmpeg -y -i out/Zelro_Theresia_Gouw_V1_iPad.mp4 \
+            -movflags +faststart -map_metadata -1 out/Zelro_Theresia_Gouw_V2_iPad.mp4
+          ffmpeg -y -i out/Zelro_Theresia_Gouw_V2_iPad.mp4 \
             -vf "scale=720:1280:flags=lanczos,format=yuv420p" \
             -c:v libx264 -preset medium -profile:v main -level:v 3.1 -pix_fmt yuv420p \
             -b:v 2300k -maxrate 2800k -bufsize 4600k -g 60 -keyint_min 30 -sc_threshold 0 \
             -tag:v avc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
             -c:a aac -profile:a aac_low -b:a 128k -ar 48000 -ac 2 \
-            -movflags +faststart -map_metadata -1 out/Zelro_Theresia_Gouw_V1_iPad_Lite.mp4
-          ffprobe -v error -show_entries stream=index,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels,color_range,color_space,color_transfer,color_primaries:format=start_time,duration,size,bit_rate -of json out/Zelro_Theresia_Gouw_V1_iPad.mp4 | tee out/TECHNICAL_REPORT.txt
-          ffprobe -v error -show_entries stream=index,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels:format=start_time,duration,size -of json out/Zelro_Theresia_Gouw_V1_iPad_Lite.mp4 | tee out/LITE_TECHNICAL_REPORT.txt
-          ffmpeg -v error -i out/Zelro_Theresia_Gouw_V1_iPad.mp4 -f null -
-          ffmpeg -v error -i out/Zelro_Theresia_Gouw_V1_iPad_Lite.mp4 -f null -
-          ffmpeg -hide_banner -i out/Zelro_Theresia_Gouw_V1_iPad.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
-          sha256sum out/Zelro_Theresia_Gouw_V1_iPad.mp4 out/Zelro_Theresia_Gouw_V1_iPad_Lite.mp4 | tee out/DELIVERY_SHA256.txt
+            -movflags +faststart -map_metadata -1 out/Zelro_Theresia_Gouw_V2_iPad_Lite.mp4
+          ffprobe -v error -show_entries stream=index,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels,color_range,color_space,color_transfer,color_primaries:format=start_time,duration,size,bit_rate -of json out/Zelro_Theresia_Gouw_V2_iPad.mp4 | tee out/TECHNICAL_REPORT_V2.txt
+          ffprobe -v error -show_entries stream=index,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels:format=start_time,duration,size -of json out/Zelro_Theresia_Gouw_V2_iPad_Lite.mp4 | tee out/LITE_TECHNICAL_REPORT_V2.txt
+          ffmpeg -v error -i out/Zelro_Theresia_Gouw_V2_iPad.mp4 -f null -
+          ffmpeg -v error -i out/Zelro_Theresia_Gouw_V2_iPad_Lite.mp4 -f null -
+          ffmpeg -hide_banner -i out/Zelro_Theresia_Gouw_V2_iPad.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT_V2.txt
+          sha256sum out/Zelro_Theresia_Gouw_V2_iPad.mp4 out/Zelro_Theresia_Gouw_V2_iPad_Lite.mp4 | tee out/DELIVERY_SHA256_V2.txt
 
-      - name: Create visual review sheets
+      - name: Create V2 visual review sheets
         run: |
-          ffmpeg -y -i out/Zelro_Theresia_Gouw_V1_iPad.mp4 -vf "fps=2/3,scale=216:-1,tile=5x3" -frames:v 1 out/THERESIA_PREVIEW.jpg || true
-          ffmpeg -y -i out/Zelro_Theresia_Gouw_V1_iPad.mp4 -vf "fps=1,scale=180:-1,tile=6x4" -frames:v 1 out/THERESIA_1S_CONTACT.jpg || true
+          ffmpeg -y -i out/Zelro_Theresia_Gouw_V2_iPad.mp4 -vf "fps=2/3,scale=216:-1,tile=5x4" -frames:v 1 out/THERESIA_V2_PREVIEW.jpg || true
+          ffmpeg -y -i out/Zelro_Theresia_Gouw_V2_iPad.mp4 -vf "fps=1,scale=180:-1,tile=6x5" -frames:v 1 out/THERESIA_V2_1S_CONTACT.jpg || true
 
-      - name: Upload finished Reel
+      - name: Upload finished Reel V2
         uses: actions/upload-artifact@v4
         with:
-          name: zelro-theresia-gouw-v1-final
+          name: zelro-theresia-gouw-v2-revision
           path: |
-            zelro-render/out/Zelro_Theresia_Gouw_V1_iPad.mp4
-            zelro-render/out/Zelro_Theresia_Gouw_V1_iPad_Lite.mp4
-            zelro-render/out/THERESIA_PREVIEW.jpg
-            zelro-render/out/THERESIA_1S_CONTACT.jpg
-            zelro-render/out/TECHNICAL_REPORT.txt
-            zelro-render/out/LITE_TECHNICAL_REPORT.txt
-            zelro-render/out/AUDIO_REPORT.txt
-            zelro-render/out/DELIVERY_SHA256.txt
+            zelro-render/out/Zelro_Theresia_Gouw_V2_iPad.mp4
+            zelro-render/out/Zelro_Theresia_Gouw_V2_iPad_Lite.mp4
+            zelro-render/out/THERESIA_V2_PREVIEW.jpg
+            zelro-render/out/THERESIA_V2_1S_CONTACT.jpg
+            zelro-render/out/TECHNICAL_REPORT_V2.txt
+            zelro-render/out/LITE_TECHNICAL_REPORT_V2.txt
+            zelro-render/out/AUDIO_REPORT_V2.txt
+            zelro-render/out/DELIVERY_SHA256_V2.txt
             zelro-render/public/media/NARRATION_REPORT.txt
             zelro-render/public/media/MUSIC_AUDITION_REPORT.txt
           retention-days: 14
