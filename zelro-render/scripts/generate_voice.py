@@ -7,11 +7,12 @@ from pathlib import Path
 
 import edge_tts
 
-SCRIPT = """Elon Musk ran a nightclub from his college house.
-He and his roommate rented a ten-bedroom frat house, covered the windows, switched on blacklights, and charged five dollars entry.
-Some nights, five hundred people showed up.
-One party could cover an entire month's rent.
-Elon stayed sober — and ran the operation."""
+# Write numbers as spoken words so Edge provides reliable word boundaries.
+# The renderer replaces the spoken money/percentage words with authored graphics.
+SCRIPT = """Alexandr Wang became a billionaire by selling AI something it still needed humans to create: labeled data.
+At nineteen, he dropped out of MIT and cofounded Scale AI.
+Self-driving companies had millions of images, but people still had to teach the models what they were seeing.
+In twenty twenty-five, Meta paid fourteen point three billion dollars for forty nine percent of Scale — and recruited Wang to lead its superintelligence push."""
 
 FPS = 30
 OUT = Path('public/media')
@@ -28,12 +29,10 @@ async def main():
     boundaries = []
     audio_path = OUT / 'narration.mp3'
 
-    # edge-tts 7.x defaults to SentenceBoundary. Explicit WordBoundary mode is essential:
-    # these events are the timing authority for the one-word-at-a-time caption system.
     comm = edge_tts.Communicate(
         SCRIPT,
         voice=VOICE,
-        rate='+6%',
+        rate='+8%',
         pitch='-2Hz',
         boundary='WordBoundary',
     )
@@ -55,9 +54,8 @@ async def main():
         '-of','default=nokey=1:noprint_wrappers=1', str(audio_path)
     ], text=True).strip())
 
-    # Fail loudly rather than rendering guessed caption timings.
     expected_words = [clean(x) for x in SCRIPT.split() if clean(x)]
-    if len(boundaries) < max(35, int(len(expected_words) * 0.80)):
+    if len(boundaries) < max(50, int(len(expected_words) * 0.80)):
         raise RuntimeError(
             f'Word-boundary metadata incomplete: got {len(boundaries)} for {len(expected_words)} script words'
         )
@@ -71,7 +69,7 @@ async def main():
         word = json.dumps(item['word'])
         rows.append(f"  {{word: {word}, startFrame: {sf}, endFrame: {ef}}},")
 
-    total = max(math.ceil(duration * FPS) + 18, 480)
+    total = max(math.ceil(duration * FPS) + 18, 570)
     TIMING.write_text(
         "export type TimedWord = {word: string; startFrame: number; endFrame: number};\n"
         "export const WORDS: TimedWord[] = [\n" + '\n'.join(rows) + "\n];\n"
