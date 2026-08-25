@@ -1,8 +1,8 @@
-name: Zelro Reel 001 V6 Render
+name: Zelro Reel 002 Alexandr Wang Render
 
 on:
   push:
-    branches: [zelro-render-temp]
+    branches: [zelro-render-alexandr]
     paths:
       - 'zelro-render/**'
       - '.github/workflows/zelro-render-v6.yml'
@@ -11,7 +11,7 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: zelro-render
@@ -31,40 +31,42 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg fluidsynth fluid-soundfont-gm
           python -m pip install --upgrade pip
-          python -m pip install edge-tts mido
+          python -m pip install edge-tts mido yt-dlp
           npm install
 
-      - name: Download and normalize real media
+      - name: Download and normalize unique real media
         run: python scripts/download_media.py
 
-      - name: Generate natural male narration and word boundaries
+      - name: Generate natural male narration and exact word boundaries
         run: python scripts/generate_voice.py
 
-      - name: Generate classical score and sound design
+      - name: Generate energetic classical score and sound design
         run: python scripts/make_audio.py
 
       - name: Render 1080x1920 Reel
         run: |
           mkdir -p out
-          npx remotion render src/index.tsx ZelroV6 out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p
+          npx remotion render src/index.tsx ZelroAlexandrWang out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p
 
       - name: Master to Instagram loudness target
         run: |
-          ffmpeg -y -i out/raw.mp4 -c:v copy -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -b:a 192k -movflags +faststart out/Zelro_Elon_Nightclub_V6.mp4
-          ffprobe -v error -show_entries stream=index,codec_name,width,height,r_frame_rate:format=duration -of default=noprint_wrappers=1 out/Zelro_Elon_Nightclub_V6.mp4 | tee out/TECHNICAL_REPORT.txt
-          ffmpeg -hide_banner -i out/Zelro_Elon_Nightclub_V6.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
+          ffmpeg -y -i out/raw.mp4 -c:v copy -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -b:a 192k -movflags +faststart out/Zelro_Alexandr_Wang_V1.mp4
+          ffprobe -v error -show_entries stream=index,codec_name,width,height,r_frame_rate:format=duration -of default=noprint_wrappers=1 out/Zelro_Alexandr_Wang_V1.mp4 | tee out/TECHNICAL_REPORT.txt
+          ffmpeg -hide_banner -i out/Zelro_Alexandr_Wang_V1.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
 
-      - name: Create contact sheet preview
+      - name: Create visual review sheets
         run: |
-          ffmpeg -y -i out/Zelro_Elon_Nightclub_V6.mp4 -vf "fps=1/2,scale=216:-1,tile=5x2" -frames:v 1 out/V6_PREVIEW.jpg || true
+          ffmpeg -y -i out/Zelro_Alexandr_Wang_V1.mp4 -vf "fps=2/3,scale=216:-1,tile=5x3" -frames:v 1 out/ALEXANDR_PREVIEW.jpg || true
+          ffmpeg -y -i out/Zelro_Alexandr_Wang_V1.mp4 -vf "fps=1,scale=180:-1,tile=6x4" -frames:v 1 out/ALEXANDR_1S_CONTACT.jpg || true
 
       - name: Upload finished Reel
         uses: actions/upload-artifact@v4
         with:
-          name: zelro-elon-nightclub-v6-final
+          name: zelro-alexandr-wang-v1-final
           path: |
-            zelro-render/out/Zelro_Elon_Nightclub_V6.mp4
-            zelro-render/out/V6_PREVIEW.jpg
+            zelro-render/out/Zelro_Alexandr_Wang_V1.mp4
+            zelro-render/out/ALEXANDR_PREVIEW.jpg
+            zelro-render/out/ALEXANDR_1S_CONTACT.jpg
             zelro-render/out/TECHNICAL_REPORT.txt
             zelro-render/out/AUDIO_REPORT.txt
           retention-days: 14
