@@ -58,7 +58,7 @@ subprocess.check_call([
     'ffmpeg', '-y', '-stream_loop', '-1', '-ss', '2.0', '-i', str(selected_path), '-t', '90',
     '-af', 'highpass=f=65,lowpass=f=15800,equalizer=f=1800:t=q:w=1.1:g=1.8,'
            'acompressor=threshold=-19dB:ratio=2.1:attack=10:release=145,'
-           'volume=0.92,afade=t=in:st=0:d=.12,afade=t=out:st=87:d=2.6',
+           'volume=0.92,afade=t=in:st=0:d=0.12,afade=t=out:st=87:d=2.6',
     '-c:a', 'aac', '-b:a', '192k', str(OUT / 'music.m4a'),
 ])
 
@@ -82,32 +82,32 @@ def ffmpeg(*args):
 
 
 ffmpeg(
-    '-f', 'lavfi', '-i', 'sine=frequency=72:duration=.45:sample_rate=48000',
-    '-f', 'lavfi', '-i', 'sine=frequency=510:duration=.22:sample_rate=48000',
-    '-filter_complex', '[0:a]volume=.75,afade=t=out:st=.05:d=.38[lo];[1:a]volume=.28,afade=t=out:st=.03:d=.17[mid];[lo][mid]amix=inputs=2,alimiter=limit=.92',
+    '-f', 'lavfi', '-i', 'sine=frequency=72:duration=0.45:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=510:duration=0.22:sample_rate=48000',
+    '-filter_complex', '[0:a]volume=0.75,afade=t=out:st=0.05:d=0.38[lo];[1:a]volume=0.28,afade=t=out:st=0.03:d=0.17[mid];[lo][mid]amix=inputs=2,alimiter=limit=0.92',
     str(OUT / 'impact.wav'),
 )
 ffmpeg(
-    '-f', 'lavfi', '-i', 'anoisesrc=d=.52:c=white:r=48000',
-    '-f', 'lavfi', '-i', 'sine=frequency=64:duration=.52:sample_rate=48000',
-    '-filter_complex', '[0:a]highpass=f=780,lowpass=f=7600,volume=.34,afade=t=out:st=.25:d=.25[n];[1:a]volume=.9,afade=t=out:st=.06:d=.44[b];[n][b]amix=inputs=2,alimiter=limit=.94',
+    '-f', 'lavfi', '-i', 'anoisesrc=d=0.52:c=white:r=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=64:duration=0.52:sample_rate=48000',
+    '-filter_complex', '[0:a]highpass=f=780,lowpass=f=7600,volume=0.34,afade=t=out:st=0.25:d=0.25[n];[1:a]volume=0.9,afade=t=out:st=0.06:d=0.44[b];[n][b]amix=inputs=2,alimiter=limit=0.94',
     str(OUT / 'collision.wav'),
 )
 ffmpeg(
     '-f', 'lavfi', '-i', 'sine=frequency=62:duration=1.1:sample_rate=48000',
-    '-af', 'tremolo=f=1.85:d=.92,volume=.7,afade=t=out:st=.72:d=.35', str(OUT / 'heartbeat.wav'),
+    '-af', 'tremolo=f=1.85:d=0.92,volume=0.7,afade=t=out:st=0.72:d=0.35', str(OUT / 'heartbeat.wav'),
 )
 ffmpeg(
-    '-f', 'lavfi', '-i', 'aevalsrc=0.13*sin(2*PI*(185*t+1550*t*t)):d=.82:s=48000',
-    '-af', 'highpass=f=120,afade=t=in:st=0:d=.05,afade=t=out:st=.68:d=.13,volume=1.2', str(OUT / 'riser.wav'),
+    '-f', 'lavfi', '-i', 'aevalsrc=0.13*sin(2*PI*(185*t+1550*t*t)):d=0.82:s=48000',
+    '-af', 'highpass=f=120,afade=t=in:st=0:d=0.05,afade=t=out:st=0.68:d=0.13,volume=1.2', str(OUT / 'riser.wav'),
 )
 ffmpeg(
-    '-f', 'lavfi', '-i', 'anoisesrc=d=.72:c=pink:r=48000',
-    '-f', 'lavfi', '-i', 'sine=frequency=92:duration=.72:sample_rate=48000',
-    '-filter_complex', '[0:a]highpass=f=360,lowpass=f=7200,volume=.28,afade=t=out:st=.55:d=.15[n];[1:a]volume=.86,afade=t=out:st=.18:d=.5[b];[n][b]amix=inputs=2,alimiter=limit=.94', str(OUT / 'launch.wav'),
+    '-f', 'lavfi', '-i', 'anoisesrc=d=0.72:c=pink:r=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=92:duration=0.72:sample_rate=48000',
+    '-filter_complex', '[0:a]highpass=f=360,lowpass=f=7200,volume=0.28,afade=t=out:st=0.55:d=0.15[n];[1:a]volume=0.86,afade=t=out:st=0.18:d=0.5[b];[n][b]amix=inputs=2,alimiter=limit=0.94', str(OUT / 'launch.wav'),
 )
 ffmpeg(
-    '-f', 'lavfi', '-i', 'sine=frequency=1320:duration=.22:sample_rate=48000',
-    '-f', 'lavfi', '-i', 'sine=frequency=1980:duration=.22:sample_rate=48000',
-    '-filter_complex', '[0:a]volume=.46[a];[1:a]volume=.25[b];[a][b]amix=inputs=2,afade=t=out:st=.05:d=.15', str(OUT / 'proof.wav'),
+    '-f', 'lavfi', '-i', 'sine=frequency=1320:duration=0.22:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=1980:duration=0.22:sample_rate=48000',
+    '-filter_complex', '[0:a]volume=0.46[a];[1:a]volume=0.25[b];[a][b]amix=inputs=2,afade=t=out:st=0.05:d=0.15', str(OUT / 'proof.wav'),
 )
