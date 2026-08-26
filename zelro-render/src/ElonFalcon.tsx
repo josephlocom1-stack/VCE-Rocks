@@ -268,7 +268,7 @@ export const ElonFalconReel: React.FC<{prototype?: boolean}> = ({prototype = fal
     <AbsoluteFill style={{background: BLACK}}>
       <Scene from={0} to={s(2)} direction="none"><Hook /></Scene>
       <Scene from={s(2)} to={s(4)} direction="left"><RealClip src="media/island.mp4" position="52% 50%" /></Scene>
-      <Scene from={s(4)} to={s(5)} direction="up"><><RealClip src="media/failure_fire.mp4" tone="hot" /><FlightCounter active={1} /></></Scene>
+      <Scene from={s(4)} to={s(5)} direction="up"><><RealClip src="media/failure_fire.mp4" tone="hot" /><AbsoluteFill style={{background: 'rgba(255,156,0,.20)', mixBlendMode: 'screen'}} /><FlightCounter active={1} /></></Scene>
       {!prototype ? (
         <>
           <Scene from={s(5)} to={s(6)} direction="left"><><RealClip src="media/flight_two.mp4" startFrom={36} tone="normal" /><FlightCounter active={2} /></></Scene>
