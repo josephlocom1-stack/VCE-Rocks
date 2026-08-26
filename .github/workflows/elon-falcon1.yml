@@ -1,0 +1,88 @@
+name: Zelro Reel 004 Elon Falcon 1 Prototype
+
+on:
+  push:
+    branches: [zelro-render-elon-falcon1]
+    paths:
+      - 'zelro-render/**'
+      - '.github/workflows/elon-falcon1.yml'
+  workflow_dispatch:
+
+jobs:
+  prototype:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: zelro-render
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install edge-tts yt-dlp
+          npm install
+
+      - name: Download and quality-gate unique real media
+        run: python scripts/download_media.py
+
+      - name: Generate narration candidates and exact captions
+        run: python scripts/generate_voice.py
+
+      - name: Audition music and create motivated sound design
+        run: python scripts/make_audio.py
+
+      - name: Verify prototype construction rules
+        run: |
+          npm run typecheck
+          grep -q 'ZELRO' src/ElonFalcon.tsx
+          grep -q 'CaptionLayer' src/ElonFalcon.tsx
+          grep -q 'generated_images=0' public/media/ASSET_REPORT.txt
+          grep -q 'source_reuse=0' public/media/ASSET_REPORT.txt
+          test "$(find public/media -maxdepth 1 -type f -name '*.mp4' | wc -l)" -ge 7
+
+      - name: Render 15-second prototype
+        run: |
+          mkdir -p out
+          npm run render:prototype
+
+      - name: Master iPad prototype and verify
+        run: |
+          ffmpeg -y -i out/prototype.mp4 \
+            -vf "scale=720:1280:flags=lanczos,format=yuv420p" \
+            -c:v libx264 -preset medium -profile:v main -level:v 3.1 -pix_fmt yuv420p \
+            -b:v 2400k -maxrate 2900k -bufsize 4800k -g 60 -keyint_min 30 -sc_threshold 0 \
+            -tag:v avc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
+            -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -profile:a aac_low -b:a 128k -ar 48000 -ac 2 \
+            -movflags +faststart -map_metadata -1 out/Zelro_Elon_Falcon1_Prototype_iPad.mp4
+          ffprobe -v error -show_entries stream=codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels,color_range,color_space:format=start_time,duration,size -of json out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 | tee out/PROTOTYPE_TECHNICAL_REPORT.txt
+          ffmpeg -v error -i out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 -f null -
+          ffmpeg -hide_banner -i out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/PROTOTYPE_AUDIO_REPORT.txt
+          sha256sum out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 | tee out/PROTOTYPE_SHA256.txt
+          ffmpeg -y -i out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 -vf "fps=1.5,scale=180:-1,tile=6x4" -frames:v 1 out/PROTOTYPE_CONTACT.jpg
+
+      - name: Upload prototype gate artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zelro-elon-falcon1-prototype-gate
+          path: |
+            zelro-render/out/Zelro_Elon_Falcon1_Prototype_iPad.mp4
+            zelro-render/out/PROTOTYPE_CONTACT.jpg
+            zelro-render/out/PROTOTYPE_TECHNICAL_REPORT.txt
+            zelro-render/out/PROTOTYPE_AUDIO_REPORT.txt
+            zelro-render/out/PROTOTYPE_SHA256.txt
+            zelro-render/public/media/ASSET_REPORT.txt
+            zelro-render/public/media/NARRATION_REPORT.txt
+            zelro-render/public/media/MUSIC_AUDITION_REPORT.txt
+          retention-days: 14

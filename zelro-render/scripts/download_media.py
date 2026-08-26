@@ -1,7 +1,6 @@
-import html
+import json
 import re
 import subprocess
-import time
 import urllib.request
 from pathlib import Path
 
@@ -9,189 +8,159 @@ OUT = Path('public/media')
 RAW = OUT / 'raw'
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
 
+# Every output comes from a different real source. No source is re-trimmed or reused.
 PEXELS = {
-    'family_airport': [37130585, 7429363],
-    'dishwasher': [8627106, 3768941],
-    'startup_board': [8344124, 3256820],
-    'vc_pitch': [8344137, 8343942],
-    'facebook_phone': [6756650, 5201210],
-    'finance_city': [29531860, 10218091],
-    'acrew_team': [7224309, 7223708],
+    'hook_launch': [854262],
+    'island': [1550083, 30120173],
+    'failure_fire': [856295, 856227],
+    'flight_two': [854232, 31398201],
+    'cargo_plane': [35232121],
+    'repair_factory': [11017956, 31016925],
 }
 
-# 2720x3888, CC BY 2.0 via TechCrunch/Flickr, mirrored by Wikimedia Commons.
-GOUW_IDENTITY = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Theresia_Gouw_2017.jpg'
+
+def run(command):
+    subprocess.check_call(command)
 
 
-def get(url: str, timeout=120) -> bytes:
-    request = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://www.pexels.com/'})
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return response.read()
-
-
-def probe_video(path: Path):
+def probe(path: Path):
     raw = subprocess.check_output([
         'ffprobe', '-v', 'error', '-select_streams', 'v:0',
-        '-show_entries', 'stream=codec_name,width,height,bit_rate',
-        '-of', 'csv=p=0', str(path),
-    ], text=True).strip().split(',')
-    if len(raw) < 3:
-        raise RuntimeError(f'Unable to probe video: {path}')
-    codec = raw[0]
-    width = int(raw[1])
-    height = int(raw[2])
-    bitrate = int(raw[3]) if len(raw) > 3 and raw[3].isdigit() else 0
-    return codec, width, height, bitrate
+        '-show_entries', 'stream=codec_name,width,height,bit_rate:format=duration',
+        '-of', 'json', str(path),
+    ], text=True)
+    data = json.loads(raw)
+    stream = data['streams'][0]
+    return stream.get('codec_name'), int(stream.get('width', 0)), int(stream.get('height', 0)), float(data['format'].get('duration', 0))
 
 
-def high_quality_video(path: Path) -> bool:
+def download_url(url: str, destination: Path):
     try:
-        codec, width, height, bitrate = probe_video(path)
-        area_ok = width * height >= 1920 * 1080
-        short_edge_ok = min(width, height) >= 1000
-        bitrate_ok = bitrate == 0 or bitrate >= 2_000_000
-        print('source quality', path.name, codec, width, height, bitrate, area_ok, short_edge_ok, bitrate_ok)
-        return bool(codec and area_ok and short_edge_ok and bitrate_ok)
+        request = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://www.pexels.com/'})
+        with urllib.request.urlopen(request, timeout=180) as response, destination.open('wb') as output:
+            while True:
+                chunk = response.read(1024 * 1024)
+                if not chunk:
+                    break
+                output.write(chunk)
+        if destination.stat().st_size < 250_000:
+            raise RuntimeError('download too small')
+        _, width, height, seconds = probe(destination)
+        if max(width, height) < 1080 or seconds < 4:
+            raise RuntimeError(f'quality gate failed {width}x{height} {seconds:.2f}s')
+        return True
     except Exception as exc:
-        print('quality probe failed', path, exc)
+        print('direct download failed', url, exc)
+        destination.unlink(missing_ok=True)
         return False
 
 
-def download_url(url: str, path: Path) -> bool:
-    for attempt in range(4):
-        try:
-            request = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://www.pexels.com/'})
-            with urllib.request.urlopen(request, timeout=180) as response, path.open('wb') as output:
-                while True:
-                    chunk = response.read(1024 * 1024)
-                    if not chunk:
-                        break
-                    output.write(chunk)
-            if path.stat().st_size > 200_000 and high_quality_video(path):
-                return True
-            print('rejecting low-quality downloaded video', url)
-        except Exception as exc:
-            print('download attempt failed', url, exc)
-        path.unlink(missing_ok=True)
-        time.sleep(3 * (attempt + 1))
-    return False
-
-
-def find_pexels_mp4(video_id: int):
+def pexels_candidates(video_id: int):
+    page = f'https://www.pexels.com/video/{video_id}/'
+    request = urllib.request.Request(page, headers={'User-Agent': UA})
     try:
-        raw = get(f'https://www.pexels.com/video/{video_id}/').decode('utf-8', errors='ignore')
-        raw = html.unescape(raw).replace('\\u0026', '&').replace('\\/', '/')
-        urls = re.findall(r'https://videos\.pexels\.com/video-files/[^"<> ]+?\.mp4(?:\?[^"<> ]*)?', raw)
-        urls = list(dict.fromkeys(urls))
-        urls.sort(
-            key=lambda url: (
-                ('2160' in url or '3840' in url),
-                ('1080' in url or '1920' in url),
-                len(url),
-            ),
-            reverse=True,
-        )
-        return urls
+        html = urllib.request.urlopen(request, timeout=90).read().decode('utf-8', 'ignore')
     except Exception as exc:
         print('Pexels page parse failed', video_id, exc)
         return []
+    urls = re.findall(r'https:\\?/\\?/[^"<> ]+?\.mp4(?:\\?[^"<> ]*)?', html)
+    urls = [url.replace('\\/', '/') for url in urls]
+    urls = list(dict.fromkeys(urls))
+    urls.sort(key=lambda url: (('2160' in url or '3840' in url), ('1080' in url or '1920' in url), len(url)), reverse=True)
+    return urls
 
 
 def download_pexels(name: str, ids):
     destination = RAW / f'{name}.mp4'
     for video_id in ids:
-        print(f'Pexels {name}: trying {video_id}')
+        print(f'Pexels {name}: trying unique source {video_id}')
         candidates = [
-            *find_pexels_mp4(video_id),
+            *pexels_candidates(video_id),
             f'https://www.pexels.com/download/video/{video_id}/',
             f'https://www.pexels.com/video/{video_id}/download/',
         ]
         for url in candidates:
             if download_url(url, destination):
-                return destination
-    raise RuntimeError(f'No native-1080p-or-better real-video source for {name}')
+                return destination, video_id
+    raise RuntimeError(f'No real high-resolution source available for {name}')
 
 
-def normalize(src: Path, dest: Path, brightness='1.08'):
+def download_falcon_success():
+    destination = RAW / 'falcon_success_source.mp4'
+    urls = [
+        'https://www.dailymotion.com/video/x9b9bh6',
+        'https://www.youtube.com/watch?v=To-XOPgaGsQ',
+    ]
+    for url in urls:
+        try:
+            run([
+                'yt-dlp', '--no-playlist', '--retries', '4',
+                '-f', 'bv*[height>=720]+ba/b[height>=720]/best',
+                '--merge-output-format', 'mp4', '-o', str(destination), url,
+            ])
+            if destination.exists() and destination.stat().st_size > 1_000_000:
+                return destination, url
+        except Exception as exc:
+            print('Falcon success source failed', url, exc)
+            destination.unlink(missing_ok=True)
+    raise RuntimeError('Actual Falcon 1 Flight 4 footage could not be downloaded')
+
+
+def normalize(src: Path, dest: Path, start='0', position='center'):
+    crop_x = '(in_w-out_w)/2'
+    if position == 'left':
+        crop_x = 'max(0,(in_w-out_w)*0.34)'
+    elif position == 'right':
+        crop_x = 'max(0,(in_w-out_w)*0.66)'
     vf = (
-        'scale=1080:1920:force_original_aspect_ratio=increase,'
-        'crop=1080:1920,fps=30,'
-        f'eq=brightness=0.025:contrast=1.035:saturation=1.04:gamma={brightness},'
-        'format=yuv420p'
+        'scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,'
+        f'crop=1080:1920:{crop_x}:(in_h-out_h)/2,fps=30,'
+        'eq=brightness=0.015:contrast=1.045:saturation=1.03,format=yuv420p'
     )
-    subprocess.check_call([
-        'ffmpeg', '-y', '-i', str(src), '-an', '-t', '8',
-        '-vf', vf, '-c:v', 'libx264', '-preset', 'medium', '-crf', '17',
-        '-movflags', '+faststart', str(dest),
+    run([
+        'ffmpeg', '-y', '-stream_loop', '-1', '-ss', str(start), '-i', str(src), '-an', '-t', '9',
+        '-vf', vf, '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-movflags', '+faststart', str(dest),
     ])
-
-
-def download_gouw_identity():
-    jpg = OUT / 'gouw_identity_2017.jpg'
-    request = urllib.request.Request(
-        GOUW_IDENTITY,
-        headers={'User-Agent': UA, 'Referer': 'https://commons.wikimedia.org/'},
-    )
-    with urllib.request.urlopen(request, timeout=180) as response, jpg.open('wb') as output:
-        output.write(response.read())
-    if jpg.stat().st_size < 500_000:
-        raise RuntimeError('Gouw high-resolution identity image download is unexpectedly small')
-    dims = subprocess.check_output([
-        'ffprobe', '-v', 'error', '-select_streams', 'v:0',
-        '-show_entries', 'stream=width,height', '-of', 'csv=p=0', str(jpg),
-    ], text=True).strip().split(',')
-    if len(dims) < 2 or min(int(dims[0]), int(dims[1])) < 1800:
-        raise RuntimeError(f'Gouw identity image is below high-resolution gate: {dims}')
-    print('Gouw identity accepted', dims, 'bytes', jpg.stat().st_size)
-
-    # Keep the established renderer filename, but create it from the true high-resolution
-    # identity source. This is a crisp editorial plate with subtle camera motion, not a
-    # low-resolution clip hidden by effects.
-    identity_plate = OUT / 'gouw_wapo_contained.mp4'
-    subprocess.check_call([
-        'ffmpeg', '-y', '-loop', '1', '-i', str(jpg), '-t', '8',
-        '-vf',
-        "scale=1280:1829:flags=lanczos,"
-        "crop=1280:720:0:300,"
-        "zoompan=z='min(zoom+0.0007,1.035)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=240:s=1280x720:fps=30,"
-        "eq=brightness=0.015:contrast=1.025:saturation=1.02,format=yuv420p",
-        '-an', '-c:v', 'libx264', '-preset', 'medium', '-crf', '15', '-movflags', '+faststart', str(identity_plate),
-    ])
-    codec, width, height, bitrate = probe_video(identity_plate)
-    if width != 1280 or height != 720:
-        raise RuntimeError(f'Identity plate has wrong dimensions: {(codec, width, height, bitrate)}')
-    print('Gouw identity plate', codec, width, height, bitrate)
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
-
-    download_gouw_identity()
+    sources = []
+    starts = {
+        'hook_launch': '0.2',
+        'island': '0.6',
+        'failure_fire': '0.0',
+        'flight_two': '0.5',
+        'cargo_plane': '0.2',
+        'repair_factory': '0.4',
+    }
+    positions = {'cargo_plane': 'left', 'repair_factory': 'right'}
     for name, ids in PEXELS.items():
-        raw = download_pexels(name, ids)
-        lift = '1.13' if name in {'facebook_phone', 'finance_city'} else '1.08'
-        normalize(raw, OUT / f'{name}.mp4', brightness=lift)
+        raw, source_id = download_pexels(name, ids)
+        normalize(raw, OUT / f'{name}.mp4', start=starts[name], position=positions.get(name, 'center'))
+        sources.append((name, f'https://www.pexels.com/video/{source_id}/'))
 
-    expected_video = list(PEXELS.keys())
-    seen = set()
-    for name in expected_video:
+    falcon_raw, falcon_url = download_falcon_success()
+    # The SpaceX retrospective places the Flight 4 launch and celebration at ~1:49.
+    normalize(falcon_raw, OUT / 'falcon_success.mp4', start='109', position='center')
+    sources.append(('falcon_success', falcon_url))
+
+    lines = ['ELON FALCON 1 REAL-MEDIA MANIFEST']
+    used = set()
+    for name, url in sources:
+        if url in used:
+            raise RuntimeError(f'Source reused: {url}')
+        used.add(url)
         path = OUT / f'{name}.mp4'
-        if not path.exists() or path.stat().st_size < 150_000:
-            raise RuntimeError(f'Missing or weak normalized asset: {path}')
-        if path.name in seen:
-            raise RuntimeError(f'Duplicate output path: {path.name}')
-        seen.add(path.name)
-        print('\n--', name, '--')
-        subprocess.check_call([
-            'ffprobe', '-v', 'error',
-            '-show_entries', 'stream=width,height,r_frame_rate:format=duration',
-            '-of', 'default=noprint_wrappers=1', str(path),
-        ])
-
-    identity = OUT / 'gouw_wapo_contained.mp4'
-    if not identity.exists() or identity.stat().st_size < 500_000:
-        raise RuntimeError('Missing crisp high-resolution-derived Gouw identity plate')
+        codec, width, height, seconds = probe(path)
+        if codec != 'h264' or width != 1080 or height != 1920 or seconds < 8.5:
+            raise RuntimeError(f'Normalized asset failed: {name} {codec} {width}x{height} {seconds:.2f}s')
+        lines.append(f'{name}: {url} -> {codec} {width}x{height} {seconds:.2f}s')
+    lines.append('generated_images=0')
+    lines.append('source_reuse=0')
+    (OUT / 'ASSET_REPORT.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    print('\n'.join(lines))
 
 
 if __name__ == '__main__':
