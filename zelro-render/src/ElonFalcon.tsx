@@ -270,7 +270,7 @@ export const ElonFalconReel: React.FC<{prototype?: boolean}> = ({prototype = fal
       <Scene from={s(4)} to={s(5)} direction="up"><><RealClip src="media/failure_fire.mp4" tone="hot" /><FlightCounter active={1} /></></Scene>
       {!prototype ? (
         <>
-          <Scene from={s(5)} to={s(6)} direction="left"><><RealClip src="media/flight_two.mp4" tone="dark" /><FlightCounter active={2} /></></Scene>
+          <Scene from={s(5)} to={s(6)} direction="left"><><RealClip src="media/flight_two.mp4" startFrom={36} tone="normal" /><FlightCounter active={2} /></></Scene>
           <Scene from={s(6)} to={s(9)} direction="none"><StageFailure /></Scene>
           <Scene from={s(9)} to={s(11)} direction="up"><OneRocketLeft /></Scene>
           <Scene from={s(11)} to={s(13)} direction="left"><RealClip src="media/cargo_plane.mp4" tone="dark" position="48% 50%" /></Scene>
