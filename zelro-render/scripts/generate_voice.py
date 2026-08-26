@@ -17,15 +17,16 @@ SENTENCES = [
     "Now her own firm, Acrew, manages one point seven billion.",
 ]
 
-# Earlier delivery used +14%/+11% and proved too fast for comfortable caption reading.
-# Keep confident delivery, but move back toward natural pace so word groups can breathe.
+# User playback showed that the previous +7%/+4% delivery still rushed captions and proof.
+# The revised target is deliberately closer to 145–150 wpm so primary frames can hold
+# 2–4 seconds and proof/mechanism frames can breathe for roughly 3–5 seconds.
 CANDIDATES = [
-    {'id': 'ava', 'voice': 'en-US-AvaNeural', 'rate': '+7%', 'pitch': '-2Hz'},
-    {'id': 'emma', 'voice': 'en-US-EmmaNeural', 'rate': '+4%', 'pitch': '-1Hz'},
+    {'id': 'ava', 'voice': 'en-US-AvaNeural', 'rate': '-4%', 'pitch': '-2Hz'},
+    {'id': 'emma', 'voice': 'en-US-EmmaNeural', 'rate': '-7%', 'pitch': '-1Hz'},
 ]
 
 FPS = 30
-TARGET_SECONDS = 23.5
+TARGET_SECONDS = 27.0
 OUT = Path('public/media')
 RAW = OUT / 'voice-candidates'
 TIMING = Path('src/timings.ts')
@@ -85,7 +86,7 @@ async def build_candidate(candidate):
     chunks = []
     all_words = []
     cursor = 0.0
-    overlap = 0.28
+    overlap = 0.22
 
     for index, sentence in enumerate(SENTENCES):
         chunk_path, boundaries = await synth_sentence(
@@ -114,11 +115,11 @@ async def build_candidate(candidate):
     if len(chunks) == 1:
         shutil.copyfile(chunks[0], output)
     else:
-        chain = '[0:a][1:a]acrossfade=d=0.28:c1=tri:c2=tri[x1];'
+        chain = '[0:a][1:a]acrossfade=d=0.22:c1=tri:c2=tri[x1];'
         for index in range(2, len(chunks)):
             incoming = f'[x{index - 1}]'
             outgoing = f'[x{index}]' if index < len(chunks) - 1 else '[out]'
-            chain += f'{incoming}[{index}:a]acrossfade=d=0.28:c1=tri:c2=tri{outgoing};'
+            chain += f'{incoming}[{index}:a]acrossfade=d=0.22:c1=tri:c2=tri{outgoing};'
         chain = chain.rstrip(';')
         subprocess.check_call([
             'ffmpeg', '-y', *inputs, '-filter_complex', chain,
@@ -140,10 +141,8 @@ async def main():
     for candidate in CANDIDATES:
         results.append(await build_candidate(candidate))
 
-    # Readability-aware audition gate: select a natural, confident cadence close to
-    # 23.5 seconds. Reject deliveries that become too fast or unnecessarily slow.
     def score(item):
-        penalty = 10 if item['duration'] < 22.0 or item['duration'] > 25.2 else 0
+        penalty = 10 if item['duration'] < 25.8 or item['duration'] > 29.2 else 0
         return abs(item['duration'] - TARGET_SECONDS) + penalty
 
     chosen = min(results, key=score)
@@ -174,7 +173,7 @@ async def main():
             'confidence': 1,
         })
 
-    total_frames = max(math.ceil(final_duration * FPS) + 10, 660)
+    total_frames = max(math.ceil(final_duration * FPS) + 12, 780)
     TIMING.write_text(
         "export type TimedWord = {word: string; startFrame: number; endFrame: number};\n"
         "export const WORDS: TimedWord[] = [\n" + '\n'.join(rows) + "\n];\n"
@@ -184,15 +183,16 @@ async def main():
     (OUT / 'captions.json').write_text(json.dumps(captions, indent=2), encoding='utf-8')
 
     report = [
-        'THERESIA GOUW NARRATION AUDITION',
+        'THERESIA GOUW NARRATION AUDITION — COMPREHENSION REVISION',
         *[
             f"{item['id']}: {item['voice']} {item['rate']} duration={item['duration']:.3f}s words={len(item['words'])}"
             for item in results
         ],
-        f"selected={chosen['id']} reason=closest readable natural cadence to {TARGET_SECONDS:.1f}s target",
+        f"selected={chosen['id']} reason=closest natural cadence to {TARGET_SECONDS:.1f}s comprehension target",
         f"master_duration={final_duration:.3f}s total_frames={total_frames}",
-        'sentence_join=280ms equal-power crossfade; dead inter-sentence air removed',
-        'readability_change=slower than prior +14/+11 percent delivery; caption timings regenerated from exact word boundaries',
+        'sentence_join=220ms equal-power crossfade; dead inter-sentence air removed',
+        'readability_change=slower than prior +7/+4 percent delivery; exact word boundaries regenerated',
+        'benchmark_intent=stable 2-6 word phrases; primary story states 2-4s; proof/mechanism states 3-5s',
     ]
     (OUT / 'NARRATION_REPORT.txt').write_text('\n'.join(report) + '\n', encoding='utf-8')
     print('\n'.join(report))
