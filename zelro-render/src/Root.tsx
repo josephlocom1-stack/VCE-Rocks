@@ -1,13 +1,13 @@
 // Reel 003 production composition
 import React from 'react';
 import {Composition} from 'remotion';
-import {ZelroTheresiaGouw} from './Theresia';
+import {ZelroTheresiaGouwFinal} from './TheresiaFinal';
 import {TOTAL_FRAMES} from './timings';
 
 export const Root: React.FC = () => (
   <Composition
     id="ZelroTheresiaGouw"
-    component={ZelroTheresiaGouw}
+    component={ZelroTheresiaGouwFinal}
     durationInFrames={TOTAL_FRAMES}
     fps={30}
     width={1080}
