@@ -87,7 +87,8 @@ const StageFailure: React.FC = () => {
   const impact = interpolate(frame, [77, 84, 104], [0, 1, 0], clamp);
   const rotate = interpolate(frame, [82, 145], [0, -19], clamp);
   return (
-    <AbsoluteFill style={{background: BLACK, color: WHITE, overflow: 'hidden'}}>
+    <AbsoluteFill style={{background: '#242424', color: WHITE, overflow: 'hidden'}}>
+      <AbsoluteFill style={{background: 'linear-gradient(150deg,rgba(255,212,0,.16),transparent 42%,rgba(255,255,255,.06))'}} />
       <FlightCounter active={3} />
       <div style={{position: 'absolute', top: 260, left: 72, right: 72, fontFamily: 'Arial Black, Impact, sans-serif', fontSize: 87, lineHeight: .88, letterSpacing: -4}}>THE STAGES<br/><span style={{color: YELLOW}}>SEPARATED.</span></div>
       <div style={{position: 'absolute', left: 405, top: 760, width: 270, height: 660, transform: `rotate(${rotate}deg)`, transformOrigin: '50% 50%'}}>
