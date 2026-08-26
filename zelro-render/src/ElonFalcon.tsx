@@ -113,14 +113,14 @@ const OneRocketLeft: React.FC = () => {
   const frame = useCurrentFrame();
   const bars = [1, 2, 3, 4];
   return (
-    <AbsoluteFill style={{background: CREAM, color: BLACK, padding: '150px 74px'}}>
-      <div style={{fontFamily: 'Arial Black, Impact, sans-serif', fontSize: 92, lineHeight: .91, letterSpacing: -5}}>SPACE X WAS<br/><span style={{background: BLACK, color: YELLOW, padding: '0 18px'}}>RUNNING OUT.</span></div>
+    <AbsoluteFill style={{background: BLACK, color: WHITE, padding: '150px 74px'}}>
+      <div style={{fontFamily: 'Arial Black, Impact, sans-serif', fontSize: 92, lineHeight: .91, letterSpacing: -5}}>SPACE X WAS<br/><span style={{background: YELLOW, color: BLACK, padding: '0 18px'}}>RUNNING OUT.</span></div>
       <div style={{position: 'absolute', left: 78, right: 78, top: 700, display: 'flex', gap: 24, alignItems: 'flex-end', height: 610}}>
         {bars.map((n, i) => {
           const reveal = interpolate(frame, [i * 8, i * 8 + 12], [0, 1], clamp);
           const failed = i < 3;
           return (
-            <div key={n} style={{flex: 1, height: 560 - i * 56, background: failed ? '#BAB5AA' : YELLOW, border: `7px solid ${BLACK}`, transform: `scaleY(${reveal})`, transformOrigin: 'bottom', position: 'relative'}}>
+            <div key={n} style={{flex: 1, height: 560 - i * 56, background: failed ? '#454545' : YELLOW, color: failed ? WHITE : BLACK, border: `7px solid ${failed ? '#777' : YELLOW}`, transform: `scaleY(${reveal})`, transformOrigin: 'bottom', position: 'relative'}}>
               <div style={{position: 'absolute', top: 28, left: 0, right: 0, textAlign: 'center', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: 50}}>{n}</div>
               <div style={{position: 'absolute', bottom: 26, left: 0, right: 0, textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: 28, fontWeight: 950}}>{failed ? 'FAILED' : 'LEFT'}</div>
             </div>
@@ -184,29 +184,29 @@ const LessonLoop: React.FC = () => {
   const frame = useCurrentFrame();
   const progress = interpolate(frame, [0, Math.max(180, TOTAL_FRAMES - s(17) - 12)], [0, 1], clamp);
   const items = [
-    {label: 'FAIL', color: '#D9D4C9'},
-    {label: 'FIND', color: WHITE},
+    {label: 'FAIL', color: '#353535'},
+    {label: 'FIND', color: '#5A5A5A'},
     {label: 'CHANGE', color: YELLOW},
-    {label: 'LAUNCH', color: BLACK},
+    {label: 'LAUNCH', color: WHITE},
   ];
   return (
-    <AbsoluteFill style={{background: CREAM, color: BLACK, padding: '145px 60px'}}>
+    <AbsoluteFill style={{background: BLACK, color: WHITE, padding: '145px 60px'}}>
       <div style={{fontFamily: 'Arial, sans-serif', fontSize: 30, fontWeight: 950, letterSpacing: 6}}>WHAT ACTUALLY WORKED</div>
       <div style={{marginTop: 26, fontFamily: 'Arial Black, Impact, sans-serif', fontSize: 86, lineHeight: .9, letterSpacing: -5}}>NOT BLIND<br/>PERSISTENCE.</div>
       <div style={{position: 'absolute', left: 68, right: 68, top: 690}}>
         {items.map((item, i) => {
           const reveal = interpolate(progress, [i * .18, i * .18 + .18], [0, 1], clamp);
-          const dark = i === 3;
+          const light = i >= 2;
           return (
-            <div key={item.label} style={{height: 190, marginBottom: 24, border: `6px solid ${BLACK}`, background: item.color, color: dark ? WHITE : BLACK, transform: `translateX(${(1 - reveal) * (i % 2 ? 90 : -90)}px)`, opacity: reveal, display: 'flex', alignItems: 'center', padding: '0 48px'}}>
-              <div style={{width: 82, height: 82, borderRadius: 50, background: dark ? YELLOW : BLACK, color: dark ? BLACK : WHITE, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: 36}}>{i + 1}</div>
+            <div key={item.label} style={{height: 190, marginBottom: 24, border: `6px solid ${light ? YELLOW : '#777'}`, background: item.color, color: light ? BLACK : WHITE, transform: `translateX(${(1 - reveal) * (i % 2 ? 90 : -90)}px)`, opacity: reveal, display: 'flex', alignItems: 'center', padding: '0 48px'}}>
+              <div style={{width: 82, height: 82, borderRadius: 50, background: light ? BLACK : YELLOW, color: light ? WHITE : BLACK, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: 36}}>{i + 1}</div>
               <div style={{marginLeft: 38, fontFamily: 'Arial Black, Impact, sans-serif', fontSize: 72, letterSpacing: -2}}>{item.label}</div>
               {i < items.length - 1 ? <div style={{marginLeft: 'auto', fontSize: 70, fontWeight: 950}}>→</div> : null}
             </div>
           );
         })}
       </div>
-      <div style={{position: 'absolute', left: 72, right: 72, bottom: 150, textAlign: 'center', fontFamily: 'Georgia, Times New Roman, serif', fontStyle: 'italic', fontWeight: 800, fontSize: 45}}>Learn faster than failure can finish you.</div>
+      <div style={{position: 'absolute', left: 72, right: 72, bottom: 150, textAlign: 'center', color: CREAM, fontFamily: 'Georgia, Times New Roman, serif', fontStyle: 'italic', fontWeight: 800, fontSize: 45}}>Learn faster than failure can finish you.</div>
     </AbsoluteFill>
   );
 };

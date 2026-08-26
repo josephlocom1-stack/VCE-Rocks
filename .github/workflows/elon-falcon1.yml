@@ -1,4 +1,4 @@
-name: Zelro Reel 004 Elon Falcon 1 Prototype
+name: Zelro Reel 004 Elon Falcon 1 Final
 
 on:
   push:
@@ -9,23 +9,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  prototype:
+  render:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: zelro-render
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install rendering dependencies
         run: |
           sudo apt-get update
@@ -33,55 +30,80 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install edge-tts yt-dlp
           npm install
-
       - name: Download and quality-gate unique real media
         run: python scripts/download_media.py
-
       - name: Generate narration candidates and exact captions
         run: python scripts/generate_voice.py
-
       - name: Audition music and create motivated sound design
         run: python scripts/make_audio.py
-
-      - name: Verify prototype construction rules
+      - name: Verify final construction rules
         run: |
           npm run typecheck
-          grep -q 'ZELRO' src/ElonFalcon.tsx
+          grep -q 'StageFailure' src/ElonFalcon.tsx
+          grep -q 'SeparationFix' src/ElonFalcon.tsx
+          grep -q 'LessonLoop' src/ElonFalcon.tsx
           grep -q 'CaptionLayer' src/ElonFalcon.tsx
           grep -q 'generated_images=0' public/media/ASSET_REPORT.txt
           grep -q 'source_reuse=0' public/media/ASSET_REPORT.txt
-          test "$(find public/media -maxdepth 1 -type f -name '*.mp4' | wc -l)" -ge 7
-
-      - name: Render 15-second prototype
+          if grep -Eqi 'elon.*\.(jpg|png)|musk.*\.(jpg|png)|talking.head' src/ElonFalcon.tsx; then
+            echo 'Faceless rule violation detected'
+            exit 1
+          fi
+      - name: Render full 1080x1920 Reel
         run: |
-          mkdir -p out
-          npm run render:prototype
-
-      - name: Master iPad prototype and verify
+          mkdir -p out/review
+          npm run render:full
+      - name: Master verified iPad exports
         run: |
-          ffmpeg -y -i out/prototype.mp4 \
+          ffmpeg -y -i out/raw.mp4 \
+            -vf "scale=1080:1920:flags=lanczos,format=yuv420p" \
+            -c:v libx264 -preset medium -profile:v high -level:v 4.1 -pix_fmt yuv420p \
+            -b:v 5200k -maxrate 6200k -bufsize 10400k -g 60 -keyint_min 30 -sc_threshold 0 \
+            -tag:v avc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
+            -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -profile:a aac_low -b:a 160k -ar 48000 -ac 2 \
+            -movflags +faststart -map_metadata -1 out/Zelro_Elon_Falcon1_iPad.mp4
+          ffmpeg -y -i out/Zelro_Elon_Falcon1_iPad.mp4 \
             -vf "scale=720:1280:flags=lanczos,format=yuv420p" \
             -c:v libx264 -preset medium -profile:v main -level:v 3.1 -pix_fmt yuv420p \
-            -b:v 2400k -maxrate 2900k -bufsize 4800k -g 60 -keyint_min 30 -sc_threshold 0 \
+            -b:v 2350k -maxrate 2850k -bufsize 4700k -g 60 -keyint_min 30 -sc_threshold 0 \
             -tag:v avc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
-            -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -profile:a aac_low -b:a 128k -ar 48000 -ac 2 \
-            -movflags +faststart -map_metadata -1 out/Zelro_Elon_Falcon1_Prototype_iPad.mp4
-          ffprobe -v error -show_entries stream=codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels,color_range,color_space:format=start_time,duration,size -of json out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 | tee out/PROTOTYPE_TECHNICAL_REPORT.txt
-          ffmpeg -v error -i out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 -f null -
-          ffmpeg -hide_banner -i out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/PROTOTYPE_AUDIO_REPORT.txt
-          sha256sum out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 | tee out/PROTOTYPE_SHA256.txt
-          ffmpeg -y -i out/Zelro_Elon_Falcon1_Prototype_iPad.mp4 -vf "fps=1.5,scale=180:-1,tile=6x4" -frames:v 1 out/PROTOTYPE_CONTACT.jpg
-
-      - name: Upload prototype gate artifact
+            -c:a aac -profile:a aac_low -b:a 128k -ar 48000 -ac 2 \
+            -movflags +faststart -map_metadata -1 out/Zelro_Elon_Falcon1_iPad_Lite.mp4
+      - name: Technical audio and decode verification
+        run: |
+          ffprobe -v error -show_entries stream=index,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels,color_range,color_space,color_transfer,color_primaries:format=start_time,duration,size,bit_rate -of json out/Zelro_Elon_Falcon1_iPad.mp4 | tee out/TECHNICAL_REPORT.txt
+          ffprobe -v error -show_entries stream=index,codec_name,profile,level,pix_fmt,width,height,r_frame_rate,sample_rate,channels:format=start_time,duration,size -of json out/Zelro_Elon_Falcon1_iPad_Lite.mp4 | tee out/LITE_TECHNICAL_REPORT.txt
+          ffmpeg -v error -i out/Zelro_Elon_Falcon1_iPad.mp4 -f null -
+          ffmpeg -v error -i out/Zelro_Elon_Falcon1_iPad_Lite.mp4 -f null -
+          ffmpeg -hide_banner -i out/Zelro_Elon_Falcon1_iPad.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
+          ffmpeg -hide_banner -i out/Zelro_Elon_Falcon1_iPad.mp4 -vf "blackdetect=d=0.20:pix_th=0.10" -an -f null - 2>&1 | tee out/BLACK_FRAME_REPORT.txt
+          if grep -q 'black_start' out/BLACK_FRAME_REPORT.txt; then
+            echo 'Unmotivated black frame interval detected'
+            exit 1
+          fi
+          sha256sum out/Zelro_Elon_Falcon1_iPad.mp4 out/Zelro_Elon_Falcon1_iPad_Lite.mp4 | tee out/DELIVERY_SHA256.txt
+      - name: Create full visual review evidence
+        run: |
+          ffmpeg -y -i out/Zelro_Elon_Falcon1_iPad.mp4 -vf "fps=1/2,scale=180:-1,tile=6x6" -frames:v 1 out/review/FULL_2S_CONTACT.jpg
+          ffmpeg -y -i out/Zelro_Elon_Falcon1_iPad.mp4 -vf "fps=1,scale=140:-1,tile=7x10" -frames:v 1 out/review/FULL_1S_CONTACT.jpg
+          for t in 0.5 2.0 6.0 12.0 18.0 24.0 30.0 36.0 42.0 49.0 56.0 63.0 67.0; do
+            ffmpeg -y -ss "$t" -i out/Zelro_Elon_Falcon1_iPad.mp4 -frames:v 1 "out/review/key-${t}.png"
+          done
+      - name: Upload completed Reel 004
         uses: actions/upload-artifact@v4
         with:
-          name: zelro-elon-falcon1-prototype-gate
+          name: zelro-elon-falcon1-final
           path: |
-            zelro-render/out/Zelro_Elon_Falcon1_Prototype_iPad.mp4
-            zelro-render/out/PROTOTYPE_CONTACT.jpg
-            zelro-render/out/PROTOTYPE_TECHNICAL_REPORT.txt
-            zelro-render/out/PROTOTYPE_AUDIO_REPORT.txt
-            zelro-render/out/PROTOTYPE_SHA256.txt
+            zelro-render/out/Zelro_Elon_Falcon1_iPad.mp4
+            zelro-render/out/Zelro_Elon_Falcon1_iPad_Lite.mp4
+            zelro-render/out/TECHNICAL_REPORT.txt
+            zelro-render/out/LITE_TECHNICAL_REPORT.txt
+            zelro-render/out/AUDIO_REPORT.txt
+            zelro-render/out/BLACK_FRAME_REPORT.txt
+            zelro-render/out/DELIVERY_SHA256.txt
+            zelro-render/out/review/FULL_2S_CONTACT.jpg
+            zelro-render/out/review/FULL_1S_CONTACT.jpg
+            zelro-render/out/review/key-*.png
             zelro-render/public/media/ASSET_REPORT.txt
             zelro-render/public/media/NARRATION_REPORT.txt
             zelro-render/public/media/MUSIC_AUDITION_REPORT.txt

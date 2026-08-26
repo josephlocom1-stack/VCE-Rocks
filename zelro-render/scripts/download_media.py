@@ -118,7 +118,7 @@ def normalize(src: Path, dest: Path, start='0', position='center'):
         'eq=brightness=0.015:contrast=1.045:saturation=1.03,format=yuv420p'
     )
     run([
-        'ffmpeg', '-y', '-stream_loop', '-1', '-ss', str(start), '-i', str(src), '-an', '-t', '9',
+        'ffmpeg', '-y', '-stream_loop', '-1', '-ss', str(start), '-i', str(src), '-an', '-t', '15',
         '-vf', vf, '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-movflags', '+faststart', str(dest),
     ])
 
@@ -154,7 +154,7 @@ def main():
         used.add(url)
         path = OUT / f'{name}.mp4'
         codec, width, height, seconds = probe(path)
-        if codec != 'h264' or width != 1080 or height != 1920 or seconds < 8.5:
+        if codec != 'h264' or width != 1080 or height != 1920 or seconds < 14.5:
             raise RuntimeError(f'Normalized asset failed: {name} {codec} {width}x{height} {seconds:.2f}s')
         lines.append(f'{name}: {url} -> {codec} {width}x{height} {seconds:.2f}s')
     lines.append('generated_images=0')
