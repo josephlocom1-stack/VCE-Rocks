@@ -109,9 +109,9 @@ def download_falcon_success():
 def normalize(src: Path, dest: Path, start='0', position='center'):
     crop_x = '(in_w-out_w)/2'
     if position == 'left':
-        crop_x = 'max(0,(in_w-out_w)*0.34)'
+        crop_x = '0.34*(in_w-out_w)'
     elif position == 'right':
-        crop_x = 'max(0,(in_w-out_w)*0.66)'
+        crop_x = '0.66*(in_w-out_w)'
     vf = (
         'scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,'
         f'crop=1080:1920:{crop_x}:(in_h-out_h)/2,fps=30,'
