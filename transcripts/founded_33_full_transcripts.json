@@ -1,0 +1,3878 @@
+[
+  {
+    "index": 1,
+    "code": "DcYvSGMNKVU",
+    "url": "https://www.instagram.com/founded/reel/DcYvSGMNKVU/",
+    "canonical_url": "https://www.instagram.com/reel/DcYvSGMNKVU/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Michael Rubin [@michaelrubin] went from six-figure debt as a teenager to building one of the biggest empires in sports.\n\nAt 16, a bad winter buried his ski business under $120,000 in debt. He dropped out of Villanova after one semester, borrowed $17,000, and started buying discounted sports equipment.\n\nBy 23, he was generating $50M in sales.\n\nYears later, eBay acquired his company for $2.4B, but one piece of the business stayed behind.\n\nThat piece became Fanatics [@fanatics].\n\nToday, Fanatics is tracking toward $13B in revenue, while Rubin’s annual Hamptons White Party attracts names like Tom Brady, Beyoncé, Jay-Z, Kim Kardashian and Drake.\n\nFrom nearly bankrupt at 16 to hosting one of America’s most exclusive parties.",
+    "duration_seconds": 81.08,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 196,
+    "coverage_ratio": 0.988,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.54,
+        "timestamp": "0:00",
+        "text": "He went bankrupt at 16."
+      },
+      {
+        "start": 1.92,
+        "end": 7.68,
+        "timestamp": "0:02",
+        "text": "Now he throws the most exclusive party in America and runs a $13 billion sports empire."
+      },
+      {
+        "start": 7.98,
+        "end": 9.14,
+        "timestamp": "0:08",
+        "text": "Meet Michael Rubin."
+      },
+      {
+        "start": 9.3,
+        "end": 14.62,
+        "timestamp": "0:09",
+        "text": "His story starts in a basement in Pennsylvania, a 12-year-old tuning skis on his parents' floor."
+      },
+      {
+        "start": 14.88,
+        "end": 20.74,
+        "timestamp": "0:15",
+        "text": "Two years later, using $2,500 in bar mitzvah money, he opened his first real store."
+      },
+      {
+        "start": 20.74,
+        "end": 29.9,
+        "timestamp": "0:21",
+        "text": "By 16, a winter with no snow wiped him out, $120,000 in debt, standing in a courtroom, watching his father write a $37,000."
+      },
+      {
+        "start": 30.0,
+        "end": 35.92,
+        "timestamp": "0:30",
+        "text": "check to make the creditors go away. The condition, go to college. He lasted one semester at"
+      },
+      {
+        "start": 35.92,
+        "end": 43.74,
+        "timestamp": "0:36",
+        "text": "Villanova, then spotted $200,000 in overstock sports gear, going for nothing. Borrowed $17,000 and flipped it"
+      },
+      {
+        "start": 43.74,
+        "end": 51.68,
+        "timestamp": "0:44",
+        "text": "for $75,000. School couldn't compete. He dropped out and built KPR Sports by $21, $1 million a year,"
+      },
+      {
+        "start": 51.84,
+        "end": 59.18,
+        "timestamp": "0:52",
+        "text": "by $23, $50 million. In 2011, eBay bought his warehousing business for $2.4 billion."
+      },
+      {
+        "start": 59.18,
+        "end": 64.94,
+        "timestamp": "0:59",
+        "text": "Then had no use for the sports merchandise side, so Ruben bought it back and turned it into Fanatics,"
+      },
+      {
+        "start": 64.94,
+        "end": 73.18,
+        "timestamp": "1:05",
+        "text": "now making every official jersey for the NFL, NBA, MLB, and Nike. Today, Fanatics employs 22,000"
+      },
+      {
+        "start": 73.18,
+        "end": 80.14,
+        "timestamp": "1:13",
+        "text": "people and is on track for $13 billion in revenue. Forbes puts Ruben's net worth at $11.5 billion."
+      }
+    ],
+    "full_text": "He went bankrupt at 16. Now he throws the most exclusive party in America and runs a $13 billion sports empire. Meet Michael Rubin. His story starts in a basement in Pennsylvania, a 12-year-old tuning skis on his parents' floor. Two years later, using $2,500 in bar mitzvah money, he opened his first real store. By 16, a winter with no snow wiped him out, $120,000 in debt, standing in a courtroom, watching his father write a $37,000. check to make the creditors go away. The condition, go to college. He lasted one semester at Villanova, then spotted $200,000 in overstock sports gear, going for nothing. Borrowed $17,000 and flipped it for $75,000. School couldn't compete. He dropped out and built KPR Sports by $21, $1 million a year, by $23, $50 million. In 2011, eBay bought his warehousing business for $2.4 billion. Then had no use for the sports merchandise side, so Ruben bought it back and turned it into Fanatics, now making every official jersey for the NFL, NBA, MLB, and Nike. Today, Fanatics employs 22,000 people and is on track for $13 billion in revenue. Forbes puts Ruben's net worth at $11.5 billion.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 2,
+    "code": "DcT81r7Otdh",
+    "url": "https://www.instagram.com/founded/reel/DcT81r7Otdh/",
+    "canonical_url": "https://www.instagram.com/reel/DcT81r7Otdh/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Meta paid $14.3 billion for half a company that started in a fridge.\n\nAlexandr Wang was at MIT, and someone kept taking his yogurt. So he built a camera to catch them. The camera saw everything. It just couldn’t tell him who.\n\nThe AI had never been taught properly. Almost none of it had.\n\nHe dropped out at 19 and started Scale AI with Lucy Guo. Within a few years it was feeding data to self-driving cars, to OpenAI, and to the Pentagon. By 24 he was a billionaire.\n\nScale reached $870 million in revenue. Then Meta took 49% at a $29 billion valuation.\n\nAll from a missing yogurt.",
+    "duration_seconds": 58.67,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 181,
+    "coverage_ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.46,
+        "timestamp": "0:00",
+        "text": "Mark Zuckerberg paid $14.3 billion to hire him, but it all started with a stolen yogurt."
+      },
+      {
+        "start": 5.64,
+        "end": 10.94,
+        "timestamp": "0:06",
+        "text": "Alexander Wang grew up in Los Alamos, New Mexico, surrounded by physicists, including both of his parents."
+      },
+      {
+        "start": 11.14,
+        "end": 14.4,
+        "timestamp": "0:11",
+        "text": "At 17, he made the U.S. physics team, then onto MIT."
+      },
+      {
+        "start": 14.7,
+        "end": 17.66,
+        "timestamp": "0:15",
+        "text": "But during his first year, his roommates kept stealing his yogurt."
+      },
+      {
+        "start": 17.86,
+        "end": 21.3,
+        "timestamp": "0:18",
+        "text": "So to fight back, Wang put a camera inside his fridge to catch the thief."
+      },
+      {
+        "start": 21.5,
+        "end": 27.02,
+        "timestamp": "0:22",
+        "text": "It failed, not because the code was broken, but because the AI had never been taught what yogurt actually looked like."
+      },
+      {
+        "start": 27.1,
+        "end": 28.16,
+        "timestamp": "0:27",
+        "text": "And that gave him an idea."
+      },
+      {
+        "start": 28.16,
+        "end": 30.22,
+        "timestamp": "0:28",
+        "text": "AI didn't just need better algorithms."
+      },
+      {
+        "start": 30.56,
+        "end": 35.02,
+        "timestamp": "0:31",
+        "text": "It needed better labeled data to learn from and understand exactly what it was looking at."
+      },
+      {
+        "start": 35.16,
+        "end": 38.7,
+        "timestamp": "0:35",
+        "text": "So at 19, Wang dropped out of MIT and co-founded Scale AI."
+      },
+      {
+        "start": 38.92,
+        "end": 43.22,
+        "timestamp": "0:39",
+        "text": "Soon, self-driving car companies were customers, then the U.S. Army, then Open AI."
+      },
+      {
+        "start": 43.42,
+        "end": 46.64,
+        "timestamp": "0:43",
+        "text": "By 24, Wang was the world's youngest self-made billionaire."
+      },
+      {
+        "start": 46.64,
+        "end": 53.58,
+        "timestamp": "0:47",
+        "text": "And in 2025, Meta invested $14.3 billion into Scale AI and brought Wang in to lead"
+      },
+      {
+        "start": 53.58,
+        "end": 57.04,
+        "timestamp": "0:54",
+        "text": "its superintelligence efforts, all because someone kept stealing his yogurt."
+      },
+      {
+        "start": 58.16,
+        "end": 60.16,
+        "timestamp": "0:58",
+        "text": "Thank you."
+      }
+    ],
+    "full_text": "Mark Zuckerberg paid $14.3 billion to hire him, but it all started with a stolen yogurt. Alexander Wang grew up in Los Alamos, New Mexico, surrounded by physicists, including both of his parents. At 17, he made the U.S. physics team, then onto MIT. But during his first year, his roommates kept stealing his yogurt. So to fight back, Wang put a camera inside his fridge to catch the thief. It failed, not because the code was broken, but because the AI had never been taught what yogurt actually looked like. And that gave him an idea. AI didn't just need better algorithms. It needed better labeled data to learn from and understand exactly what it was looking at. So at 19, Wang dropped out of MIT and co-founded Scale AI. Soon, self-driving car companies were customers, then the U.S. Army, then Open AI. By 24, Wang was the world's youngest self-made billionaire. And in 2025, Meta invested $14.3 billion into Scale AI and brought Wang in to lead its superintelligence efforts, all because someone kept stealing his yogurt. Thank you.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 3,
+    "code": "Db8Zevktfjv",
+    "url": "https://www.instagram.com/founded/reel/Db8Zevktfjv/",
+    "canonical_url": "https://www.instagram.com/reel/Db8Zevktfjv/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Seven years ago, Clint Ogbenna [@clint419] came back from his grandmother’s funeral to an eviction notice. At 20, he ended up sleeping on his sister’s sofa with almost nothing to his name.\n\nHe sold a pair of Off-White Jordans, invested the cash into crypto, then used what remained to make samples and book a flight to LA. [@corteiz] was born.\n\nThe brand played by different rules. Password-only websites. GPS drop locations. 99p cargos. Crowds racing across London.\n\nSoon, Central Cee, Drake, Stormzy and Virgil Abloh were wearing it without paid deals.\n\nThen Nike sued him in 2021.\n\nTwo years later? They collaborated.\n\nBy 2024, Corteiz was reportedly doing £43 million in revenue.\n\nFrom a sofa and flipped Jordans to one of Britain’s biggest streetwear stories.",
+    "duration_seconds": 68.21,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 207,
+    "coverage_ratio": 0.985,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.74,
+        "timestamp": "0:00",
+        "text": "Seven years ago, he was sleeping on his sister's sofa."
+      },
+      {
+        "start": 3.02,
+        "end": 6.54,
+        "timestamp": "0:03",
+        "text": "Today, he runs a 43 million pound a year streetwear giant."
+      },
+      {
+        "start": 6.72,
+        "end": 7.82,
+        "timestamp": "0:07",
+        "text": "Meet Clint Okbenna."
+      },
+      {
+        "start": 7.98,
+        "end": 13.0,
+        "timestamp": "0:08",
+        "text": "At 20, in his third year of university, he flew home from his grandmother's burial in Nigeria"
+      },
+      {
+        "start": 13.0,
+        "end": 15.66,
+        "timestamp": "0:13",
+        "text": "to find an eviction notice, one week to leave."
+      },
+      {
+        "start": 15.82,
+        "end": 17.82,
+        "timestamp": "0:16",
+        "text": "No money, no home, no plan."
+      },
+      {
+        "start": 17.98,
+        "end": 22.2,
+        "timestamp": "0:18",
+        "text": "He took refuge on his sister's sofa in a Stanford Hill flat share for six weeks."
+      },
+      {
+        "start": 22.32,
+        "end": 23.56,
+        "timestamp": "0:22",
+        "text": "That's where he started Cortez."
+      },
+      {
+        "start": 23.56,
+        "end": 28.74,
+        "timestamp": "0:24",
+        "text": "His start came from flipping a pair of off-white Jordans for $1,000, putting the money into"
+      },
+      {
+        "start": 28.74,
+        "end": 34.06,
+        "timestamp": "0:29",
+        "text": "crypto, then cashing out to fund the first Cortez samples and a flight to L.A. for the lookbook."
+      },
+      {
+        "start": 34.22,
+        "end": 37.96,
+        "timestamp": "0:34",
+        "text": "The website was locked behind a password, shared only in small circles."
+      },
+      {
+        "start": 38.22,
+        "end": 42.88,
+        "timestamp": "0:38",
+        "text": "Drops happened through GPS coordinates on Instagram, with people sprinting across London"
+      },
+      {
+        "start": 42.88,
+        "end": 47.98,
+        "timestamp": "0:43",
+        "text": "to grab the clothes. Central C, Drake, Stormsy, and the late Virgil Ablo started wearing it."
+      },
+      {
+        "start": 48.08,
+        "end": 53.16,
+        "timestamp": "0:48",
+        "text": "It became a cultural uniform. Then Nike sued, claiming Cortiz was too close to their Cortez"
+      },
+      {
+        "start": 53.16,
+        "end": 58.64,
+        "timestamp": "0:53",
+        "text": "sneaker. For most brands, that's where the story ends. Not for Clint. By 2023, Nike"
+      },
+      {
+        "start": 58.74,
+        "end": 65.02,
+        "timestamp": "0:59",
+        "text": "came back for a collaboration instead. By 2024, the brand was doing 43 million pounds a year"
+      },
+      {
+        "start": 65.02,
+        "end": 67.16,
+        "timestamp": "1:05",
+        "text": "from a sofa to making shoes with Nike."
+      }
+    ],
+    "full_text": "Seven years ago, he was sleeping on his sister's sofa. Today, he runs a 43 million pound a year streetwear giant. Meet Clint Okbenna. At 20, in his third year of university, he flew home from his grandmother's burial in Nigeria to find an eviction notice, one week to leave. No money, no home, no plan. He took refuge on his sister's sofa in a Stanford Hill flat share for six weeks. That's where he started Cortez. His start came from flipping a pair of off-white Jordans for $1,000, putting the money into crypto, then cashing out to fund the first Cortez samples and a flight to L.A. for the lookbook. The website was locked behind a password, shared only in small circles. Drops happened through GPS coordinates on Instagram, with people sprinting across London to grab the clothes. Central C, Drake, Stormsy, and the late Virgil Ablo started wearing it. It became a cultural uniform. Then Nike sued, claiming Cortiz was too close to their Cortez sneaker. For most brands, that's where the story ends. Not for Clint. By 2023, Nike came back for a collaboration instead. By 2024, the brand was doing 43 million pounds a year from a sofa to making shoes with Nike.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 4,
+    "code": "DbycTLMuMVx",
+    "url": "https://www.instagram.com/founded/reel/DbycTLMuMVx/",
+    "canonical_url": "https://www.instagram.com/reel/DbycTLMuMVx/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "From segregation to an $11.4 billion fortune.\n\nDavid Steward grew up in the American South, where Black children were excluded from public pools and forced into separate seating.\n\nYears later, he took a $2,000 loan from his father, built up $250,000 in savings, and started World Wide Technology [@wwt_inc].\n\nIt was far from an overnight success.\n\nMoney got so tight that Steward’s car was repossessed outside his own office. He picked up his briefcase, walked back inside, and kept going.\n\nToday, World Wide Technology generates more than $20 billion in annual revenue.\n\nSteward wasn’t born with access, connections, or an empire waiting for him.\n\nHe built the door himself.",
+    "duration_seconds": 77.17,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 203,
+    "coverage_ratio": 0.975,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.2,
+        "timestamp": "0:00",
+        "text": "This 73-year-old grew up poor in the segregated South."
+      },
+      {
+        "start": 3.2,
+        "end": 5.52,
+        "timestamp": "0:03",
+        "text": "Now he's the richest black person in America."
+      },
+      {
+        "start": 5.52,
+        "end": 11.04,
+        "timestamp": "0:06",
+        "text": "Meet David Stewart. Born in 1951 in rural Missouri, black kids were forced into movie"
+      },
+      {
+        "start": 11.04,
+        "end": 15.92,
+        "timestamp": "0:11",
+        "text": "theater balconies, barred from public pools. His mother never got a formal education."
+      },
+      {
+        "start": 15.92,
+        "end": 20.24,
+        "timestamp": "0:16",
+        "text": "The local high school refused black students, but she raised in believing the world was"
+      },
+      {
+        "start": 20.24,
+        "end": 25.36,
+        "timestamp": "0:20",
+        "text": "still open to him. He believed her. He borrowed $2,000 from his father and launched his first"
+      },
+      {
+        "start": 25.36,
+        "end": 29.84,
+        "timestamp": "0:25",
+        "text": "company auditing freight bills for the rail industry. By 1990, he'd saved two"
+      },
+      {
+        "start": 29.84,
+        "end": 36.8,
+        "timestamp": "0:30",
+        "text": "$250,000, enough to build his biggest vision worldwide technology, supplying tech infrastructure"
+      },
+      {
+        "start": 36.8,
+        "end": 41.28,
+        "timestamp": "0:37",
+        "text": "to businesses and government. The early years were brutal, struggling just to make payroll."
+      },
+      {
+        "start": 41.28,
+        "end": 46.88,
+        "timestamp": "0:41",
+        "text": "In 1993, a debt collector repossessed his car from the office parking lot while he was inside"
+      },
+      {
+        "start": 46.88,
+        "end": 52.08,
+        "timestamp": "0:47",
+        "text": "working. Most people quit at that moment. David walked outside, grabbed his briefcase from the back"
+      },
+      {
+        "start": 52.08,
+        "end": 58.08,
+        "timestamp": "0:52",
+        "text": "seat, and calmly returned to his desk. A partnership with Cisco stabilized the business. Government"
+      },
+      {
+        "start": 58.08,
+        "end": 59.76,
+        "timestamp": "0:58",
+        "text": "contracts followed. By 2000,"
+      },
+      {
+        "start": 59.84,
+        "end": 67.44,
+        "timestamp": "1:00",
+        "text": "2003, revenue passed $1 billion. Today, worldwide technology generates over $20 billion a year,"
+      },
+      {
+        "start": 67.44,
+        "end": 72.48,
+        "timestamp": "1:07",
+        "text": "the largest black-owned company in America. Forbes puts his net worth at $12.4 billion."
+      },
+      {
+        "start": 73.2,
+        "end": 75.2,
+        "timestamp": "1:13",
+        "text": "The richest black person in the country."
+      }
+    ],
+    "full_text": "This 73-year-old grew up poor in the segregated South. Now he's the richest black person in America. Meet David Stewart. Born in 1951 in rural Missouri, black kids were forced into movie theater balconies, barred from public pools. His mother never got a formal education. The local high school refused black students, but she raised in believing the world was still open to him. He believed her. He borrowed $2,000 from his father and launched his first company auditing freight bills for the rail industry. By 1990, he'd saved two $250,000, enough to build his biggest vision worldwide technology, supplying tech infrastructure to businesses and government. The early years were brutal, struggling just to make payroll. In 1993, a debt collector repossessed his car from the office parking lot while he was inside working. Most people quit at that moment. David walked outside, grabbed his briefcase from the back seat, and calmly returned to his desk. A partnership with Cisco stabilized the business. Government contracts followed. By 2000, 2003, revenue passed $1 billion. Today, worldwide technology generates over $20 billion a year, the largest black-owned company in America. Forbes puts his net worth at $12.4 billion. The richest black person in the country.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 5,
+    "code": "DbqdyhOta_B",
+    "url": "https://www.instagram.com/founded/reel/DbqdyhOta_B/",
+    "canonical_url": "https://www.instagram.com/reel/DbqdyhOta_B/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Nike passed on Travis Grillo. That rejection helped create a $28M pickle empire.\n\nIn 2008, Grillo survived four Nike interviews and even sat down with Phil Knight.\n\nNo job came.\n\nBack home in Connecticut, he tasted his grandfather Sam’s century-old pickle recipe and spotted a business nobody else saw.\n\nSeven ingredients. Zero preservatives. One 1985 Oldsmobile.\n\nHe packed the trunk and sold jars by hand at parks, courts and ballfields.\n\nBoston officials said he wouldn’t last an hour.\n\nThen Whole Foods called.\n\nBy 2019, @grillospickles had reached 10,000+ stores and roughly $28 million in annual sales.\n\nSometimes the door that closes is the one that forces you to build your own.",
+    "duration_seconds": 67.96,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 196,
+    "coverage_ratio": 0.978,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 0.98,
+        "timestamp": "0:00",
+        "text": "Meet Travis Grillo."
+      },
+      {
+        "start": 1.18,
+        "end": 5.44,
+        "timestamp": "0:01",
+        "text": "In 2008, he had four interviews with Nike to become a sneaker designer."
+      },
+      {
+        "start": 5.62,
+        "end": 7.28,
+        "timestamp": "0:06",
+        "text": "Even met co-founder Phil Knight."
+      },
+      {
+        "start": 7.34,
+        "end": 8.28,
+        "timestamp": "0:07",
+        "text": "They still said no."
+      },
+      {
+        "start": 8.48,
+        "end": 12.96,
+        "timestamp": "0:08",
+        "text": "He went home to Norwich, Connecticut, sat in his parents' backyard, and ate his grandfather,"
+      },
+      {
+        "start": 13.16,
+        "end": 18.96,
+        "timestamp": "0:13",
+        "text": "Sam's homemade pickles, a recipe over 100 years old, seven ingredients, and no preservatives."
+      },
+      {
+        "start": 19.1,
+        "end": 20.2,
+        "timestamp": "0:19",
+        "text": "That's when the idea hit him."
+      },
+      {
+        "start": 20.3,
+        "end": 21.12,
+        "timestamp": "0:20",
+        "text": "Why not sell these?"
+      },
+      {
+        "start": 21.12,
+        "end": 26.82,
+        "timestamp": "0:21",
+        "text": "He loaded up his 1985 Oldsmobile and started driving to baseball fields and basketball courts"
+      },
+      {
+        "start": 26.82,
+        "end": 29.66,
+        "timestamp": "0:27",
+        "text": "across Connecticut, selling pickles straight from the trunk."
+      },
+      {
+        "start": 30.0,
+        "end": 31.64,
+        "timestamp": "0:30",
+        "text": "Most people thought he was crazy."
+      },
+      {
+        "start": 31.64,
+        "end": 33.44,
+        "timestamp": "0:32",
+        "text": "His friends told him to try Boston."
+      },
+      {
+        "start": 33.44,
+        "end": 35.86,
+        "timestamp": "0:33",
+        "text": "The health department said he wouldn't last an hour."
+      },
+      {
+        "start": 35.86,
+        "end": 41.22,
+        "timestamp": "0:36",
+        "text": "He built a pickle cart anyway and started selling on Boston Common, two spears for a dollar."
+      },
+      {
+        "start": 41.22,
+        "end": 45.32,
+        "timestamp": "0:41",
+        "text": "Many of his first customers were people experiencing homelessness in the park."
+      },
+      {
+        "start": 45.32,
+        "end": 46.72,
+        "timestamp": "0:45",
+        "text": "Then Whole Foods noticed."
+      },
+      {
+        "start": 46.72,
+        "end": 49.56,
+        "timestamp": "0:47",
+        "text": "They ordered, he delivered it himself, and it sold out."
+      },
+      {
+        "start": 49.56,
+        "end": 50.86,
+        "timestamp": "0:50",
+        "text": "Buyout offers followed."
+      },
+      {
+        "start": 50.86,
+        "end": 53.88,
+        "timestamp": "0:51",
+        "text": "He rejected everyone that wanted him to add preservatives."
+      },
+      {
+        "start": 53.88,
+        "end": 59.04,
+        "timestamp": "0:54",
+        "text": "By 2019, Grillo's was in 10,000 stores doing $28 million a year."
+      },
+      {
+        "start": 59.04,
+        "end": 61.8,
+        "timestamp": "0:59",
+        "text": "In 2021, King's Hawaiian acquired it."
+      },
+      {
+        "start": 61.8,
+        "end": 65.28,
+        "timestamp": "1:02",
+        "text": "Today, it's America's number one refrigerated pickle brand."
+      },
+      {
+        "start": 65.28,
+        "end": 66.48,
+        "timestamp": "1:05",
+        "text": "It all started with a no."
+      }
+    ],
+    "full_text": "Meet Travis Grillo. In 2008, he had four interviews with Nike to become a sneaker designer. Even met co-founder Phil Knight. They still said no. He went home to Norwich, Connecticut, sat in his parents' backyard, and ate his grandfather, Sam's homemade pickles, a recipe over 100 years old, seven ingredients, and no preservatives. That's when the idea hit him. Why not sell these? He loaded up his 1985 Oldsmobile and started driving to baseball fields and basketball courts across Connecticut, selling pickles straight from the trunk. Most people thought he was crazy. His friends told him to try Boston. The health department said he wouldn't last an hour. He built a pickle cart anyway and started selling on Boston Common, two spears for a dollar. Many of his first customers were people experiencing homelessness in the park. Then Whole Foods noticed. They ordered, he delivered it himself, and it sold out. Buyout offers followed. He rejected everyone that wanted him to add preservatives. By 2019, Grillo's was in 10,000 stores doing $28 million a year. In 2021, King's Hawaiian acquired it. Today, it's America's number one refrigerated pickle brand. It all started with a no.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 6,
+    "code": "DbdstndtCUU",
+    "url": "https://www.instagram.com/founded/reel/DbdstndtCUU/",
+    "canonical_url": "https://www.instagram.com/reel/DbdstndtCUU/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "At 24, Abdul Samad Rabiu came home to save a collapsing family business. Four decades later, his fortune briefly approached $20 billion.\n\nHis father had been detained. Operations were falling apart. Suppliers were losing confidence.\n\nRabiu rebuilt trust, stabilized the company, then launched BUA International in 1988.\n\nFirst came steel. Then sugar. Then cement.\n\nBUA developed one of sub-Saharan Africa’s largest sugar refineries and invested $900 million into cement production.\n\nEven when currency losses erased his billionaire status, he kept building quietly.\n\nBy 2025, BUA Foods’ profit had surged 95%. BUA Cement’s jumped 382%.\n\nHe returned home to protect a family legacy, and turned it into one of Africa’s most powerful business empires.",
+    "duration_seconds": 80.33,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 211,
+    "coverage_ratio": 0.976,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.14,
+        "timestamp": "0:00",
+        "text": "This Nigerian rescued his father's failing business and turned it into a $20 billion fortune."
+      },
+      {
+        "start": 5.38,
+        "end": 8.66,
+        "timestamp": "0:05",
+        "text": "Now he's on the verge of doing what only one African has ever done."
+      },
+      {
+        "start": 8.9,
+        "end": 11.22,
+        "timestamp": "0:09",
+        "text": "Meet Abdul Suhmad Rahbuyu."
+      },
+      {
+        "start": 11.38,
+        "end": 16.18,
+        "timestamp": "0:11",
+        "text": "In 1984, at 24, he returned to Nigeria to find his family in crisis."
+      },
+      {
+        "start": 16.48,
+        "end": 21.68,
+        "timestamp": "0:16",
+        "text": "His father, one of the country's most influential businessmen, had been arrested by the military government."
+      },
+      {
+        "start": 21.82,
+        "end": 23.26,
+        "timestamp": "0:22",
+        "text": "The empire was falling apart."
+      },
+      {
+        "start": 23.26,
+        "end": 26.62,
+        "timestamp": "0:23",
+        "text": "With almost no business experience, Rabiu stepped in to save it."
+      },
+      {
+        "start": 26.72,
+        "end": 29.98,
+        "timestamp": "0:27",
+        "text": "He stabilized the business and in 1988 launched BUA and,"
+      },
+      {
+        "start": 30.0,
+        "end": 36.12,
+        "timestamp": "0:30",
+        "text": "international, trading rice, oil, iron, and steel. His breakthrough came in 1990. A state steel"
+      },
+      {
+        "start": 36.12,
+        "end": 41.62,
+        "timestamp": "0:36",
+        "text": "company paid him in Finnish steel instead of cash, and he sold it for 15 times its value."
+      },
+      {
+        "start": 41.88,
+        "end": 47.5,
+        "timestamp": "0:42",
+        "text": "BUA had its launch pad. Next came sugar, then Nigeria's second largest cement producer for"
+      },
+      {
+        "start": 47.5,
+        "end": 54.56,
+        "timestamp": "0:48",
+        "text": "$900 million. By 2013, Forbes put his fortune at $1.2 billion. Then the Naira collapsed,"
+      },
+      {
+        "start": 54.56,
+        "end": 59.88,
+        "timestamp": "0:55",
+        "text": "and he disappeared from the list entirely. He rebuilt quietly, no headlines, just years of"
+      },
+      {
+        "start": 59.88,
+        "end": 63.26,
+        "timestamp": "1:00",
+        "text": "compounding value. By 2026, the market caught up."
+      },
+      {
+        "start": 63.44,
+        "end": 69.76,
+        "timestamp": "1:03",
+        "text": "Rabiu added $9.53 billion in a single year, the largest wealth increase of any African billionaire."
+      },
+      {
+        "start": 70.06,
+        "end": 76.7,
+        "timestamp": "1:10",
+        "text": "His net worth reached $19.7 billion. Just $300 million from becoming only the second African"
+      },
+      {
+        "start": 76.7,
+        "end": 78.4,
+        "timestamp": "1:17",
+        "text": "ever to cross $20 billion."
+      }
+    ],
+    "full_text": "This Nigerian rescued his father's failing business and turned it into a $20 billion fortune. Now he's on the verge of doing what only one African has ever done. Meet Abdul Suhmad Rahbuyu. In 1984, at 24, he returned to Nigeria to find his family in crisis. His father, one of the country's most influential businessmen, had been arrested by the military government. The empire was falling apart. With almost no business experience, Rabiu stepped in to save it. He stabilized the business and in 1988 launched BUA and, international, trading rice, oil, iron, and steel. His breakthrough came in 1990. A state steel company paid him in Finnish steel instead of cash, and he sold it for 15 times its value. BUA had its launch pad. Next came sugar, then Nigeria's second largest cement producer for $900 million. By 2013, Forbes put his fortune at $1.2 billion. Then the Naira collapsed, and he disappeared from the list entirely. He rebuilt quietly, no headlines, just years of compounding value. By 2026, the market caught up. Rabiu added $9.53 billion in a single year, the largest wealth increase of any African billionaire. His net worth reached $19.7 billion. Just $300 million from becoming only the second African ever to cross $20 billion.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 7,
+    "code": "Da5irTcNRzK",
+    "url": "https://www.instagram.com/founded/reel/Da5irTcNRzK/",
+    "canonical_url": "https://www.instagram.com/reel/Da5irTcNRzK/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "From nicking frozen pizzas at 18 just to eat, to running one of the largest creator businesses on the planet.\n\n@steven Bartlett’s story comes down to one thing: obsession.\n\nHe dropped out of university, co-founded Social Chain, and started The Diary of a CEO recording under a duvet with a cheap $100 mic. That hunger to win eventually became a media empire valued at $425 million.\n\nForbes now lists him as one of the wealthiest creators in the world, yet he’s aiming at something far bigger:\n\n“To build the Disney of the creator economy.”\n\nThe lesson? Your starting point never decides your finish line. Obsession does.\n\nSteven Bartlett is an investor in Founded.",
+    "duration_seconds": 82.71,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 273,
+    "coverage_ratio": 0.99,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.92,
+        "timestamp": "0:00",
+        "text": "At 18, he was shoplifting frozen pizzas to survive."
+      },
+      {
+        "start": 3.04,
+        "end": 5.6,
+        "timestamp": "0:03",
+        "text": "Today, he's the third richest creator in the world."
+      },
+      {
+        "start": 5.78,
+        "end": 6.84,
+        "timestamp": "0:06",
+        "text": "Meet Stephen Bartlett."
+      },
+      {
+        "start": 7.06,
+        "end": 12.0,
+        "timestamp": "0:07",
+        "text": "He grew up in Plymouth with no money, no birthday presents, no Christmas gifts, barely a card."
+      },
+      {
+        "start": 12.22,
+        "end": 13.88,
+        "timestamp": "0:12",
+        "text": "But somewhere in that, something clicked."
+      },
+      {
+        "start": 14.06,
+        "end": 17.16,
+        "timestamp": "0:14",
+        "text": "If anything was going to change, it was going to be because of him."
+      },
+      {
+        "start": 17.34,
+        "end": 25.56,
+        "timestamp": "0:17",
+        "text": "At school, he started organizing parties and trips for his classmates and made the school so much money that when they tried to expel him, they had to take it back."
+      },
+      {
+        "start": 25.66,
+        "end": 28.4,
+        "timestamp": "0:26",
+        "text": "His headmaster went on national TV and said it himself."
+      },
+      {
+        "start": 28.4,
+        "end": 31.32,
+        "timestamp": "0:28",
+        "text": "We had to unexpel Steve because he made the school so much money."
+      },
+      {
+        "start": 31.48,
+        "end": 37.34,
+        "timestamp": "0:31",
+        "text": "He enrolled at university, walked into his very first lecture, looked around the room, stood up, and left."
+      },
+      {
+        "start": 37.52,
+        "end": 40.22,
+        "timestamp": "0:38",
+        "text": "He never went back. Instead, he was writing in his diary."
+      },
+      {
+        "start": 40.46,
+        "end": 43.9,
+        "timestamp": "0:40",
+        "text": "I will be a millionaire by 25. Not a dream. A deadline."
+      },
+      {
+        "start": 43.9,
+        "end": 47.64,
+        "timestamp": "0:44",
+        "text": "While everyone else called social media a fad, Bartlett saw a gap."
+      },
+      {
+        "start": 47.86,
+        "end": 56.74,
+        "timestamp": "0:48",
+        "text": "Brands had no idea how to speak to young people online. At 21, he co-founded social chain to solve exactly that, building communities for Apple, Amazon, and Coca-Cola."
+      },
+      {
+        "start": 56.94,
+        "end": 58.38,
+        "timestamp": "0:57",
+        "text": "By 2019, it was on the dream."
+      },
+      {
+        "start": 58.4,
+        "end": 63.48,
+        "timestamp": "0:58",
+        "text": "German stock exchange at over $200 million. Then came the podcast. A $100"
+      },
+      {
+        "start": 63.48,
+        "end": 70.34,
+        "timestamp": "1:03",
+        "text": "$100 microphone and a duve over his head at 3 a.m. He called it the diary of a CEO. In 2024,"
+      },
+      {
+        "start": 70.34,
+        "end": 77.0,
+        "timestamp": "1:10",
+        "text": "it became the first UK podcast in history to hit 1 billion listens. And he's still not done."
+      },
+      {
+        "start": 77.1,
+        "end": 81.92,
+        "timestamp": "1:17",
+        "text": "His goal is to build the Disney of the creator economy because in his view, the creator is the new franchise."
+      }
+    ],
+    "full_text": "At 18, he was shoplifting frozen pizzas to survive. Today, he's the third richest creator in the world. Meet Stephen Bartlett. He grew up in Plymouth with no money, no birthday presents, no Christmas gifts, barely a card. But somewhere in that, something clicked. If anything was going to change, it was going to be because of him. At school, he started organizing parties and trips for his classmates and made the school so much money that when they tried to expel him, they had to take it back. His headmaster went on national TV and said it himself. We had to unexpel Steve because he made the school so much money. He enrolled at university, walked into his very first lecture, looked around the room, stood up, and left. He never went back. Instead, he was writing in his diary. I will be a millionaire by 25. Not a dream. A deadline. While everyone else called social media a fad, Bartlett saw a gap. Brands had no idea how to speak to young people online. At 21, he co-founded social chain to solve exactly that, building communities for Apple, Amazon, and Coca-Cola. By 2019, it was on the dream. German stock exchange at over $200 million. Then came the podcast. A $100 $100 microphone and a duve over his head at 3 a.m. He called it the diary of a CEO. In 2024, it became the first UK podcast in history to hit 1 billion listens. And he's still not done. His goal is to build the Disney of the creator economy because in his view, the creator is the new franchise.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 8,
+    "code": "DaAwCE_tulk",
+    "url": "https://www.instagram.com/founded/reel/DaAwCE_tulk/",
+    "canonical_url": "https://www.instagram.com/reel/DaAwCE_tulk/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Vicky Tsai built Tatcha from the kind of place most people never come back from.\n\nBefore the skincare brand sold to Unilever for a reported $500 million in 2019, she had a Harvard MBA, a Wall Street career, and skin so damaged by stress that she was using steroids every day.\n\nNothing helped.\n\nSo she left her job and went to Kyoto, where a geisha introduced her to Japanese beauty rituals that had been passed down for generations.\n\nBack in the U.S., retailers told her Asian beauty was too niche.\n\nSo Vicky sold her engagement ring, car, and furniture, moved into her parents’ house, and started Tatcha [@tatcha] from a garage.\n\nNine years without a salary.\n\n$600,000 in debt.\n\nStill, she kept going.",
+    "duration_seconds": 79.83,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 235,
+    "coverage_ratio": 0.983,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.9,
+        "timestamp": "0:00",
+        "text": "She sold her engagement ring to start a skincare brand."
+      },
+      {
+        "start": 2.9,
+        "end": 5.24,
+        "timestamp": "0:03",
+        "text": "Now it's worth $500 million."
+      },
+      {
+        "start": 5.24,
+        "end": 6.5,
+        "timestamp": "0:05",
+        "text": "Meet Vicki Tsai."
+      },
+      {
+        "start": 6.5,
+        "end": 10.4,
+        "timestamp": "0:06",
+        "text": "She had a Harvard MBA and a career as a derivatives trader on Wall Street."
+      },
+      {
+        "start": 10.4,
+        "end": 12.3,
+        "timestamp": "0:10",
+        "text": "But stress was destroying her skin."
+      },
+      {
+        "start": 12.3,
+        "end": 17.0,
+        "timestamp": "0:12",
+        "text": "Acute dermatitis, so severe she relied on daily steroids just to function."
+      },
+      {
+        "start": 17.0,
+        "end": 19.1,
+        "timestamp": "0:17",
+        "text": "For nearly three years, nothing worked."
+      },
+      {
+        "start": 19.1,
+        "end": 22.9,
+        "timestamp": "0:19",
+        "text": "Since she fell pregnant and couldn't keep pumping steroids into her body,"
+      },
+      {
+        "start": 22.9,
+        "end": 25.9,
+        "timestamp": "0:23",
+        "text": "so she quit her job and flew to Kyoto, Japan."
+      },
+      {
+        "start": 25.9,
+        "end": 29.98,
+        "timestamp": "0:26",
+        "text": "There, she met a Geisha, who showed her a completely different approach to skincare."
+      },
+      {
+        "start": 30.0,
+        "end": 34.5,
+        "timestamp": "0:30",
+        "text": "not products that strip and fix, but rituals passed down for centuries."
+      },
+      {
+        "start": 34.5,
+        "end": 37.8,
+        "timestamp": "0:34",
+        "text": "For the first time in three years, her skin started to heal."
+      },
+      {
+        "start": 37.8,
+        "end": 40.3,
+        "timestamp": "0:38",
+        "text": "She couldn't believe this didn't exist back home."
+      },
+      {
+        "start": 40.3,
+        "end": 44.8,
+        "timestamp": "0:40",
+        "text": "When she pitched retailers, they told her Asian beauty wasn't aspirational in the US."
+      },
+      {
+        "start": 44.8,
+        "end": 47.3,
+        "timestamp": "0:45",
+        "text": "Too niche, too exotic, nobody wanted it."
+      },
+      {
+        "start": 47.3,
+        "end": 50.7,
+        "timestamp": "0:47",
+        "text": "So she sold her engagement ring, her car, and her furniture,"
+      },
+      {
+        "start": 50.7,
+        "end": 55.7,
+        "timestamp": "0:51",
+        "text": "moved back into her parents' house, and used the money to buy 10,000 Japanese blotting papers."
+      },
+      {
+        "start": 55.7,
+        "end": 59.1,
+        "timestamp": "0:56",
+        "text": "Tacha launched from the garage the same day her daughter was born."
+      },
+      {
+        "start": 59.1,
+        "end": 66.9,
+        "timestamp": "0:59",
+        "text": "For the next nine years, Vicki didn't take a single salary and at one point was over $600,000 in debt, but the products worked."
+      },
+      {
+        "start": 66.9,
+        "end": 73.9,
+        "timestamp": "1:07",
+        "text": "Tacha landed in Sephora and by 2015 was the 21st fastest growing private company in America."
+      },
+      {
+        "start": 73.9,
+        "end": 78.5,
+        "timestamp": "1:14",
+        "text": "In 2019, Unilever acquired it for a reported $500 million."
+      }
+    ],
+    "full_text": "She sold her engagement ring to start a skincare brand. Now it's worth $500 million. Meet Vicki Tsai. She had a Harvard MBA and a career as a derivatives trader on Wall Street. But stress was destroying her skin. Acute dermatitis, so severe she relied on daily steroids just to function. For nearly three years, nothing worked. Since she fell pregnant and couldn't keep pumping steroids into her body, so she quit her job and flew to Kyoto, Japan. There, she met a Geisha, who showed her a completely different approach to skincare. not products that strip and fix, but rituals passed down for centuries. For the first time in three years, her skin started to heal. She couldn't believe this didn't exist back home. When she pitched retailers, they told her Asian beauty wasn't aspirational in the US. Too niche, too exotic, nobody wanted it. So she sold her engagement ring, her car, and her furniture, moved back into her parents' house, and used the money to buy 10,000 Japanese blotting papers. Tacha launched from the garage the same day her daughter was born. For the next nine years, Vicki didn't take a single salary and at one point was over $600,000 in debt, but the products worked. Tacha landed in Sephora and by 2015 was the 21st fastest growing private company in America. In 2019, Unilever acquired it for a reported $500 million.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 9,
+    "code": "DZ-QfsntL0b",
+    "url": "https://www.instagram.com/founded/reel/DZ-QfsntL0b/",
+    "canonical_url": "https://www.instagram.com/reel/DZ-QfsntL0b/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Aliko Dangote turned a borrowed cheque into a $30B empire.\n\nAt 21, he saw Nigeria importing the basics it needed to survive: sugar, rice, cement.\n\nSo he borrowed from his uncle and started supplying them himself.\n\nThen he made the move most traders never make.\n\nHe stopped just importing goods and built the factories behind them.\n\nThat shift turned Dangote from a local supplier into one of Africa’s most powerful industrialists.\n\nCement. Sugar. Flour. Billions in revenue. Control over the products countries can’t function without.\n\nThen came the $19B refinery, a bet to help Nigeria stop importing its own fuel.\n\nHe didn’t just build a company.\n\nHe built leverage.",
+    "duration_seconds": 67.88,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 202,
+    "coverage_ratio": 0.995,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.04,
+        "timestamp": "0:00",
+        "text": "Meet the Nigerian billionaire who built a $30 billion empire and became the richest black man"
+      },
+      {
+        "start": 6.04,
+        "end": 7.04,
+        "timestamp": "0:06",
+        "text": "in the world."
+      },
+      {
+        "start": 7.04,
+        "end": 9.84,
+        "timestamp": "0:07",
+        "text": "He started by selling boiled sugar sweets to classmates."
+      },
+      {
+        "start": 9.84,
+        "end": 14.54,
+        "timestamp": "0:10",
+        "text": "At 21, Aliko Dengote learned that Nigeria was buying most of the things it needed"
+      },
+      {
+        "start": 14.54,
+        "end": 15.84,
+        "timestamp": "0:15",
+        "text": "from other countries."
+      },
+      {
+        "start": 15.84,
+        "end": 19.92,
+        "timestamp": "0:16",
+        "text": "That's when he spotted an opportunity to supply Nigeria with goods himself."
+      },
+      {
+        "start": 19.92,
+        "end": 24.68,
+        "timestamp": "0:20",
+        "text": "He borrowed money from his uncle and began supplying everyday essentials people rely on,"
+      },
+      {
+        "start": 24.68,
+        "end": 26.5,
+        "timestamp": "0:25",
+        "text": "like sugar, rice, and cement."
+      },
+      {
+        "start": 26.5,
+        "end": 29.98,
+        "timestamp": "0:26",
+        "text": "He scaled it aggressively, and soon his company became a key."
+      },
+      {
+        "start": 30.0,
+        "end": 35.06,
+        "timestamp": "0:30",
+        "text": "supplier across the country. For most, that success would be the finish line. But Dango"
+      },
+      {
+        "start": 35.06,
+        "end": 40.14,
+        "timestamp": "0:35",
+        "text": "they saw a flaw. He didn't own production, so he took a risk and built factories to manufacture"
+      },
+      {
+        "start": 40.14,
+        "end": 45.1,
+        "timestamp": "0:40",
+        "text": "what he once imported. Soon he wasn't just supplying Nigeria. He was supplying an entire continent."
+      },
+      {
+        "start": 45.26,
+        "end": 50.24,
+        "timestamp": "0:45",
+        "text": "Numbers exploded, billions in revenue, dominance in cement, sugar and flour, a business empire"
+      },
+      {
+        "start": 50.24,
+        "end": 55.36,
+        "timestamp": "0:50",
+        "text": "few could compete with. Then came his biggest bet, a $19 billion dollar oil refinery project,"
+      },
+      {
+        "start": 55.36,
+        "end": 59.98,
+        "timestamp": "0:55",
+        "text": "one of the largest in the world, ending Nigeria's reliance on importing fuel. Today, he's"
+      },
+      {
+        "start": 60.0,
+        "end": 66.2,
+        "timestamp": "1:00",
+        "text": "His empire generates billions in revenue and a net worth past $30 billion, built by controlling"
+      },
+      {
+        "start": 66.2,
+        "end": 67.56,
+        "timestamp": "1:06",
+        "text": "what nations depend on."
+      }
+    ],
+    "full_text": "Meet the Nigerian billionaire who built a $30 billion empire and became the richest black man in the world. He started by selling boiled sugar sweets to classmates. At 21, Aliko Dengote learned that Nigeria was buying most of the things it needed from other countries. That's when he spotted an opportunity to supply Nigeria with goods himself. He borrowed money from his uncle and began supplying everyday essentials people rely on, like sugar, rice, and cement. He scaled it aggressively, and soon his company became a key. supplier across the country. For most, that success would be the finish line. But Dango they saw a flaw. He didn't own production, so he took a risk and built factories to manufacture what he once imported. Soon he wasn't just supplying Nigeria. He was supplying an entire continent. Numbers exploded, billions in revenue, dominance in cement, sugar and flour, a business empire few could compete with. Then came his biggest bet, a $19 billion dollar oil refinery project, one of the largest in the world, ending Nigeria's reliance on importing fuel. Today, he's His empire generates billions in revenue and a net worth past $30 billion, built by controlling what nations depend on.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 10,
+    "code": "DZz3J40N_d9",
+    "url": "https://www.instagram.com/founded/reel/DZz3J40N_d9/",
+    "canonical_url": "https://www.instagram.com/reel/DZz3J40N_d9/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Red Lobster was buried under $1 billion in debt when a 35-year-old CEO got the call.\n\nIn May 2024, the chain filed for bankruptcy. 93 locations were gone, and the brand looked like another American restaurant giant fading out.\n\nThree months later, Damola Adamolekun @damolaadamolekun stepped in.\n\nBorn in Nigeria and raised across three continents, he had already run P.F. Chang’s at 31, helping pull it back to $1 billion in revenue during COVID.\n\nBefore taking the job, he quietly visited Red Lobster locations himself.\n\nHe found tired dining rooms, stretched staff, and a company people had started writing off.\n\nOne year later, sales are up 40%.\n\nNow he says this could become the greatest comeback in restaurant history.",
+    "duration_seconds": 83.96,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 243,
+    "coverage_ratio": 0.982,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.84,
+        "timestamp": "0:00",
+        "text": "Meet the Nigerian CEO who led to $2 billion restaurant chains before 35."
+      },
+      {
+        "start": 6.02,
+        "end": 11.02,
+        "timestamp": "0:06",
+        "text": "Damola Atomolakan was born in Nigeria to a neurologist father and a pharmacist's mother,"
+      },
+      {
+        "start": 11.2,
+        "end": 15.02,
+        "timestamp": "0:11",
+        "text": "grew up across Zimbabwe and the Netherlands, and arrived in the U.S. at 9."
+      },
+      {
+        "start": 15.26,
+        "end": 18.56,
+        "timestamp": "0:15",
+        "text": "He went to Brown, then Harvard Business School, then Goldman Sachs,"
+      },
+      {
+        "start": 18.56,
+        "end": 21.7,
+        "timestamp": "0:19",
+        "text": "and eventually ended up at billionaire John Paulson's hedge fund."
+      },
+      {
+        "start": 21.82,
+        "end": 26.1,
+        "timestamp": "0:22",
+        "text": "But while he was there, he pitched the firm on acquiring P.F. Chang's, they said yes."
+      },
+      {
+        "start": 26.28,
+        "end": 29.68,
+        "timestamp": "0:26",
+        "text": "And just like that, he went from investor to CEO at 31."
+      },
+      {
+        "start": 30.0,
+        "end": 35.5,
+        "timestamp": "0:30",
+        "text": "Then COVID hit and restaurants were shutting down everywhere, so he launched P.F. Chong's to go,"
+      },
+      {
+        "start": 35.66,
+        "end": 38.98,
+        "timestamp": "0:36",
+        "text": "doubled down on delivery, and brought the company back to profitability."
+      },
+      {
+        "start": 39.32,
+        "end": 40.7,
+        "timestamp": "0:39",
+        "text": "Revenue hit $1 billion."
+      },
+      {
+        "start": 41.58,
+        "end": 43.32,
+        "timestamp": "0:42",
+        "text": "Then Red Lobster came calling."
+      },
+      {
+        "start": 43.52,
+        "end": 48.92,
+        "timestamp": "0:44",
+        "text": "Before accepting, he secretly toured locations across the country and found shabby interiors,"
+      },
+      {
+        "start": 49.08,
+        "end": 52.4,
+        "timestamp": "0:49",
+        "text": "understaffed kitchens, and outdated tech everywhere he looked."
+      },
+      {
+        "start": 52.52,
+        "end": 53.66,
+        "timestamp": "0:53",
+        "text": "He took the job anyway."
+      },
+      {
+        "start": 53.66,
+        "end": 59.92,
+        "timestamp": "0:54",
+        "text": "He launched seafood boil so popular that restaurants ran out of product, cut prices, and refreshed everything"
+      },
+      {
+        "start": 59.92,
+        "end": 61.42,
+        "timestamp": "1:00",
+        "text": "from the lighting to the music."
+      },
+      {
+        "start": 61.54,
+        "end": 66.22,
+        "timestamp": "1:02",
+        "text": "When asked if he'd bring back the endless shrimp deal that helped bankrupt the chain, his answer was simple."
+      },
+      {
+        "start": 66.46,
+        "end": 68.02,
+        "timestamp": "1:06",
+        "text": "No, because I know how to do math."
+      },
+      {
+        "start": 68.3,
+        "end": 74.36,
+        "timestamp": "1:08",
+        "text": "Sales surged 40% in 2025, and for the first time in years, Red Lobster was projecting a profit."
+      },
+      {
+        "start": 74.62,
+        "end": 78.98,
+        "timestamp": "1:15",
+        "text": "Fortune put him on their inaugural 100 most powerful people and business list."
+      },
+      {
+        "start": 79.18,
+        "end": 82.44,
+        "timestamp": "1:19",
+        "text": "From Lagos to leading two billion dollar brands, he's 35."
+      }
+    ],
+    "full_text": "Meet the Nigerian CEO who led to $2 billion restaurant chains before 35. Damola Atomolakan was born in Nigeria to a neurologist father and a pharmacist's mother, grew up across Zimbabwe and the Netherlands, and arrived in the U.S. at 9. He went to Brown, then Harvard Business School, then Goldman Sachs, and eventually ended up at billionaire John Paulson's hedge fund. But while he was there, he pitched the firm on acquiring P.F. Chang's, they said yes. And just like that, he went from investor to CEO at 31. Then COVID hit and restaurants were shutting down everywhere, so he launched P.F. Chong's to go, doubled down on delivery, and brought the company back to profitability. Revenue hit $1 billion. Then Red Lobster came calling. Before accepting, he secretly toured locations across the country and found shabby interiors, understaffed kitchens, and outdated tech everywhere he looked. He took the job anyway. He launched seafood boil so popular that restaurants ran out of product, cut prices, and refreshed everything from the lighting to the music. When asked if he'd bring back the endless shrimp deal that helped bankrupt the chain, his answer was simple. No, because I know how to do math. Sales surged 40% in 2025, and for the first time in years, Red Lobster was projecting a profit. Fortune put him on their inaugural 100 most powerful people and business list. From Lagos to leading two billion dollar brands, he's 35.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 11,
+    "code": "DZsJR6at9a0",
+    "url": "https://www.instagram.com/founded/reel/DZsJR6at9a0/",
+    "canonical_url": "https://www.instagram.com/reel/DZsJR6at9a0/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Before she was America’s first female billionaire investor, Theresia Gouw [@theresiagouw] was flipping burgers.\n\nIn 1971, her family fled Indonesia and landed near Buffalo with nothing.\n\nHer dad, a dentist back home, started washing dishes.\nHer mom, a nurse, picked up waitress shifts.\n\nFrom zero, they rebuilt. Theresia turned that pressure into fuel.\n\nFirst in her high school to get into Brown.\nMBA at Stanford.\nThen Silicon Valley.\n\nIn 2005, she’s in the room when her firm places an early bet on a tiny college network called Facebook.\n\nThat bet made history.\n\nShe went on to launch Acrew Capital, now a major force in early-stage venture.\n\nForbes named her: first female billionaire in venture capital.\n\nHer parents handed her a shot.\n\nShe turned it into history.",
+    "duration_seconds": 85.96,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 240,
+    "coverage_ratio": 0.99,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.84,
+        "timestamp": "0:00",
+        "text": "This Indonesian refugee went from flipping burgers at Burger King to becoming America's first female billionaire investor."
+      },
+      {
+        "start": 7.14,
+        "end": 8.26,
+        "timestamp": "0:07",
+        "text": "Nobody saw it coming."
+      },
+      {
+        "start": 8.42,
+        "end": 10.7,
+        "timestamp": "0:08",
+        "text": "Least of all the industry she'd go on to change."
+      },
+      {
+        "start": 10.9,
+        "end": 19.1,
+        "timestamp": "0:11",
+        "text": "Teresa Gao was three years old when her family fled Indonesia in 1971 and landed in a small town near Buffalo with almost nothing."
+      },
+      {
+        "start": 19.26,
+        "end": 21.02,
+        "timestamp": "0:19",
+        "text": "Her father had been a dentist back home."
+      },
+      {
+        "start": 21.2,
+        "end": 22.68,
+        "timestamp": "0:21",
+        "text": "In America, he washed dishes."
+      },
+      {
+        "start": 22.86,
+        "end": 23.68,
+        "timestamp": "0:23",
+        "text": "Her mother waitress."
+      },
+      {
+        "start": 23.68,
+        "end": 27.68,
+        "timestamp": "0:24",
+        "text": "They rebuilt from zero and made sure their daughter saw exactly what that took."
+      },
+      {
+        "start": 27.68,
+        "end": 32.84,
+        "timestamp": "0:28",
+        "text": "She got into Brown, graduated at the top of her class, then an MBA from Stanford,"
+      },
+      {
+        "start": 33.08,
+        "end": 40.26,
+        "timestamp": "0:33",
+        "text": "and eventually landed at one of Silicon Valley's most powerful investment firms where she became their first female partner."
+      },
+      {
+        "start": 40.5,
+        "end": 48.5,
+        "timestamp": "0:40",
+        "text": "Then, in 2005, a 21-year-old Mark Zuckerberg walked in with a pitch, a college social network, barely 10 people on the team."
+      },
+      {
+        "start": 48.66,
+        "end": 51.08,
+        "timestamp": "0:49",
+        "text": "Teresa was in the room when her firm wrote the check."
+      },
+      {
+        "start": 51.08,
+        "end": 57.04,
+        "timestamp": "0:51",
+        "text": "Forbes later estimated she held around 8 million Facebook shares at its IPO in 2012."
+      },
+      {
+        "start": 57.68,
+        "end": 69.98,
+        "timestamp": "0:58",
+        "text": "Most, a win like that would be enough. Not for Teresa. In 2014, she walked away to build her own firm and in 2019 launched Agru Capital, which now manages $1.7 billion in investments."
+      },
+      {
+        "start": 70.28,
+        "end": 76.6,
+        "timestamp": "1:10",
+        "text": "83% of its founding team are women or people of color. In 2025, Forbes made it official."
+      },
+      {
+        "start": 76.84,
+        "end": 85.14,
+        "timestamp": "1:17",
+        "text": "Teresa Gao, $1.2 billion net worth. Not just America's first female billionaire investor, the first in the history of the industry."
+      }
+    ],
+    "full_text": "This Indonesian refugee went from flipping burgers at Burger King to becoming America's first female billionaire investor. Nobody saw it coming. Least of all the industry she'd go on to change. Teresa Gao was three years old when her family fled Indonesia in 1971 and landed in a small town near Buffalo with almost nothing. Her father had been a dentist back home. In America, he washed dishes. Her mother waitress. They rebuilt from zero and made sure their daughter saw exactly what that took. She got into Brown, graduated at the top of her class, then an MBA from Stanford, and eventually landed at one of Silicon Valley's most powerful investment firms where she became their first female partner. Then, in 2005, a 21-year-old Mark Zuckerberg walked in with a pitch, a college social network, barely 10 people on the team. Teresa was in the room when her firm wrote the check. Forbes later estimated she held around 8 million Facebook shares at its IPO in 2012. Most, a win like that would be enough. Not for Teresa. In 2014, she walked away to build her own firm and in 2019 launched Agru Capital, which now manages $1.7 billion in investments. 83% of its founding team are women or people of color. In 2025, Forbes made it official. Teresa Gao, $1.2 billion net worth. Not just America's first female billionaire investor, the first in the history of the industry.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 12,
+    "code": "DZkbHvcN4dr",
+    "url": "https://www.instagram.com/founded/reel/DZkbHvcN4dr/",
+    "canonical_url": "https://www.instagram.com/reel/DZkbHvcN4dr/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "His grandpa paid $4,700 for a hearing aid that barely worked.\n\nSo Ramin Syed and two McMaster classmates built one for $20.\n\nThe idea started after Ramin watched his grandfather struggle to hear for 18 months. When the device finally arrived, it was noisy, expensive, and disappointing.\n\nSo they studied the ear itself.\n\nInstead of building another tiny computer, they designed @amanolabs to work with the ear’s natural ability to amplify sound.\n\nIt’s 3D-printed, custom-made from an ear photo and a quick hearing test.\n\nCost to make: $1.\n\nRetail price: $20.\n\nNow they’re testing with Harvard Medical School.\n\nThree students saw a broken industry and made it harder to defend.",
+    "duration_seconds": 68.38,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 200,
+    "coverage_ratio": 0.989,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.18,
+        "timestamp": "0:00",
+        "text": "His grandpa couldn't afford a $4,700 hearing aid, so he built one that cost $20."
+      },
+      {
+        "start": 5.9,
+        "end": 9.94,
+        "timestamp": "0:06",
+        "text": "Rahman Syed watched his grandfather struggle to hear for over a year and a half."
+      },
+      {
+        "start": 10.06,
+        "end": 13.9,
+        "timestamp": "0:10",
+        "text": "When the hearing aid finally arrived, it was full of interference and noise."
+      },
+      {
+        "start": 14.08,
+        "end": 16.5,
+        "timestamp": "0:14",
+        "text": "$4,700 wasted."
+      },
+      {
+        "start": 16.5,
+        "end": 21.78,
+        "timestamp": "0:16",
+        "text": "So, Rahman and his two classmates spent weeks studying the human ear and found something hiding"
+      },
+      {
+        "start": 21.78,
+        "end": 22.66,
+        "timestamp": "0:22",
+        "text": "in plain sight."
+      },
+      {
+        "start": 22.9,
+        "end": 25.12,
+        "timestamp": "0:23",
+        "text": "It could already amplify sound on its own."
+      },
+      {
+        "start": 25.34,
+        "end": 29.28,
+        "timestamp": "0:25",
+        "text": "So instead of building a tiny computer, they built a device that copies the ear."
+      },
+      {
+        "start": 29.28,
+        "end": 30.68,
+        "timestamp": "0:29",
+        "text": "They called it a mono."
+      },
+      {
+        "start": 30.88,
+        "end": 35.42,
+        "timestamp": "0:31",
+        "text": "3D printed, custom built from a photo of your ear and a quick hearing test."
+      },
+      {
+        "start": 35.58,
+        "end": 36.52,
+        "timestamp": "0:36",
+        "text": "Cost to make $1."
+      },
+      {
+        "start": 37.0,
+        "end": 38.18,
+        "timestamp": "0:37",
+        "text": "Retail price, $20."
+      },
+      {
+        "start": 38.76,
+        "end": 43.1,
+        "timestamp": "0:39",
+        "text": "That's 235 times cheaper than the average hearing aid in America."
+      },
+      {
+        "start": 43.4,
+        "end": 46.68,
+        "timestamp": "0:43",
+        "text": "1.5 billion people worldwide live with hearing loss."
+      },
+      {
+        "start": 46.84,
+        "end": 49.6,
+        "timestamp": "0:47",
+        "text": "83% of those who need a hearing aid don't own one."
+      },
+      {
+        "start": 49.72,
+        "end": 51.46,
+        "timestamp": "0:50",
+        "text": "The technology existed all along."
+      },
+      {
+        "start": 51.6,
+        "end": 52.66,
+        "timestamp": "0:52",
+        "text": "It just cost too much."
+      },
+      {
+        "start": 52.78,
+        "end": 55.18,
+        "timestamp": "0:53",
+        "text": "When their launch video dropped, millions watched."
+      },
+      {
+        "start": 55.34,
+        "end": 56.3,
+        "timestamp": "0:55",
+        "text": "Mr. B shared it."
+      },
+      {
+        "start": 56.3,
+        "end": 59.26,
+        "timestamp": "0:56",
+        "text": "Now they're working with Harvard Medical School testing devices with real."
+      },
+      {
+        "start": 59.28,
+        "end": 64.68,
+        "timestamp": "0:59",
+        "text": "patients. An entire industry spent decades convincing people that hearing well had to cost"
+      },
+      {
+        "start": 64.68,
+        "end": 67.6,
+        "timestamp": "1:05",
+        "text": "a fortune. Three students from Canada just proved it doesn't."
+      }
+    ],
+    "full_text": "His grandpa couldn't afford a $4,700 hearing aid, so he built one that cost $20. Rahman Syed watched his grandfather struggle to hear for over a year and a half. When the hearing aid finally arrived, it was full of interference and noise. $4,700 wasted. So, Rahman and his two classmates spent weeks studying the human ear and found something hiding in plain sight. It could already amplify sound on its own. So instead of building a tiny computer, they built a device that copies the ear. They called it a mono. 3D printed, custom built from a photo of your ear and a quick hearing test. Cost to make $1. Retail price, $20. That's 235 times cheaper than the average hearing aid in America. 1.5 billion people worldwide live with hearing loss. 83% of those who need a hearing aid don't own one. The technology existed all along. It just cost too much. When their launch video dropped, millions watched. Mr. B shared it. Now they're working with Harvard Medical School testing devices with real. patients. An entire industry spent decades convincing people that hearing well had to cost a fortune. Three students from Canada just proved it doesn't.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 13,
+    "code": "DZSaSp8teyn",
+    "url": "https://www.instagram.com/founded/reel/DZSaSp8teyn/",
+    "canonical_url": "https://www.instagram.com/reel/DZSaSp8teyn/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "He turned a bus driver’s wage into a £4.5 billion business empire.\n\nAnwar Pervez arrived in England from Pakistan in 1956, aged 21, and found work driving buses.\n\nBy 1963, he had saved enough to open a small shop in west London, selling spices and halal meat.\n\nBut the real shift came when he noticed who kept walking through the door: other shopkeepers.\n\nSo he stopped thinking only like a retailer.\n\nIn 1976, he opened Bestway Wholesale in Acton, supplying small stores with cheaper stock at scale.\n\nThat single warehouse grew into a group spanning wholesale, cement, pharmacies, convenience stores and banking.\n\nBy 2022, Bestway had 8,750 employees and 12 million customers.\n\nFrom one shop counter to Sir Anwar.",
+    "duration_seconds": 78.92,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 214,
+    "coverage_ratio": 0.989,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.2,
+        "timestamp": "0:00",
+        "text": "This Pakistani immigrant went from a single corner shop to building a 4.5 billion pound global empire."
+      },
+      {
+        "start": 6.44,
+        "end": 8.02,
+        "timestamp": "0:06",
+        "text": "And it started on a bus in Bradford."
+      },
+      {
+        "start": 8.28,
+        "end": 9.56,
+        "timestamp": "0:08",
+        "text": "Meet Anwar Purvez."
+      },
+      {
+        "start": 9.7,
+        "end": 16.16,
+        "timestamp": "0:10",
+        "text": "In 1956, at 21 years old, he left Pakistan with almost nothing and took a job driving buses in England."
+      },
+      {
+        "start": 16.46,
+        "end": 17.14,
+        "timestamp": "0:16",
+        "text": "It was progress."
+      },
+      {
+        "start": 17.46,
+        "end": 19.58,
+        "timestamp": "0:17",
+        "text": "But Anwar wanted more than a driver's seat."
+      },
+      {
+        "start": 19.78,
+        "end": 24.66,
+        "timestamp": "0:20",
+        "text": "In 1963, he opened a small shop in West London selling Masala and Halalbi."
+      },
+      {
+        "start": 24.66,
+        "end": 27.9,
+        "timestamp": "0:25",
+        "text": "But noticed the high street had most of the customers, not him."
+      },
+      {
+        "start": 28.1,
+        "end": 29.98,
+        "timestamp": "0:28",
+        "text": "So he didn't go deeper into one shot."
+      },
+      {
+        "start": 30.0,
+        "end": 31.0,
+        "timestamp": "0:30",
+        "text": "He opened 10."
+      },
+      {
+        "start": 31.0,
+        "end": 35.1,
+        "timestamp": "0:31",
+        "text": "Then he stopped thinking like a shopkeeper, but someone who supplies them."
+      },
+      {
+        "start": 35.1,
+        "end": 39.46,
+        "timestamp": "0:35",
+        "text": "In 1976, he opened Best Way Wholesale and Acton."
+      },
+      {
+        "start": 39.46,
+        "end": 44.94,
+        "timestamp": "0:39",
+        "text": "One warehouse selling stock cheaper and serving small shopkeepers better than anyone else."
+      },
+      {
+        "start": 44.94,
+        "end": 46.06,
+        "timestamp": "0:45",
+        "text": "It paid off."
+      },
+      {
+        "start": 46.06,
+        "end": 49.88,
+        "timestamp": "0:46",
+        "text": "Warehouses spread across Britain through the 80s and 90s."
+      },
+      {
+        "start": 49.88,
+        "end": 53.5,
+        "timestamp": "0:50",
+        "text": "Then came pharmacies, cement, banking, and convenience stores."
+      },
+      {
+        "start": 53.5,
+        "end": 59.98,
+        "timestamp": "0:54",
+        "text": "By 2022, the group hit 4.5 billion pounds with 28,000 employees, and 10,000."
+      },
+      {
+        "start": 60.0,
+        "end": 63.96,
+        "timestamp": "1:00",
+        "text": "12 million customers across the UK, Pakistan, and the Middle East."
+      },
+      {
+        "start": 64.06,
+        "end": 68.24,
+        "timestamp": "1:04",
+        "text": "The former bus driver is now Sir Anwar Pervez, knighted in 1999."
+      },
+      {
+        "start": 68.68,
+        "end": 73.02,
+        "timestamp": "1:09",
+        "text": "In 2025, King Charles hosted him at Royal Ascot as he turned 90."
+      },
+      {
+        "start": 73.26,
+        "end": 78.06,
+        "timestamp": "1:13",
+        "text": "From bus shifts in Bradford to 4.5 billion pounds, one corner shop at a time."
+      }
+    ],
+    "full_text": "This Pakistani immigrant went from a single corner shop to building a 4.5 billion pound global empire. And it started on a bus in Bradford. Meet Anwar Purvez. In 1956, at 21 years old, he left Pakistan with almost nothing and took a job driving buses in England. It was progress. But Anwar wanted more than a driver's seat. In 1963, he opened a small shop in West London selling Masala and Halalbi. But noticed the high street had most of the customers, not him. So he didn't go deeper into one shot. He opened 10. Then he stopped thinking like a shopkeeper, but someone who supplies them. In 1976, he opened Best Way Wholesale and Acton. One warehouse selling stock cheaper and serving small shopkeepers better than anyone else. It paid off. Warehouses spread across Britain through the 80s and 90s. Then came pharmacies, cement, banking, and convenience stores. By 2022, the group hit 4.5 billion pounds with 28,000 employees, and 10,000. 12 million customers across the UK, Pakistan, and the Middle East. The former bus driver is now Sir Anwar Pervez, knighted in 1999. In 2025, King Charles hosted him at Royal Ascot as he turned 90. From bus shifts in Bradford to 4.5 billion pounds, one corner shop at a time.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 14,
+    "code": "DZIjXjOOd3o",
+    "url": "https://www.instagram.com/founded/reel/DZIjXjOOd3o/",
+    "canonical_url": "https://www.instagram.com/reel/DZIjXjOOd3o/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "In 1999, the very first Coachella lost roughly $850,000, and founder Paul Tollett sold his house and car just to keep going.\n\nTollett came up in Pomona, a college student who got obsessed with live music promotion. Before he finished his degree, he dropped out to work concerts full time.\n\nHe later took over @goldenvoice, where he faced bigger rivals with deeper budgets and stronger artist ties.\n\nSo rather than compete on their terms, he built something of his own.\n\nA festival where the lineup and the experience were the whole draw.\n\nHe drew inspiration from European festivals like Glastonbury, then carried that model to the California desert.\n\nPlenty of people doubted it.\n\nToday, Coachella ranks among the most successful music festivals on the planet, pulling in hundreds of millions a year and standing as a global cultural institution.\n\nSome ideas only look crazy until enough time passes to make them look obvious.",
+    "duration_seconds": 79.02,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 209,
+    "coverage_ratio": 0.988,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "timestamp": "0:00",
+        "text": "The first Coachella lost $850,000 and forced its founder to sell his house and his car."
+      },
+      {
+        "start": 6.0,
+        "end": 8.88,
+        "timestamp": "0:06",
+        "text": "This year, it made over $200 million."
+      },
+      {
+        "start": 8.88,
+        "end": 16.56,
+        "timestamp": "0:09",
+        "text": "Meet Paul Tollet, a college dropout, who quit senior year to run a small concert promotion company called Golden Voice in 1989."
+      },
+      {
+        "start": 16.56,
+        "end": 21.52,
+        "timestamp": "0:17",
+        "text": "By the mid-90s, they struggled as bigger festivals crushed them, so in 1997,"
+      },
+      {
+        "start": 21.52,
+        "end": 28.08,
+        "timestamp": "0:22",
+        "text": "Talit flew to Glastonbury Festival and handed out pamphlets, showing sunny California to every manager he could find."
+      },
+      {
+        "start": 28.08,
+        "end": 32.58,
+        "timestamp": "0:28",
+        "text": "They laughed at the idea, but Talit believed in something nobody else at the time did,"
+      },
+      {
+        "start": 32.58,
+        "end": 35.58,
+        "timestamp": "0:33",
+        "text": "that the festival itself could become the attraction."
+      },
+      {
+        "start": 35.58,
+        "end": 39.58,
+        "timestamp": "0:36",
+        "text": "Then Woodstock 99 happened, violence, arson, chaos."
+      },
+      {
+        "start": 39.58,
+        "end": 43.58,
+        "timestamp": "0:40",
+        "text": "Insurance costs jumped 40% just when Talit announced Coachella."
+      },
+      {
+        "start": 43.58,
+        "end": 47.58,
+        "timestamp": "0:44",
+        "text": "Beck, Rage Against the Machine and Tool, headlined to 25,000 people."
+      },
+      {
+        "start": 47.58,
+        "end": 48.58,
+        "timestamp": "0:48",
+        "text": "The crowd loved it."
+      },
+      {
+        "start": 48.58,
+        "end": 51.58,
+        "timestamp": "0:49",
+        "text": "But Golden Voice lost $850,000."
+      },
+      {
+        "start": 51.58,
+        "end": 57.08,
+        "timestamp": "0:52",
+        "text": "To keep the company alive, Talit sold his house, then his car, and later said it also cost him his marriage."
+      },
+      {
+        "start": 57.08,
+        "end": 58.08,
+        "timestamp": "0:57",
+        "text": "He came back in his marriage."
+      },
+      {
+        "start": 58.08,
+        "end": 65.08,
+        "timestamp": "0:58",
+        "text": "By 2017, Coachella became the first festival in history to gross over $100 million in a single year."
+      },
+      {
+        "start": 65.08,
+        "end": 70.08,
+        "timestamp": "1:05",
+        "text": "This year, $200 million across 250,000 attendees."
+      },
+      {
+        "start": 70.08,
+        "end": 75.08,
+        "timestamp": "1:10",
+        "text": "Tickets that once cost $50 dollars now start at $549."
+      },
+      {
+        "start": 75.08,
+        "end": 78.08,
+        "timestamp": "1:15",
+        "text": "Not bad for a college dropout whose vision was laughed at."
+      }
+    ],
+    "full_text": "The first Coachella lost $850,000 and forced its founder to sell his house and his car. This year, it made over $200 million. Meet Paul Tollet, a college dropout, who quit senior year to run a small concert promotion company called Golden Voice in 1989. By the mid-90s, they struggled as bigger festivals crushed them, so in 1997, Talit flew to Glastonbury Festival and handed out pamphlets, showing sunny California to every manager he could find. They laughed at the idea, but Talit believed in something nobody else at the time did, that the festival itself could become the attraction. Then Woodstock 99 happened, violence, arson, chaos. Insurance costs jumped 40% just when Talit announced Coachella. Beck, Rage Against the Machine and Tool, headlined to 25,000 people. The crowd loved it. But Golden Voice lost $850,000. To keep the company alive, Talit sold his house, then his car, and later said it also cost him his marriage. He came back in his marriage. By 2017, Coachella became the first festival in history to gross over $100 million in a single year. This year, $200 million across 250,000 attendees. Tickets that once cost $50 dollars now start at $549. Not bad for a college dropout whose vision was laughed at.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 15,
+    "code": "DYkElFVN6tv",
+    "url": "https://www.instagram.com/founded/reel/DYkElFVN6tv/",
+    "canonical_url": "https://www.instagram.com/reel/DYkElFVN6tv/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "These 16-year-olds built a tool from their bedrooms to help people find affordable apartments to rent in New York City.\n\nAfter years of trailing his father through exhausting searches for an affordable apartment, Beckett\nZahedi finally decided he’d had enough.\n\nSo one summer, he taught himself to code using YouTube and AI, with his friend Derrick Webster Jr.\n\nTogether they launched a site [@tryrealerestate] listing affordable apartments, the kind most New Yorkers had never seen before.\n\nThe site exploded in popularity, and the pair landed investment to take it to the next level.\n\nBut even with the success, their feet have stayed firmly on the ground…\n\nHomework still comes before busines",
+    "duration_seconds": 84.58,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 244,
+    "coverage_ratio": 0.991,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.22,
+        "timestamp": "0:00",
+        "text": "These 16-year-old kids might have just solved New York's housing problem."
+      },
+      {
+        "start": 3.42,
+        "end": 5.26,
+        "timestamp": "0:03",
+        "text": "Meet Beckett to Haiti and Derek Webster."
+      },
+      {
+        "start": 5.44,
+        "end": 9.38,
+        "timestamp": "0:05",
+        "text": "Beckett first dreamed of helping people find affordable apartments in fifth grade."
+      },
+      {
+        "start": 9.62,
+        "end": 13.56,
+        "timestamp": "0:10",
+        "text": "After following his father through exhausting apartment searches across Brooklyn,"
+      },
+      {
+        "start": 13.82,
+        "end": 18.08,
+        "timestamp": "0:14",
+        "text": "touring cramped units and dodging cockroaches just to secure something barely livable."
+      },
+      {
+        "start": 18.24,
+        "end": 21.28,
+        "timestamp": "0:18",
+        "text": "And after seeing it firsthand, one question kept bothering him."
+      },
+      {
+        "start": 21.36,
+        "end": 24.98,
+        "timestamp": "0:21",
+        "text": "How could anyone be expected to live in these conditions, let alone afford them?"
+      },
+      {
+        "start": 25.18,
+        "end": 26.2,
+        "timestamp": "0:25",
+        "text": "Something had to change."
+      },
+      {
+        "start": 26.2,
+        "end": 29.98,
+        "timestamp": "0:26",
+        "text": "So years later, Beckett taught himself how to code using YouTube tutorials,"
+      },
+      {
+        "start": 30.0,
+        "end": 33.5,
+        "timestamp": "0:30",
+        "text": "and AI tools, while his classmate Derek Webster Jr."
+      },
+      {
+        "start": 33.5,
+        "end": 36.5,
+        "timestamp": "0:34",
+        "text": "built the email system that would power the platform."
+      },
+      {
+        "start": 36.5,
+        "end": 40.5,
+        "timestamp": "0:36",
+        "text": "Together, they launched the tool Beckett's own family had once desperately needed."
+      },
+      {
+        "start": 40.5,
+        "end": 46.0,
+        "timestamp": "0:40",
+        "text": "A simple website that scrapes real estate listings to help users find below-market apartments"
+      },
+      {
+        "start": 46.0,
+        "end": 47.0,
+        "timestamp": "0:46",
+        "text": "and rent-stabilized homes."
+      },
+      {
+        "start": 47.0,
+        "end": 49.0,
+        "timestamp": "0:47",
+        "text": "They quietly launched it on Reddit."
+      },
+      {
+        "start": 49.0,
+        "end": 54.5,
+        "timestamp": "0:49",
+        "text": "Within days, the site blew up with traffic, jumping from 6,000 visitors to over 27,000,"
+      },
+      {
+        "start": 54.5,
+        "end": 59.98,
+        "timestamp": "0:54",
+        "text": "as people shared the link, tagged friends, and even thanked them for helping them finally find a"
+      },
+      {
+        "start": 60.0,
+        "end": 65.24,
+        "timestamp": "1:00",
+        "text": "place to live. Soon after, their first subscribers covered their running costs, a local agent"
+      },
+      {
+        "start": 65.24,
+        "end": 71.76,
+        "timestamp": "1:05",
+        "text": "paid them $1,000 to advertise on the platform, and Startup Accelerator Autos stepped in with"
+      },
+      {
+        "start": 71.76,
+        "end": 74.96,
+        "timestamp": "1:12",
+        "text": "up to $25,000 to back their mission."
+      },
+      {
+        "start": 74.96,
+        "end": 79.2,
+        "timestamp": "1:15",
+        "text": "But even after tasting early success, the two founders are keeping their feet firmly"
+      },
+      {
+        "start": 79.2,
+        "end": 83.84,
+        "timestamp": "1:19",
+        "text": "on the ground, balancing school during the day and building their startup late into the night."
+      }
+    ],
+    "full_text": "These 16-year-old kids might have just solved New York's housing problem. Meet Beckett to Haiti and Derek Webster. Beckett first dreamed of helping people find affordable apartments in fifth grade. After following his father through exhausting apartment searches across Brooklyn, touring cramped units and dodging cockroaches just to secure something barely livable. And after seeing it firsthand, one question kept bothering him. How could anyone be expected to live in these conditions, let alone afford them? Something had to change. So years later, Beckett taught himself how to code using YouTube tutorials, and AI tools, while his classmate Derek Webster Jr. built the email system that would power the platform. Together, they launched the tool Beckett's own family had once desperately needed. A simple website that scrapes real estate listings to help users find below-market apartments and rent-stabilized homes. They quietly launched it on Reddit. Within days, the site blew up with traffic, jumping from 6,000 visitors to over 27,000, as people shared the link, tagged friends, and even thanked them for helping them finally find a place to live. Soon after, their first subscribers covered their running costs, a local agent paid them $1,000 to advertise on the platform, and Startup Accelerator Autos stepped in with up to $25,000 to back their mission. But even after tasting early success, the two founders are keeping their feet firmly on the ground, balancing school during the day and building their startup late into the night.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 16,
+    "code": "DYUlPUZsXom",
+    "url": "https://www.instagram.com/founded/reel/DYUlPUZsXom/",
+    "canonical_url": "https://www.instagram.com/reel/DYUlPUZsXom/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "At 2 days old, Freddie Figgers [@freddiefiggers] was found in a cardboard box by a dumpster and\nadopted by Nathan and Betty Figgers.\n\nGrowing up, kids called him a dumpster baby. Years later, his dad developed Alzheimer’s and went\nmissing.\n\nFreddie found him miles away and in that moment knew the man who rescued him needed saving.\n\nSo he got to work, building a GPS shoe with a 2-way speaker so he could track and talk to his father.\nThat tech then sold for a reported 7-figure sum.\n\nInstead of retiring, he poured the money into Figgers Communication, one of the only Black-owned\ntelecoms in the US, now reportedly valued around $62M.\n\nFrom abandoned newborn to $62M founder, Freddie’s story is proof that where you begin doesn’t define how far you go",
+    "duration_seconds": 93.25,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 292,
+    "coverage_ratio": 0.995,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.32,
+        "timestamp": "0:00",
+        "text": "This guy was left in a cardboard box near a dumpster at just two days old."
+      },
+      {
+        "start": 4.44,
+        "end": 7.56,
+        "timestamp": "0:04",
+        "text": "Today, he runs a $62 million tech company."
+      },
+      {
+        "start": 7.72,
+        "end": 12.76,
+        "timestamp": "0:08",
+        "text": "Freddie was found abandoned and later adopted by Nathan and Betty Figures, who raised him as their own."
+      },
+      {
+        "start": 12.86,
+        "end": 14.16,
+        "timestamp": "0:13",
+        "text": "But growing up wasn't easy."
+      },
+      {
+        "start": 14.32,
+        "end": 17.2,
+        "timestamp": "0:14",
+        "text": "Kids at school would bully him, calling him dumpster baby."
+      },
+      {
+        "start": 17.34,
+        "end": 20.56,
+        "timestamp": "0:17",
+        "text": "One day, his dad brought home a broken thrift store computer."
+      },
+      {
+        "start": 20.82,
+        "end": 24.36,
+        "timestamp": "0:21",
+        "text": "Determined to fix it for him, Freddy took it apart piece by piece,"
+      },
+      {
+        "start": 24.48,
+        "end": 27.2,
+        "timestamp": "0:24",
+        "text": "before somehow managing to put it back together again."
+      },
+      {
+        "start": 27.2,
+        "end": 33.16,
+        "timestamp": "0:27",
+        "text": "Soon, the same neighborhood that mocked him began to realize that dumpster baby could actually fix their computers."
+      },
+      {
+        "start": 33.64,
+        "end": 38.98,
+        "timestamp": "0:34",
+        "text": "And by the age of 12, he was fixing half the town's tech, even doing work for the city's government."
+      },
+      {
+        "start": 39.12,
+        "end": 44.88,
+        "timestamp": "0:39",
+        "text": "The once bullied kid had quietly become the person everyone called when something stopped working."
+      },
+      {
+        "start": 45.18,
+        "end": 50.68,
+        "timestamp": "0:45",
+        "text": "But then life flipped again because his father, who had been diagnosed with Alzheimer's, suddenly went missing."
+      },
+      {
+        "start": 50.84,
+        "end": 53.3,
+        "timestamp": "0:51",
+        "text": "Freddie eventually found him miles away in a field."
+      },
+      {
+        "start": 53.3,
+        "end": 57.18,
+        "timestamp": "0:53",
+        "text": "And in that moment, he realized that the man who once rescued him, now he was."
+      },
+      {
+        "start": 57.2,
+        "end": 63.28,
+        "timestamp": "0:57",
+        "text": "needed rescuing too. So he built a shoe with a hidden GPS chip and speaker inside, allowing him to"
+      },
+      {
+        "start": 63.28,
+        "end": 68.92,
+        "timestamp": "1:03",
+        "text": "track his dad and even talk to him if it ever happened again. And when a company later heard about the"
+      },
+      {
+        "start": 68.92,
+        "end": 74.44,
+        "timestamp": "1:09",
+        "text": "invention, they bought the tech for a reported seven-figure sum, but instead of retiring, Freddie"
+      },
+      {
+        "start": 74.44,
+        "end": 79.68,
+        "timestamp": "1:14",
+        "text": "doubled down, pouring the money he'd made into building his own telecom network. Figures communication,"
+      },
+      {
+        "start": 79.98,
+        "end": 85.96,
+        "timestamp": "1:20",
+        "text": "one of the only black-owned telecoms in the United States. Today, the company is valued at over"
+      },
+      {
+        "start": 85.96,
+        "end": 92.76,
+        "timestamp": "1:26",
+        "text": "$62 million, the kid that was once left behind, is now building technology to make sure no one else does."
+      }
+    ],
+    "full_text": "This guy was left in a cardboard box near a dumpster at just two days old. Today, he runs a $62 million tech company. Freddie was found abandoned and later adopted by Nathan and Betty Figures, who raised him as their own. But growing up wasn't easy. Kids at school would bully him, calling him dumpster baby. One day, his dad brought home a broken thrift store computer. Determined to fix it for him, Freddy took it apart piece by piece, before somehow managing to put it back together again. Soon, the same neighborhood that mocked him began to realize that dumpster baby could actually fix their computers. And by the age of 12, he was fixing half the town's tech, even doing work for the city's government. The once bullied kid had quietly become the person everyone called when something stopped working. But then life flipped again because his father, who had been diagnosed with Alzheimer's, suddenly went missing. Freddie eventually found him miles away in a field. And in that moment, he realized that the man who once rescued him, now he was. needed rescuing too. So he built a shoe with a hidden GPS chip and speaker inside, allowing him to track his dad and even talk to him if it ever happened again. And when a company later heard about the invention, they bought the tech for a reported seven-figure sum, but instead of retiring, Freddie doubled down, pouring the money he'd made into building his own telecom network. Figures communication, one of the only black-owned telecoms in the United States. Today, the company is valued at over $62 million, the kid that was once left behind, is now building technology to make sure no one else does.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 17,
+    "code": "DYKQBwjtEr6",
+    "url": "https://www.instagram.com/founded/reel/DYKQBwjtEr6/",
+    "canonical_url": "https://www.instagram.com/reel/DYKQBwjtEr6/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "When everyone else was buried in textbooks, then 19-year-old Dhravya Shah was lost in Twitter.\n\nHe built a bot that screenshotted tweets, just for fun. But then the internet noticed.\n\nShah sold the tool, and with the money bought his ticket from India to the U.S.\n\nSince then, he’s raised $2.6 million from Google and OpenAI execs.\n\nNot bad for a 20-year-old who started from his bedroo",
+    "duration_seconds": 77.96,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 247,
+    "coverage_ratio": 0.993,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.1,
+        "timestamp": "0:00",
+        "text": "This 20-year-old Indian prodigy raised $3 million to build his very own AI startup."
+      },
+      {
+        "start": 5.4,
+        "end": 7.56,
+        "timestamp": "0:05",
+        "text": "But first, let's take it back to where it all began."
+      },
+      {
+        "start": 7.78,
+        "end": 8.66,
+        "timestamp": "0:08",
+        "text": "Meet Dravya Shah."
+      },
+      {
+        "start": 8.82,
+        "end": 11.44,
+        "timestamp": "0:09",
+        "text": "While most kids his age were studying for exams,"
+      },
+      {
+        "start": 11.68,
+        "end": 16.12,
+        "timestamp": "0:12",
+        "text": "Dravia spent his time on Twitter experimenting with code and building tools for fun."
+      },
+      {
+        "start": 16.28,
+        "end": 20.38,
+        "timestamp": "0:16",
+        "text": "And it was there that he built a simple bot that could transform tweets into images,"
+      },
+      {
+        "start": 20.38,
+        "end": 24.02,
+        "timestamp": "0:20",
+        "text": "a small project that unexpectedly exploded online."
+      },
+      {
+        "start": 24.28,
+        "end": 26.54,
+        "timestamp": "0:24",
+        "text": "Soon after launching it, the bot went viral."
+      },
+      {
+        "start": 26.8,
+        "end": 29.4,
+        "timestamp": "0:27",
+        "text": "And Dravia did what most young builders dream about."
+      },
+      {
+        "start": 29.4,
+        "end": 35.68,
+        "timestamp": "0:29",
+        "text": "He sold it, pocketed the profit, and booked a one-way ticket from India to the United States to study at Arizona State."
+      },
+      {
+        "start": 35.76,
+        "end": 39.84,
+        "timestamp": "0:36",
+        "text": "But instead of slowing down, once he got there, he made a promise to himself."
+      },
+      {
+        "start": 40.12,
+        "end": 43.36,
+        "timestamp": "0:40",
+        "text": "Build something new every week and keep going for 40 weeks straight."
+      },
+      {
+        "start": 43.5,
+        "end": 44.82,
+        "timestamp": "0:44",
+        "text": "Week after week, he kept shipping."
+      },
+      {
+        "start": 44.98,
+        "end": 49.28,
+        "timestamp": "0:45",
+        "text": "Then on week 37, he built a tool that let people chat with their Twitter bookmarks."
+      },
+      {
+        "start": 49.48,
+        "end": 53.6,
+        "timestamp": "0:49",
+        "text": "And that small experiment would eventually grow into something much bigger."
+      },
+      {
+        "start": 53.6,
+        "end": 59.38,
+        "timestamp": "0:54",
+        "text": "That project became super memory, a tool designed to help AI recall and remember past conversations."
+      },
+      {
+        "start": 59.4,
+        "end": 62.4,
+        "timestamp": "0:59",
+        "text": "essentially building the memory layer for AI systems."
+      },
+      {
+        "start": 62.4,
+        "end": 66.4,
+        "timestamp": "1:02",
+        "text": "It didn't take long for the idea to catch the attention of some of the biggest names in tech,"
+      },
+      {
+        "start": 66.4,
+        "end": 70.4,
+        "timestamp": "1:06",
+        "text": "including Google AI Chief Jeff Dean and Cloudflare's CTO,"
+      },
+      {
+        "start": 70.4,
+        "end": 73.4,
+        "timestamp": "1:10",
+        "text": "ultimately leading to a $3 million seed round."
+      },
+      {
+        "start": 73.4,
+        "end": 77.4,
+        "timestamp": "1:13",
+        "text": "Not bad for a 20-year-old who started by building Twitter bots in his bedroom."
+      }
+    ],
+    "full_text": "This 20-year-old Indian prodigy raised $3 million to build his very own AI startup. But first, let's take it back to where it all began. Meet Dravya Shah. While most kids his age were studying for exams, Dravia spent his time on Twitter experimenting with code and building tools for fun. And it was there that he built a simple bot that could transform tweets into images, a small project that unexpectedly exploded online. Soon after launching it, the bot went viral. And Dravia did what most young builders dream about. He sold it, pocketed the profit, and booked a one-way ticket from India to the United States to study at Arizona State. But instead of slowing down, once he got there, he made a promise to himself. Build something new every week and keep going for 40 weeks straight. Week after week, he kept shipping. Then on week 37, he built a tool that let people chat with their Twitter bookmarks. And that small experiment would eventually grow into something much bigger. That project became super memory, a tool designed to help AI recall and remember past conversations. essentially building the memory layer for AI systems. It didn't take long for the idea to catch the attention of some of the biggest names in tech, including Google AI Chief Jeff Dean and Cloudflare's CTO, ultimately leading to a $3 million seed round. Not bad for a 20-year-old who started by building Twitter bots in his bedroom.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 18,
+    "code": "DYAFU0TiAaO",
+    "url": "https://www.instagram.com/founded/reel/DYAFU0TiAaO/",
+    "canonical_url": "https://www.instagram.com/reel/DYAFU0TiAaO/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "@eddybuild dropped out of Columbia and turned down an offer for $25M+, all so he could build his own business.\n\nEddy started Build with a simple mission.\n\nTrain robots to do human-like work.\n\nHow?\n\nXu asks factory workers to wear smart glasses, their shifts get recorded, and the steps get taught to\nrobots.\n\nBuild has so far generated over 2,500 clips and ~400,000 steps to train robots on everyday tasks.\n\nThe promise is fewer boring chores for people and steadier output for factories.\n\nThe risk is harder to ignore.",
+    "duration_seconds": 55.38,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 160,
+    "coverage_ratio": 0.993,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.5,
+        "timestamp": "0:00",
+        "text": "Beat Eddie Shoe, a Columbia dropout who's using factory workers to train robots that will replace them."
+      },
+      {
+        "start": 5.5,
+        "end": 9.0,
+        "timestamp": "0:06",
+        "text": "Eddie turned down $25 million to build his own company."
+      },
+      {
+        "start": 9.0,
+        "end": 13.0,
+        "timestamp": "0:09",
+        "text": "Because in his eyes, building the robots was never the hardest part."
+      },
+      {
+        "start": 13.0,
+        "end": 14.5,
+        "timestamp": "0:13",
+        "text": "Teaching them how to work was."
+      },
+      {
+        "start": 14.5,
+        "end": 21.5,
+        "timestamp": "0:14",
+        "text": "So he built a system that strapped smart glasses onto factory workers, capturing exactly how they do their jobs."
+      },
+      {
+        "start": 21.5,
+        "end": 26.5,
+        "timestamp": "0:22",
+        "text": "Every movement, every step, every decision, turning all of it into training data."
+      },
+      {
+        "start": 26.5,
+        "end": 29.0,
+        "timestamp": "0:26",
+        "text": "That data is then used to train robots."
+      },
+      {
+        "start": 29.0,
+        "end": 31.0,
+        "timestamp": "0:29",
+        "text": "to do the same work as the factory workers."
+      },
+      {
+        "start": 31.0,
+        "end": 37.0,
+        "timestamp": "0:31",
+        "text": "At twice the speed, at first it rolled out quietly before factories fully realized what they were looking at."
+      },
+      {
+        "start": 37.0,
+        "end": 45.0,
+        "timestamp": "0:37",
+        "text": "Now, Eddie's company has collected more than 2,500 clips and 400,000 human actions from workers across Asia,"
+      },
+      {
+        "start": 45.0,
+        "end": 47.0,
+        "timestamp": "0:45",
+        "text": "and is preparing to expand into the US."
+      },
+      {
+        "start": 47.0,
+        "end": 55.0,
+        "timestamp": "0:47",
+        "text": "But as the age of robotics accelerates, one question remains, if robots can do everything humans can, where does that leave humans?"
+      }
+    ],
+    "full_text": "Beat Eddie Shoe, a Columbia dropout who's using factory workers to train robots that will replace them. Eddie turned down $25 million to build his own company. Because in his eyes, building the robots was never the hardest part. Teaching them how to work was. So he built a system that strapped smart glasses onto factory workers, capturing exactly how they do their jobs. Every movement, every step, every decision, turning all of it into training data. That data is then used to train robots. to do the same work as the factory workers. At twice the speed, at first it rolled out quietly before factories fully realized what they were looking at. Now, Eddie's company has collected more than 2,500 clips and 400,000 human actions from workers across Asia, and is preparing to expand into the US. But as the age of robotics accelerates, one question remains, if robots can do everything humans can, where does that leave humans?",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 19,
+    "code": "DX4TRYbMl-_",
+    "url": "https://www.instagram.com/founded/reel/DX4TRYbMl-_/",
+    "canonical_url": "https://www.instagram.com/reel/DX4TRYbMl-_/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "They didn’t grow up with role models who looked like them, so they became the role models they\nnever had.\n\nMeet Nathaneo [@nathaneo_j] and Sean [@_2woot], founders of Series [@series.so].\n\nA platform where you ask other entrepreneurs for what you need, whether it’s a cofounder, users for\nyour app, or pitch feedback, Series matches entrepreneurs instantly with people who can help.\n\nBacked by Parable, Pear VC, and Reddit’s CEO Steve Huffman.\n\nBuilt to rival Facebook and LinkedIn.\n\nDesigned for the next generation of founder",
+    "duration_seconds": 49.71,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 159,
+    "coverage_ratio": 0.976,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.08,
+        "timestamp": "0:00",
+        "text": "Meet students Nathanio Johnson and Sean Hargrove, who raised $3.1 million in just 14 days from a dorm room."
+      },
+      {
+        "start": 8.16,
+        "end": 11.28,
+        "timestamp": "0:08",
+        "text": "And it didn't come from hype or connections, but with a simple problem."
+      },
+      {
+        "start": 11.44,
+        "end": 16.98,
+        "timestamp": "0:11",
+        "text": "Nathanio grew up watching business news, but never saw anyone who looked like him building those companies, and that stuck with him."
+      },
+      {
+        "start": 17.08,
+        "end": 19.82,
+        "timestamp": "0:17",
+        "text": "So instead of waiting for access, he decided to create it."
+      },
+      {
+        "start": 19.9,
+        "end": 25.26,
+        "timestamp": "0:20",
+        "text": "Together, they realized how hard it is to build something from scratch, finding co-founders and even feedback."
+      },
+      {
+        "start": 25.5,
+        "end": 29.7,
+        "timestamp": "0:26",
+        "text": "So they built a place where founders could just say what they needed and find the right people to help."
+      },
+      {
+        "start": 30.0,
+        "end": 32.58,
+        "timestamp": "0:30",
+        "text": "Others chased internships, they stayed in their dorm building."
+      },
+      {
+        "start": 32.7,
+        "end": 35.4,
+        "timestamp": "0:33",
+        "text": "The real question was whether anyone would take them seriously."
+      },
+      {
+        "start": 35.6,
+        "end": 36.06,
+        "timestamp": "0:36",
+        "text": "They did."
+      },
+      {
+        "start": 36.2,
+        "end": 42.6,
+        "timestamp": "0:36",
+        "text": "In 14 days, they raised $3.1 million from investors like PairVC and Parable and Reddit CEO."
+      },
+      {
+        "start": 42.9,
+        "end": 48.54,
+        "timestamp": "0:43",
+        "text": "Now, they're building the network they never had, making it easier for the next generation of founders to get started."
+      }
+    ],
+    "full_text": "Meet students Nathanio Johnson and Sean Hargrove, who raised $3.1 million in just 14 days from a dorm room. And it didn't come from hype or connections, but with a simple problem. Nathanio grew up watching business news, but never saw anyone who looked like him building those companies, and that stuck with him. So instead of waiting for access, he decided to create it. Together, they realized how hard it is to build something from scratch, finding co-founders and even feedback. So they built a place where founders could just say what they needed and find the right people to help. Others chased internships, they stayed in their dorm building. The real question was whether anyone would take them seriously. They did. In 14 days, they raised $3.1 million from investors like PairVC and Parable and Reddit CEO. Now, they're building the network they never had, making it easier for the next generation of founders to get started.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 20,
+    "code": "DXzG-MosByN",
+    "url": "https://www.instagram.com/founded/reel/DXzG-MosByN/",
+    "canonical_url": "https://www.instagram.com/reel/DXzG-MosByN/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "When Frank Yu launched @coterie in 2019, diapers hadn’t changed in decades.\n\nSo he built a brand that didn’t speak to babies, it spoke to parents. Minimalist, premium, quiet luxury.\n\nCoterie turned the most boring product on earth into a status symbol.\n\n700 million diapers sold. $200M in net revenue.\n\nThis month, Yu sold the brand to Mammoth Brands in a deal valued at over $1 billion.\n\nProof that even the most ordinary products can build extraordinary brands.",
+    "duration_seconds": 55.58,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 164,
+    "coverage_ratio": 0.986,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.8,
+        "timestamp": "0:00",
+        "text": "Meet Frank You, the genius who turned one of the most boring products on earth into a billion"
+      },
+      {
+        "start": 4.8,
+        "end": 10.08,
+        "timestamp": "0:05",
+        "text": "dollar company. In 2019, you launched Kotoree, a premium diaper brand, challenging giants that"
+      },
+      {
+        "start": 10.08,
+        "end": 14.56,
+        "timestamp": "0:10",
+        "text": "hadn't innovated in decades. But the real breakthrough wasn't the product, it was the position."
+      },
+      {
+        "start": 14.56,
+        "end": 18.4,
+        "timestamp": "0:15",
+        "text": "You realized the entire industry was thinking about diapers the wrong way."
+      },
+      {
+        "start": 18.4,
+        "end": 22.64,
+        "timestamp": "0:18",
+        "text": "Diapers weren't really being sold to babies. They were being sold to the ones with the purchasing"
+      },
+      {
+        "start": 22.64,
+        "end": 28.88,
+        "timestamp": "0:23",
+        "text": "power, the parents. So instead of bright cartoons and childish branding, Coterie went in the opposite direction."
+      },
+      {
+        "start": 28.88,
+        "end": 34.48,
+        "timestamp": "0:29",
+        "text": "Clean design, minimal packaging, and a brand that fell closer to luxury skin care than a baby product."
+      },
+      {
+        "start": 34.48,
+        "end": 35.44,
+        "timestamp": "0:34",
+        "text": "And parents loved."
+      },
+      {
+        "start": 35.44,
+        "end": 43.76,
+        "timestamp": "0:35",
+        "text": "Cotary quickly became a status symbol, eventually selling over 700 million diapers and surpassing $200 million in revenue."
+      },
+      {
+        "start": 43.76,
+        "end": 54.8,
+        "timestamp": "0:44",
+        "text": "Then Mammoth Brands noticed and acquired Cotery in a deal valued at over $1 billion, proving that sometimes the biggest businesses aren't built by inventing something new, but by reinventing the boring."
+      }
+    ],
+    "full_text": "Meet Frank You, the genius who turned one of the most boring products on earth into a billion dollar company. In 2019, you launched Kotoree, a premium diaper brand, challenging giants that hadn't innovated in decades. But the real breakthrough wasn't the product, it was the position. You realized the entire industry was thinking about diapers the wrong way. Diapers weren't really being sold to babies. They were being sold to the ones with the purchasing power, the parents. So instead of bright cartoons and childish branding, Coterie went in the opposite direction. Clean design, minimal packaging, and a brand that fell closer to luxury skin care than a baby product. And parents loved. Cotary quickly became a status symbol, eventually selling over 700 million diapers and surpassing $200 million in revenue. Then Mammoth Brands noticed and acquired Cotery in a deal valued at over $1 billion, proving that sometimes the biggest businesses aren't built by inventing something new, but by reinventing the boring.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 21,
+    "code": "DXjqnHEjI8m",
+    "url": "https://www.instagram.com/founded/reel/DXjqnHEjI8m/",
+    "canonical_url": "https://www.instagram.com/reel/DXjqnHEjI8m/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "In 1967, a 16-year-old called Shahid Khan landed in Illinois during a blizzard with $500 in his pocket. His first job was washing dishes for $1.20 an hour.\n\nWhile studying engineering, he got hired at a small auto parts company. He noticed their truck bumpers could be better, so he designed a one-piece bumper that was lighter, stronger, and cheaper to make.\n\nHe left, started his own company, then bought his former employer two years later.\n\nBy the late 1980s, his company was the sole bumper supplier for every Toyota sold in America. Today it turns over $9 billion a year.\n\nThen he bought the Jacksonville Jaguars for $770 million, becoming the first ethnic-minority owner in NFL history, before going on to own premier league club Fulham, and All Elite Wrestling.\n\nForbes said it best, describing Khan’s journey as as the embodiment of the American Dream.",
+    "duration_seconds": 60.0,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 184,
+    "coverage_ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.64,
+        "timestamp": "0:00",
+        "text": "This Pakistani immigrant went from washing dishes to building a $10 billion plus empire."
+      },
+      {
+        "start": 4.8,
+        "end": 5.8,
+        "timestamp": "0:05",
+        "text": "Meet Shahid Khan."
+      },
+      {
+        "start": 5.94,
+        "end": 12.96,
+        "timestamp": "0:06",
+        "text": "At 16, he arrived in America with just $500 and took a $1.20 an hour dishwashing job to survive."
+      },
+      {
+        "start": 13.08,
+        "end": 18.38,
+        "timestamp": "0:13",
+        "text": "But while studying engineering, he started working at a small auto parts company called Flex Engate."
+      },
+      {
+        "start": 18.42,
+        "end": 20.94,
+        "timestamp": "0:18",
+        "text": "That's where he noticed a simple problem others ignored."
+      },
+      {
+        "start": 21.14,
+        "end": 22.94,
+        "timestamp": "0:21",
+        "text": "Parts could be made better and cheaper."
+      },
+      {
+        "start": 22.94,
+        "end": 29.52,
+        "timestamp": "0:23",
+        "text": "So in 1978, he took a risk, borrowed $50,000, added his own savings, and started his own company."
+      },
+      {
+        "start": 29.52,
+        "end": 32.62,
+        "timestamp": "0:30",
+        "text": "His first big break came when General Motors became his customer."
+      },
+      {
+        "start": 32.92,
+        "end": 35.26,
+        "timestamp": "0:33",
+        "text": "Then, he made the move that changed everything."
+      },
+      {
+        "start": 35.46,
+        "end": 40.34,
+        "timestamp": "0:35",
+        "text": "He bought Flexingate the same company he once worked for and scaled it into a global supplier."
+      },
+      {
+        "start": 40.52,
+        "end": 48.16,
+        "timestamp": "0:41",
+        "text": "Today, the company operates dozens of plants, employs over 25,000 people, and its parts are used in most cars across the U.S."
+      },
+      {
+        "start": 48.24,
+        "end": 49.16,
+        "timestamp": "0:48",
+        "text": "And he didn't stop there."
+      },
+      {
+        "start": 49.28,
+        "end": 54.5,
+        "timestamp": "0:49",
+        "text": "He went on to buy the Jacksonville Jaguars, Freedom FC, and later co-founded AEW with his son."
+      },
+      {
+        "start": 54.6,
+        "end": 59.08,
+        "timestamp": "0:55",
+        "text": "From a teenage immigrant trying to get by to building a global empire, that's Shaheed Khan."
+      },
+      {
+        "start": 59.52,
+        "end": 61.52,
+        "timestamp": "1:00",
+        "text": "Thank you."
+      }
+    ],
+    "full_text": "This Pakistani immigrant went from washing dishes to building a $10 billion plus empire. Meet Shahid Khan. At 16, he arrived in America with just $500 and took a $1.20 an hour dishwashing job to survive. But while studying engineering, he started working at a small auto parts company called Flex Engate. That's where he noticed a simple problem others ignored. Parts could be made better and cheaper. So in 1978, he took a risk, borrowed $50,000, added his own savings, and started his own company. His first big break came when General Motors became his customer. Then, he made the move that changed everything. He bought Flexingate the same company he once worked for and scaled it into a global supplier. Today, the company operates dozens of plants, employs over 25,000 people, and its parts are used in most cars across the U.S. And he didn't stop there. He went on to buy the Jacksonville Jaguars, Freedom FC, and later co-founded AEW with his son. From a teenage immigrant trying to get by to building a global empire, that's Shaheed Khan. Thank you.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 22,
+    "code": "DWT5-bKDEMH",
+    "url": "https://www.instagram.com/founded/reel/DWT5-bKDEMH/",
+    "canonical_url": "https://www.instagram.com/reel/DWT5-bKDEMH/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Most 13-year-olds are either doing their homework or playing video games…\n\nNot Malaki Conteh. He’s thinking about how many plates of Caribbean food he needs to sell to cover £4,000 per term in school fees.\n\nHis story started at just six years old, when he set up a small stall outside his dad’s office to earn enough for singing lessons and chase the dream of joining his church choir.\n\nToday, he runs Malaki’s Food & Drinks in London, a Caribbean food business that now employs his parents.\n\nBut for Malaki, success isn’t only measured in money. \n\nPart of what he earns goes toward buying instruments for children who can’t afford them, and helping fund therapy and travel for people facing mental health struggles.\n\nAnd in a full-circle moment, it all led back to where it began, the choir.\n\nMalaki fulfilled that childhood dream, becoming the first Black chief chorister in the church’s 1,000-year history.",
+    "duration_seconds": 90.17,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 281,
+    "coverage_ratio": 0.989,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.36,
+        "timestamp": "0:00",
+        "text": "Meet the UK's youngest businessman, Maliki Conte, who pays his own 4,000 pounds at term school fees at just 13."
+      },
+      {
+        "start": 7.52,
+        "end": 15.66,
+        "timestamp": "0:08",
+        "text": "While most kids his age are thinking about homework or video games, he's doing the maths on how much Caribbean food he needs to sell to cover the next term."
+      },
+      {
+        "start": 15.78,
+        "end": 21.24,
+        "timestamp": "0:16",
+        "text": "It started when he was just six years old and wanted singing lessons so he could join his church's choir."
+      },
+      {
+        "start": 21.46,
+        "end": 27.86,
+        "timestamp": "0:21",
+        "text": "But when he found out how expensive they were, he realized if he really wanted them, he'd have to find a way to pay for it himself."
+      },
+      {
+        "start": 27.86,
+        "end": 33.74,
+        "timestamp": "0:28",
+        "text": "So he set up a tiny stall outside his dad's office, selling plants, gifts, and baked goods."
+      },
+      {
+        "start": 33.94,
+        "end": 41.0,
+        "timestamp": "0:34",
+        "text": "And whether it was rain, wind, or passing traffic, he was out there learning what sells, what doesn't, and what it feels like when nobody buys."
+      },
+      {
+        "start": 41.16,
+        "end": 54.76,
+        "timestamp": "0:41",
+        "text": "Over time, that little stall slowly turned into a pop-up cafe and one weekend, after everything completely sold out, and people kept asking when they could come back again, it finally clicked that this wasn't just pocket money anymore."
+      },
+      {
+        "start": 54.96,
+        "end": 56.32,
+        "timestamp": "0:55",
+        "text": "This could be a real business."
+      },
+      {
+        "start": 56.32,
+        "end": 86.3,
+        "timestamp": "0:56",
+        "text": "Today, at just 13, Maliki runs a full Caribbean food shop in South London, where he designs the menus and meal deals himself, while his parents handle the cooking during school hours, technically employed by their teenage son, and the business now helps cover his 4,000 pounds at term boarding school fees, but more importantly, it led him right back to where all of this started, because Maliki was finally able to join the choir he'd been working towards all those years, and even became the church's first black sheep."
+      },
+      {
+        "start": 86.32,
+        "end": 89.16,
+        "timestamp": "1:26",
+        "text": "of Corister in its 1,000-year history."
+      }
+    ],
+    "full_text": "Meet the UK's youngest businessman, Maliki Conte, who pays his own 4,000 pounds at term school fees at just 13. While most kids his age are thinking about homework or video games, he's doing the maths on how much Caribbean food he needs to sell to cover the next term. It started when he was just six years old and wanted singing lessons so he could join his church's choir. But when he found out how expensive they were, he realized if he really wanted them, he'd have to find a way to pay for it himself. So he set up a tiny stall outside his dad's office, selling plants, gifts, and baked goods. And whether it was rain, wind, or passing traffic, he was out there learning what sells, what doesn't, and what it feels like when nobody buys. Over time, that little stall slowly turned into a pop-up cafe and one weekend, after everything completely sold out, and people kept asking when they could come back again, it finally clicked that this wasn't just pocket money anymore. This could be a real business. Today, at just 13, Maliki runs a full Caribbean food shop in South London, where he designs the menus and meal deals himself, while his parents handle the cooking during school hours, technically employed by their teenage son, and the business now helps cover his 4,000 pounds at term boarding school fees, but more importantly, it led him right back to where all of this started, because Maliki was finally able to join the choir he'd been working towards all those years, and even became the church's first black sheep. of Corister in its 1,000-year history.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 23,
+    "code": "DVTTThCDMyA",
+    "url": "https://www.instagram.com/founded/reel/DVTTThCDMyA/",
+    "canonical_url": "https://www.instagram.com/reel/DVTTThCDMyA/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "At 15, Nathan Nwachuku [@_kingnath101] survived a schoolyard accident that left him blind in one eye. \n\nHe made himself a promise that if he got a second chance, he’d build something that mattered.\n\nThat promise led him to co-founder Maduka, a teenage prodigy who became a lead engineer for the Nigerian Navy and sold his first drone company at just 19.\n\nIn 2024, the two launched Terra, billed as the continent’s first African owned defence tech company, helping to protect more than $11bn in critical infrastructure across the continent.\n\nWith $11.75M in backing led by Palantir co-founder Joe Lonsdale, it seems Nathan and Maduka are delivering on their promise, to protect Africa at all costs 🤝",
+    "duration_seconds": 73.38,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 201,
+    "coverage_ratio": 0.981,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.22,
+        "timestamp": "0:00",
+        "text": "Meet Nathan Noachuku. At just 15, a schoolyard accident almost ended his life."
+      },
+      {
+        "start": 5.76,
+        "end": 8.16,
+        "timestamp": "0:06",
+        "text": "He survived, but was left blind in one eye."
+      },
+      {
+        "start": 8.32,
+        "end": 13.64,
+        "timestamp": "0:08",
+        "text": "During recovery, he made himself a promise that with his second chance at life, he built something that matter."
+      },
+      {
+        "start": 13.8,
+        "end": 18.04,
+        "timestamp": "0:14",
+        "text": "That promise led him to Modica, a young drone engineer for the Nigerian Navy,"
+      },
+      {
+        "start": 18.04,
+        "end": 21.68,
+        "timestamp": "0:18",
+        "text": "who had already built and sold a drone company by the age of 19."
+      },
+      {
+        "start": 22.04,
+        "end": 28.12,
+        "timestamp": "0:22",
+        "text": "Growing up, the two had experienced more terror-related violence on their doorstep than almost anywhere else in the world."
+      },
+      {
+        "start": 28.12,
+        "end": 30.08,
+        "timestamp": "0:28",
+        "text": "They knew something had to change."
+      },
+      {
+        "start": 30.24,
+        "end": 35.28,
+        "timestamp": "0:30",
+        "text": "So, in 2024, they launched Terra, the continent's first homegrown Defense Tech Prime."
+      },
+      {
+        "start": 35.5,
+        "end": 40.96,
+        "timestamp": "0:36",
+        "text": "Within a year, the tiny team beat an Israeli defense consortium to land a massive government contract"
+      },
+      {
+        "start": 40.96,
+        "end": 44.5,
+        "timestamp": "0:41",
+        "text": "using their AI-powered drones, ground vehicles, and sentry towers."
+      },
+      {
+        "start": 44.8,
+        "end": 49.16,
+        "timestamp": "0:45",
+        "text": "Soon, they were protecting power plants, mines, and pipelines across the continent."
+      },
+      {
+        "start": 49.3,
+        "end": 53.44,
+        "timestamp": "0:49",
+        "text": "With over $11 billion worth of critical infrastructure under their protection,"
+      },
+      {
+        "start": 53.68,
+        "end": 58.1,
+        "timestamp": "0:54",
+        "text": "investors began to take notice with Palantir co-founder Joe Lonsdale,"
+      },
+      {
+        "start": 58.12,
+        "end": 64.8,
+        "timestamp": "0:58",
+        "text": "backing the company alongside Valor, Lux, and SB Angel with an $11.75 million investment."
+      },
+      {
+        "start": 65.1,
+        "end": 71.96,
+        "timestamp": "1:05",
+        "text": "Today, it seems Nathan and Maduka are delivering on the promise he made years ago by defending Africa at all costs."
+      }
+    ],
+    "full_text": "Meet Nathan Noachuku. At just 15, a schoolyard accident almost ended his life. He survived, but was left blind in one eye. During recovery, he made himself a promise that with his second chance at life, he built something that matter. That promise led him to Modica, a young drone engineer for the Nigerian Navy, who had already built and sold a drone company by the age of 19. Growing up, the two had experienced more terror-related violence on their doorstep than almost anywhere else in the world. They knew something had to change. So, in 2024, they launched Terra, the continent's first homegrown Defense Tech Prime. Within a year, the tiny team beat an Israeli defense consortium to land a massive government contract using their AI-powered drones, ground vehicles, and sentry towers. Soon, they were protecting power plants, mines, and pipelines across the continent. With over $11 billion worth of critical infrastructure under their protection, investors began to take notice with Palantir co-founder Joe Lonsdale, backing the company alongside Valor, Lux, and SB Angel with an $11.75 million investment. Today, it seems Nathan and Maduka are delivering on the promise he made years ago by defending Africa at all costs.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 24,
+    "code": "DVBw3GYjHaB",
+    "url": "https://www.instagram.com/founded/reel/DVBw3GYjHaB/",
+    "canonical_url": "https://www.instagram.com/reel/DVBw3GYjHaB/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Most founders who sell their company for $550M disappear to live a life of luxury.\n\nNot Daniel Nadler.\n\nAfter selling finance AI startup Kensho, he didn’t slow down, he pivoted. This time into healthcare, after he realised doctors were buried under research papers they didn’t have hours to read.\n\nSo alongside co-founder Zachary Ziegler, he built OpenEvidence, described by many as “ChatGPT for doctors”, a tool designed to answer complex clinical questions in seconds.\n\nLast year alone, doctors used it while treating ~100M Americans. \n\nAnd it didn’t take long for investors to notice.\n\nPouring in $700M, including a recent $250M round, to value the company at $12B.\n\nMaking OpenEvidence the most valuable AI healthcare company in the world.\n\nWould you trust a Doctor who used AI to treat you?👇\n\n#entrepreneurs #founders #business #startup #entrepreneur",
+    "duration_seconds": 63.69,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 181,
+    "coverage_ratio": 0.985,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.84,
+        "timestamp": "0:00",
+        "text": "This Canadian poet sold his AI startup for $550 million,"
+      },
+      {
+        "start": 4.38,
+        "end": 9.92,
+        "timestamp": "0:04",
+        "text": "then went on to build a $12 billion chat GPT for doctors that's treating 100 million Americans."
+      },
+      {
+        "start": 10.12,
+        "end": 11.18,
+        "timestamp": "0:10",
+        "text": "Meet Daniel Nadler."
+      },
+      {
+        "start": 11.38,
+        "end": 17.12,
+        "timestamp": "0:11",
+        "text": "After selling his last company for $550 million, most people would retire, not Daniel."
+      },
+      {
+        "start": 17.32,
+        "end": 21.86,
+        "timestamp": "0:17",
+        "text": "Instead, he went after a problem most people thought was impossible to fix health care."
+      },
+      {
+        "start": 21.86,
+        "end": 27.84,
+        "timestamp": "0:22",
+        "text": "After spending time around hospitals, Daniel realized the problem wasn't that doctors were short on information."
+      },
+      {
+        "start": 28.12,
+        "end": 29.7,
+        "timestamp": "0:28",
+        "text": "It was that they were drowning in it."
+      },
+      {
+        "start": 30.0,
+        "end": 36.56,
+        "timestamp": "0:30",
+        "text": "All day, every day, doctors were expected to keep up with thousands of new studies, all while seeing patients back to back."
+      },
+      {
+        "start": 36.82,
+        "end": 38.24,
+        "timestamp": "0:37",
+        "text": "The problem? Time."
+      },
+      {
+        "start": 38.56,
+        "end": 42.44,
+        "timestamp": "0:39",
+        "text": "So to fix it, Daniel teamed up with Zachary Ziegler to build open evidence."
+      },
+      {
+        "start": 42.44,
+        "end": 48.88,
+        "timestamp": "0:42",
+        "text": "A chat GPT-like AI that has helped treat over 100 million Americans by answering medical questions in seconds."
+      },
+      {
+        "start": 49.06,
+        "end": 58.5,
+        "timestamp": "0:49",
+        "text": "To top it off, they are now generating around $100 million a year, with investors pouring in over $700 million, bringing the company's valuation to $12 billion."
+      },
+      {
+        "start": 58.5,
+        "end": 62.74,
+        "timestamp": "0:58",
+        "text": "dollars making open evidence the most valuable health care AI company in the world."
+      }
+    ],
+    "full_text": "This Canadian poet sold his AI startup for $550 million, then went on to build a $12 billion chat GPT for doctors that's treating 100 million Americans. Meet Daniel Nadler. After selling his last company for $550 million, most people would retire, not Daniel. Instead, he went after a problem most people thought was impossible to fix health care. After spending time around hospitals, Daniel realized the problem wasn't that doctors were short on information. It was that they were drowning in it. All day, every day, doctors were expected to keep up with thousands of new studies, all while seeing patients back to back. The problem? Time. So to fix it, Daniel teamed up with Zachary Ziegler to build open evidence. A chat GPT-like AI that has helped treat over 100 million Americans by answering medical questions in seconds. To top it off, they are now generating around $100 million a year, with investors pouring in over $700 million, bringing the company's valuation to $12 billion. dollars making open evidence the most valuable health care AI company in the world.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 25,
+    "code": "DUn7x9-DDDG",
+    "url": "https://www.instagram.com/founded/reel/DUn7x9-DDDG/",
+    "canonical_url": "https://www.instagram.com/reel/DUn7x9-DDDG/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Most people know Taylor Swift and Lucy Guo…\n\nAlmost nobody knows the Brazilian ballerina who just became the youngest self-made female billionaire in history.\n\nMeet Luana Lopes Lara [@luana_lopes_lara] the co-founder of Kalshi [@kalshi].\n\nBefore cap tables and valuations, her world was 10 hour training days, where teachers would test obedience with lit cigarettes held under her thigh as she forced her body into impossible lines.\n\nAfter starring in the famous Black Swan, she quit and moved to the U.S. swapping dance halls for lecture halls.\n\nAt MIT, she met classmate Tarek Mansour [@tarekmansour_ ]. And together, they built a different kind of stage.\n\nKalshi. A prediction market where people trade on real-world outcomes.\n\nBy 2025, Kalshi hit an $11B valuation.\nLuana’s stake? $1.3B.\n\nThis is the story of how a ballerina became a billionaire, powered by discipline.",
+    "duration_seconds": 88.79,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 285,
+    "coverage_ratio": 0.995,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.82,
+        "timestamp": "0:00",
+        "text": "The youngest self-made billionaire in history isn't a pop star or a tech-wiz."
+      },
+      {
+        "start": 3.96,
+        "end": 6.12,
+        "timestamp": "0:04",
+        "text": "She's a Brazilian ballerina you've never heard of."
+      },
+      {
+        "start": 6.22,
+        "end": 7.74,
+        "timestamp": "0:06",
+        "text": "Meet Luana Lopez Lara."
+      },
+      {
+        "start": 8.0,
+        "end": 12.62,
+        "timestamp": "0:08",
+        "text": "Before boardrooms and billion-dollar rounds, her world was bloody feet and torn tights."
+      },
+      {
+        "start": 12.62,
+        "end": 17.34,
+        "timestamp": "0:13",
+        "text": "As a teenager, she would train up to 10 hours a day at the prestigious Bolshoi theater school,"
+      },
+      {
+        "start": 17.48,
+        "end": 19.72,
+        "timestamp": "0:17",
+        "text": "where perfection wasn't encouraged, it was demanded."
+      },
+      {
+        "start": 19.88,
+        "end": 21.1,
+        "timestamp": "0:20",
+        "text": "The stories were harrowing."
+      },
+      {
+        "start": 21.28,
+        "end": 25.38,
+        "timestamp": "0:21",
+        "text": "Teachers would test endurance with lit cigarettes held under legs, and rivals would allegedly"
+      },
+      {
+        "start": 25.38,
+        "end": 27.98,
+        "timestamp": "0:25",
+        "text": "slip glass shards into other dancer's shoes."
+      },
+      {
+        "start": 28.14,
+        "end": 28.52,
+        "timestamp": "0:28",
+        "text": "The lesson?"
+      },
+      {
+        "start": 28.52,
+        "end": 32.24,
+        "timestamp": "0:29",
+        "text": "Don't flinch, hold the line, and turn pain into discipline, and it worked."
+      },
+      {
+        "start": 32.42,
+        "end": 35.82,
+        "timestamp": "0:32",
+        "text": "Luana landed the role every ballerina dreamt of, Swan Lake."
+      },
+      {
+        "start": 35.94,
+        "end": 39.6,
+        "timestamp": "0:36",
+        "text": "But when the curtain fell and the applause died, so did her hunger to carry on."
+      },
+      {
+        "start": 39.78,
+        "end": 44.58,
+        "timestamp": "0:40",
+        "text": "So she quit, packed up, and moved to the U.S. enrolling at MIT, where she met her now co-founder"
+      },
+      {
+        "start": 44.58,
+        "end": 45.54,
+        "timestamp": "0:45",
+        "text": "Terek Mansour."
+      },
+      {
+        "start": 45.72,
+        "end": 47.92,
+        "timestamp": "0:46",
+        "text": "Instead of stretches, she trained algorithms."
+      },
+      {
+        "start": 48.26,
+        "end": 50.28,
+        "timestamp": "0:48",
+        "text": "And instead of rehearsals, she ran code."
+      },
+      {
+        "start": 50.36,
+        "end": 53.46,
+        "timestamp": "0:50",
+        "text": "But it wasn't in an office where their billion-dollar idea was born."
+      },
+      {
+        "start": 53.6,
+        "end": 54.64,
+        "timestamp": "0:54",
+        "text": "It was on a walk home."
+      },
+      {
+        "start": 54.82,
+        "end": 57.7,
+        "timestamp": "0:55",
+        "text": "What if the future wasn't debated on TV, but bet on?"
+      },
+      {
+        "start": 57.7,
+        "end": 60.2,
+        "timestamp": "0:58",
+        "text": "with real-world outcomes that pay out if you're right."
+      },
+      {
+        "start": 60.4,
+        "end": 67.16,
+        "timestamp": "1:00",
+        "text": "They caught lightning in a bottle, and in 2019, Y Combinator backed them with $150,000 and a countdown."
+      },
+      {
+        "start": 67.46,
+        "end": 69.46,
+        "timestamp": "1:07",
+        "text": "Twelve weeks to turn Kalshi into a company."
+      },
+      {
+        "start": 69.66,
+        "end": 73.48,
+        "timestamp": "1:10",
+        "text": "They sprinted to ship, spending years in brutal back and forths with regulators."
+      },
+      {
+        "start": 73.86,
+        "end": 78.3,
+        "timestamp": "1:14",
+        "text": "Until they did what nobody else could, they became the first regulated event contract"
+      },
+      {
+        "start": 78.3,
+        "end": 80.12,
+        "timestamp": "1:18",
+        "text": "exchange in the United States."
+      },
+      {
+        "start": 80.12,
+        "end": 85.64,
+        "timestamp": "1:20",
+        "text": "Fast forward to today, and Kalshi is an $11 billion company, with Luana's stake sitting at a billion"
+      },
+      {
+        "start": 85.64,
+        "end": 88.34,
+        "timestamp": "1:26",
+        "text": "dollars, all from a ballerina's billion dollar pivot."
+      }
+    ],
+    "full_text": "The youngest self-made billionaire in history isn't a pop star or a tech-wiz. She's a Brazilian ballerina you've never heard of. Meet Luana Lopez Lara. Before boardrooms and billion-dollar rounds, her world was bloody feet and torn tights. As a teenager, she would train up to 10 hours a day at the prestigious Bolshoi theater school, where perfection wasn't encouraged, it was demanded. The stories were harrowing. Teachers would test endurance with lit cigarettes held under legs, and rivals would allegedly slip glass shards into other dancer's shoes. The lesson? Don't flinch, hold the line, and turn pain into discipline, and it worked. Luana landed the role every ballerina dreamt of, Swan Lake. But when the curtain fell and the applause died, so did her hunger to carry on. So she quit, packed up, and moved to the U.S. enrolling at MIT, where she met her now co-founder Terek Mansour. Instead of stretches, she trained algorithms. And instead of rehearsals, she ran code. But it wasn't in an office where their billion-dollar idea was born. It was on a walk home. What if the future wasn't debated on TV, but bet on? with real-world outcomes that pay out if you're right. They caught lightning in a bottle, and in 2019, Y Combinator backed them with $150,000 and a countdown. Twelve weeks to turn Kalshi into a company. They sprinted to ship, spending years in brutal back and forths with regulators. Until they did what nobody else could, they became the first regulated event contract exchange in the United States. Fast forward to today, and Kalshi is an $11 billion company, with Luana's stake sitting at a billion dollars, all from a ballerina's billion dollar pivot.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 26,
+    "code": "DUGU3j_DCSa",
+    "url": "https://www.instagram.com/founded/reel/DUGU3j_DCSa/",
+    "canonical_url": "https://www.instagram.com/reel/DUGU3j_DCSa/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "This Nigerian student chased a millionaire investor down the street whilst he was on his morning run, and left with a $500,000 investment 😅\n\nNigerian founders [@marvy_101] [@davidaladee] [@okii.dan] went on to use their investment from @fdotinc and @ycombinator to take 15-minute job applications into 3 second swipes, yes or no.\n\nDubbed the Tinder for jobs, over 500,000 users are now using @sorcejob With over 20M+ swipes people are now landing interviews at giants like OpenAI, Nvidia, Coca-Cola, and Samsung.\n\nAnd it all came from chasing a millionaire Sam Parr [@thesamparr] down the street.",
+    "duration_seconds": 79.62,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 255,
+    "coverage_ratio": 0.988,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.3,
+        "timestamp": "0:00",
+        "text": "This Nigerian student chased down a multi-millionaire on his morning run and landed a $500,000"
+      },
+      {
+        "start": 5.3,
+        "end": 11.92,
+        "timestamp": "0:05",
+        "text": "investment. Meet Oluwapilumi Dada, a 21-year-old who came to the U.S. from Nigeria and did something"
+      },
+      {
+        "start": 11.92,
+        "end": 17.88,
+        "timestamp": "0:12",
+        "text": "completely insane. In April 24, on the streets of Austin, Texas, Dada was on his bite when he"
+      },
+      {
+        "start": 17.88,
+        "end": 23.08,
+        "timestamp": "0:18",
+        "text": "sees a guy jogging. But not just any guy, multi-millionaire investor Sampar. Dada had been working"
+      },
+      {
+        "start": 23.08,
+        "end": 27.32,
+        "timestamp": "0:23",
+        "text": "on an app that let students apply to hundreds of jobs in one go. He'd seen his friends"
+      },
+      {
+        "start": 27.32,
+        "end": 32.42,
+        "timestamp": "0:27",
+        "text": "burning and tired evenings, retyping the same details into applications, and never hearing back."
+      },
+      {
+        "start": 32.54,
+        "end": 35.76,
+        "timestamp": "0:33",
+        "text": "He knew the product could be great, but he also knew he couldn't afford to make it."
+      },
+      {
+        "start": 35.86,
+        "end": 40.1,
+        "timestamp": "0:36",
+        "text": "So when he spotted Sam Parr, he didn't hesitate. He chased him down. Out of breath and sweaty,"
+      },
+      {
+        "start": 40.28,
+        "end": 42.42,
+        "timestamp": "0:40",
+        "text": "he pitched his app like it was the only thing that mattered."
+      },
+      {
+        "start": 42.62,
+        "end": 47.92,
+        "timestamp": "0:43",
+        "text": "Parr was so stunned, he posted the moment to his 1.7 million followers, and the story went viral,"
+      },
+      {
+        "start": 48.06,
+        "end": 53.0,
+        "timestamp": "0:48",
+        "text": "landing in front of Founders, Inc., who cut him, his first check. With a little runway, he rebuilt"
+      },
+      {
+        "start": 53.0,
+        "end": 56.9,
+        "timestamp": "0:53",
+        "text": "the idea, inspired by Tinder, to make job hunting as simple as a swipe."
+      },
+      {
+        "start": 57.32,
+        "end": 62.82,
+        "timestamp": "0:57",
+        "text": "Next, he finds Ajai, an MIT-trained NVIDIA intern, and Olade an iOS whiz."
+      },
+      {
+        "start": 62.82,
+        "end": 65.94,
+        "timestamp": "1:03",
+        "text": "Together they grind for seven weeks before releasing source."
+      },
+      {
+        "start": 65.94,
+        "end": 71.84,
+        "timestamp": "1:06",
+        "text": "Within a year, they hit 500,000 users and 20 million job swipes before joining Y Combinator."
+      },
+      {
+        "start": 71.84,
+        "end": 76.7,
+        "timestamp": "1:12",
+        "text": "Today, users are landing interviews at OpenAI and Nvidia, and it all came from one Nigerian"
+      },
+      {
+        "start": 76.7,
+        "end": 78.7,
+        "timestamp": "1:17",
+        "text": "student chasing an investor in the street."
+      }
+    ],
+    "full_text": "This Nigerian student chased down a multi-millionaire on his morning run and landed a $500,000 investment. Meet Oluwapilumi Dada, a 21-year-old who came to the U.S. from Nigeria and did something completely insane. In April 24, on the streets of Austin, Texas, Dada was on his bite when he sees a guy jogging. But not just any guy, multi-millionaire investor Sampar. Dada had been working on an app that let students apply to hundreds of jobs in one go. He'd seen his friends burning and tired evenings, retyping the same details into applications, and never hearing back. He knew the product could be great, but he also knew he couldn't afford to make it. So when he spotted Sam Parr, he didn't hesitate. He chased him down. Out of breath and sweaty, he pitched his app like it was the only thing that mattered. Parr was so stunned, he posted the moment to his 1.7 million followers, and the story went viral, landing in front of Founders, Inc., who cut him, his first check. With a little runway, he rebuilt the idea, inspired by Tinder, to make job hunting as simple as a swipe. Next, he finds Ajai, an MIT-trained NVIDIA intern, and Olade an iOS whiz. Together they grind for seven weeks before releasing source. Within a year, they hit 500,000 users and 20 million job swipes before joining Y Combinator. Today, users are landing interviews at OpenAI and Nvidia, and it all came from one Nigerian student chasing an investor in the street.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 27,
+    "code": "DM3hevcN6nn",
+    "url": "https://www.instagram.com/founded/reel/DM3hevcN6nn/",
+    "canonical_url": "https://www.instagram.com/reel/DM3hevcN6nn/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Brian Chesky built Airbnb from 3 air mattresses – here’s the $79B lesson👇\n\nBack in 2007, Chesky was broke, with just $1,000 in the bank and $1,150 rent due. The breakthrough?\n\n→ He and co-founder Joe Gebbia rented out 3 airbeds to designers during a sold-out conference nearby, calling it Air Bed & Breakfast.\n\n→ They didn’t just fill a room; they solved a problem, connecting travelers with local hosts when hotels were full.\n\n→ Even when others doubted the idea, Chesky stayed obsessed with solving real pain points, scaling Airbnb into a $79 billion travel giant.",
+    "duration_seconds": 73.25,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 314,
+    "coverage_ratio": 0.997,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 29.98,
+        "timestamp": "0:00",
+        "text": "I quit my job. I pack everything in the back of an old Honda Civic. And I drive up a random middle of the night in October 2007. Of course, when I get there, I can't pay rent. I have around $1,000 of the bank. My rent I vividly remember was $1,150. It turns out the weekend I was going to be there. There was an international design conference. Joe and I went on the conference website. They hadn't recommend hotels on the conference website. But every hotel next to the hotel said sold out, sold out, sold out. And we had this idea. We have to have a conference website. We had to recommend hotels on the conference website. But every hotel next to the hotel, sold out, sold out. And we had this idea. We had this idea. We have a"
+      },
+      {
+        "start": 30.0,
+        "end": 34.48,
+        "timestamp": "0:30",
+        "text": "all this extra space. You can barely pay rent. And these designers probably want to stay with other designers."
+      },
+      {
+        "start": 34.98,
+        "end": 38.08,
+        "timestamp": "0:35",
+        "text": "So we said, what if we just turned our house into a bed and breakfast for a design conference?"
+      },
+      {
+        "start": 38.82,
+        "end": 42.9,
+        "timestamp": "0:39",
+        "text": "Unfortunately, I didn't have any beds, but Joe had three airbeds. We pulled the air beds out of the closet."
+      },
+      {
+        "start": 43.44,
+        "end": 53.44,
+        "timestamp": "0:43",
+        "text": "We inflated the airbeds. And we called it the airbed and breakfast.com. We ended up having three people that we hosted, a 35-year-old woman from Boston, a 30-year-old from India, a 45-year-old father-fod from Utah."
+      },
+      {
+        "start": 53.82,
+        "end": 59.58,
+        "timestamp": "0:54",
+        "text": "The second night of this conference, I see a designer that I admired. And I come up to him."
+      },
+      {
+        "start": 60.0,
+        "end": 61.62,
+        "timestamp": "1:00",
+        "text": "And I told him about airbed and breakfast."
+      },
+      {
+        "start": 61.84,
+        "end": 63.56,
+        "timestamp": "1:02",
+        "text": "I told him it's going to be the biggest thing in the world."
+      },
+      {
+        "start": 63.66,
+        "end": 66.06,
+        "timestamp": "1:04",
+        "text": "One day, thousands of people are going to use this."
+      },
+      {
+        "start": 66.56,
+        "end": 68.08,
+        "timestamp": "1:07",
+        "text": "And he looks at me very seriously."
+      },
+      {
+        "start": 68.52,
+        "end": 69.98,
+        "timestamp": "1:09",
+        "text": "And he said, Brian, and I said, yes."
+      },
+      {
+        "start": 70.3,
+        "end": 73.0,
+        "timestamp": "1:10",
+        "text": "He said, I hope that's not the only idea that you're working on."
+      }
+    ],
+    "full_text": "I quit my job. I pack everything in the back of an old Honda Civic. And I drive up a random middle of the night in October 2007. Of course, when I get there, I can't pay rent. I have around $1,000 of the bank. My rent I vividly remember was $1,150. It turns out the weekend I was going to be there. There was an international design conference. Joe and I went on the conference website. They hadn't recommend hotels on the conference website. But every hotel next to the hotel said sold out, sold out, sold out. And we had this idea. We have to have a conference website. We had to recommend hotels on the conference website. But every hotel next to the hotel, sold out, sold out. And we had this idea. We had this idea. We have a all this extra space. You can barely pay rent. And these designers probably want to stay with other designers. So we said, what if we just turned our house into a bed and breakfast for a design conference? Unfortunately, I didn't have any beds, but Joe had three airbeds. We pulled the air beds out of the closet. We inflated the airbeds. And we called it the airbed and breakfast.com. We ended up having three people that we hosted, a 35-year-old woman from Boston, a 30-year-old from India, a 45-year-old father-fod from Utah. The second night of this conference, I see a designer that I admired. And I come up to him. And I told him about airbed and breakfast. I told him it's going to be the biggest thing in the world. One day, thousands of people are going to use this. And he looks at me very seriously. And he said, Brian, and I said, yes. He said, I hope that's not the only idea that you're working on.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 28,
+    "code": "DMvr92Tu8Xs",
+    "url": "https://www.instagram.com/founded/reel/DMvr92Tu8Xs/",
+    "canonical_url": "https://www.instagram.com/reel/DMvr92Tu8Xs/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "How to start a company when you have no idea where to start👇\n\n↳ According to YC’s playbook, the perfect startup begins with 2–4 co-founders, at least 50% engineers, and a year’s worth of savings, not for luxury, but for ramen noodles and survival.\n\n↳ Everyone must quit their jobs and commit fully. The idea? That comes next. The best ones solve daily or weekly pain points you deeply understand.\n\n↳ Brainstorm with your team early, ensure ownership is shared, and focus on problems you live and breathe.",
+    "duration_seconds": 69.41,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 256,
+    "coverage_ratio": 0.998,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.52,
+        "timestamp": "0:00",
+        "text": "How to Tart, a technical startup."
+      },
+      {
+        "start": 1.8,
+        "end": 5.44,
+        "timestamp": "0:02",
+        "text": "First one, two to four co-founders, at least 50% engineering."
+      },
+      {
+        "start": 5.68,
+        "end": 9.36,
+        "timestamp": "0:06",
+        "text": "They all have to have somewhat around a year's worth of money in the bank,"
+      },
+      {
+        "start": 9.44,
+        "end": 12.58,
+        "timestamp": "0:09",
+        "text": "but that doesn't mean a years worth of money living in a one-bedroom apartment,"
+      },
+      {
+        "start": 12.88,
+        "end": 13.64,
+        "timestamp": "0:13",
+        "text": "like in a high-rise."
+      },
+      {
+        "start": 13.92,
+        "end": 16.84,
+        "timestamp": "0:14",
+        "text": "That means a year's worth of money eating ramen noodles and being very poor."
+      },
+      {
+        "start": 16.94,
+        "end": 19.58,
+        "timestamp": "0:17",
+        "text": "And everyone has to have quit their jobs."
+      },
+      {
+        "start": 19.84,
+        "end": 21.74,
+        "timestamp": "0:20",
+        "text": "This is what you need to start a startup."
+      },
+      {
+        "start": 21.98,
+        "end": 23.84,
+        "timestamp": "0:22",
+        "text": "Notice no idea is required."
+      },
+      {
+        "start": 24.08,
+        "end": 24.86,
+        "timestamp": "0:24",
+        "text": "You just need this."
+      },
+      {
+        "start": 25.06,
+        "end": 25.42,
+        "timestamp": "0:25",
+        "text": "That's it."
+      },
+      {
+        "start": 25.6,
+        "end": 26.56,
+        "timestamp": "0:26",
+        "text": "Second, idea."
+      },
+      {
+        "start": 26.56,
+        "end": 29.92,
+        "timestamp": "0:27",
+        "text": "I always think that it's better to start brainstorming"
+      },
+      {
+        "start": 29.92,
+        "end": 34.78,
+        "timestamp": "0:30",
+        "text": "with your teammates. Typically, one member of the team has the kernel of an idea. They'll become"
+      },
+      {
+        "start": 34.78,
+        "end": 39.34,
+        "timestamp": "0:35",
+        "text": "the company. But it's always best before that gets too solidified to discuss it with your teammates"
+      },
+      {
+        "start": 39.34,
+        "end": 43.38,
+        "timestamp": "0:39",
+        "text": "so that everyone buys in and gets ownership. We like companies where the founders know what"
+      },
+      {
+        "start": 43.38,
+        "end": 47.4,
+        "timestamp": "0:43",
+        "text": "the hell the companies are doing and know what the problem is. So if it's not solving your problem,"
+      },
+      {
+        "start": 47.5,
+        "end": 51.22,
+        "timestamp": "0:48",
+        "text": "it should be solving a problem that you're very, very aware of. And then the other thing I tell"
+      },
+      {
+        "start": 51.22,
+        "end": 57.12,
+        "timestamp": "0:51",
+        "text": "founders is try to focus on daily and weekly problems as opposed to monthly or yearly problems."
+      },
+      {
+        "start": 57.26,
+        "end": 59.58,
+        "timestamp": "0:57",
+        "text": "It's a lot easier to do something like Uber."
+      },
+      {
+        "start": 59.92,
+        "end": 63.74,
+        "timestamp": "1:00",
+        "text": "A typical person in America has to figure out how to get somewhere three times a day."
+      },
+      {
+        "start": 63.86,
+        "end": 66.18,
+        "timestamp": "1:04",
+        "text": "It's a lot harder to do a car sales website."
+      },
+      {
+        "start": 66.38,
+        "end": 69.3,
+        "timestamp": "1:06",
+        "text": "The typical person in America only buys a car once every seven years."
+      }
+    ],
+    "full_text": "How to Tart, a technical startup. First one, two to four co-founders, at least 50% engineering. They all have to have somewhat around a year's worth of money in the bank, but that doesn't mean a years worth of money living in a one-bedroom apartment, like in a high-rise. That means a year's worth of money eating ramen noodles and being very poor. And everyone has to have quit their jobs. This is what you need to start a startup. Notice no idea is required. You just need this. That's it. Second, idea. I always think that it's better to start brainstorming with your teammates. Typically, one member of the team has the kernel of an idea. They'll become the company. But it's always best before that gets too solidified to discuss it with your teammates so that everyone buys in and gets ownership. We like companies where the founders know what the hell the companies are doing and know what the problem is. So if it's not solving your problem, it should be solving a problem that you're very, very aware of. And then the other thing I tell founders is try to focus on daily and weekly problems as opposed to monthly or yearly problems. It's a lot easier to do something like Uber. A typical person in America has to figure out how to get somewhere three times a day. It's a lot harder to do a car sales website. The typical person in America only buys a car once every seven years.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 29,
+    "code": "DMkc1q4tyi8",
+    "url": "https://www.instagram.com/founded/reel/DMkc1q4tyi8/",
+    "canonical_url": "https://www.instagram.com/reel/DMkc1q4tyi8/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Whilst Meta and X fought over attention, Substack quietly built a platform people actually wanted: \n\n✓ Speech without censorship\n✓ Audiences owned by creators\n✓ Ability to earn big \n\nBy 2025, @substack hit a $1.1B valuation, proving that in this attention economy, trust > virality.",
+    "duration_seconds": 44.7,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 95,
+    "coverage_ratio": 0.978,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.64,
+        "timestamp": "0:00",
+        "text": "The platform that is taking on Facebook and Twitter meet..."
+      },
+      {
+        "start": 2.64,
+        "end": 3.12,
+        "timestamp": "0:03",
+        "text": "Substack."
+      },
+      {
+        "start": 3.28,
+        "end": 3.68,
+        "timestamp": "0:03",
+        "text": "Substack."
+      },
+      {
+        "start": 3.8,
+        "end": 4.8,
+        "timestamp": "0:04",
+        "text": "Substack."
+      },
+      {
+        "start": 4.92,
+        "end": 7.8,
+        "timestamp": "0:05",
+        "text": "While Elon and Zuckerberg were busy battling for attention,"
+      },
+      {
+        "start": 8.4,
+        "end": 11.66,
+        "timestamp": "0:08",
+        "text": "Substack quietly gave the world what it really wanted."
+      },
+      {
+        "start": 12.26,
+        "end": 13.02,
+        "timestamp": "0:12",
+        "text": "Free speech."
+      },
+      {
+        "start": 13.46,
+        "end": 16.96,
+        "timestamp": "0:13",
+        "text": "In 2017, Chris Best and his team launched Substack."
+      },
+      {
+        "start": 17.4,
+        "end": 19.38,
+        "timestamp": "0:17",
+        "text": "A platform where writers could speak freely,"
+      },
+      {
+        "start": 19.84,
+        "end": 20.72,
+        "timestamp": "0:20",
+        "text": "own their audience,"
+      },
+      {
+        "start": 21.12,
+        "end": 22.86,
+        "timestamp": "0:21",
+        "text": "and earned directly from subscriptions."
+      },
+      {
+        "start": 23.52,
+        "end": 24.0,
+        "timestamp": "0:24",
+        "text": "The result?"
+      },
+      {
+        "start": 24.32,
+        "end": 25.82,
+        "timestamp": "0:24",
+        "text": "35 million readers."
+      },
+      {
+        "start": 26.48,
+        "end": 28.5,
+        "timestamp": "0:26",
+        "text": "Over 5 million paid subscriptions."
+      },
+      {
+        "start": 28.5,
+        "end": 33.92,
+        "timestamp": "0:28",
+        "text": "and more than 50 creators earning over $1 million a year."
+      },
+      {
+        "start": 34.46,
+        "end": 39.32,
+        "timestamp": "0:34",
+        "text": "By 2025, Substack reached a $1.1 billion valuation,"
+      },
+      {
+        "start": 39.86,
+        "end": 41.56,
+        "timestamp": "0:40",
+        "text": "proof that in the attention economy,"
+      },
+      {
+        "start": 42.32,
+        "end": 43.7,
+        "timestamp": "0:42",
+        "text": "trust beats virality."
+      }
+    ],
+    "full_text": "The platform that is taking on Facebook and Twitter meet... Substack. Substack. Substack. While Elon and Zuckerberg were busy battling for attention, Substack quietly gave the world what it really wanted. Free speech. In 2017, Chris Best and his team launched Substack. A platform where writers could speak freely, own their audience, and earned directly from subscriptions. The result? 35 million readers. Over 5 million paid subscriptions. and more than 50 creators earning over $1 million a year. By 2025, Substack reached a $1.1 billion valuation, proof that in the attention economy, trust beats virality.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 30,
+    "code": "DMiW9nGtpyT",
+    "url": "https://www.instagram.com/founded/reel/DMiW9nGtpyT/",
+    "canonical_url": "https://www.instagram.com/reel/DMiW9nGtpyT/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "In business, the difference between success and failure often comes down to the urgency you operate with.\n\n→ In this moment of insight during a SpaceX tour, Elon Musk explains how they measure progress in minutes and days, not months or years.\n\n→ Every day is a sprint, not because there’s a deadline, but because urgency is a competitive edge\n\nThat’s the level of intensity truly world-class founders operate under, because if you’re not moving fast, you’re already falling behind.",
+    "duration_seconds": 35.04,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 130,
+    "coverage_ratio": 0.999,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.44,
+        "timestamp": "0:00",
+        "text": "If we don't act with extreme urgency, that chance is probably zero."
+      },
+      {
+        "start": 3.7,
+        "end": 7.18,
+        "timestamp": "0:04",
+        "text": "It's pretty amazing that on a project at this scale, you're still measuring things in days."
+      },
+      {
+        "start": 7.34,
+        "end": 12.02,
+        "timestamp": "0:07",
+        "text": "You're still like a day, you know, I mean, that's impressive when other people are like months and hours."
+      },
+      {
+        "start": 12.4,
+        "end": 13.28,
+        "timestamp": "0:12",
+        "text": "I mean, it's nonstop."
+      },
+      {
+        "start": 13.42,
+        "end": 16.14,
+        "timestamp": "0:13",
+        "text": "It's not like you're doing that because there's a launch in two days."
+      },
+      {
+        "start": 16.22,
+        "end": 18.44,
+        "timestamp": "0:16",
+        "text": "You're doing that the whole time this place has been developed."
+      },
+      {
+        "start": 18.52,
+        "end": 21.66,
+        "timestamp": "0:19",
+        "text": "It's been like down to your counting every minute and second."
+      },
+      {
+        "start": 21.66,
+        "end": 22.58,
+        "timestamp": "0:22",
+        "text": "I saw the grain operators."
+      },
+      {
+        "start": 22.7,
+        "end": 25.32,
+        "timestamp": "0:23",
+        "text": "What would you do if there's an asteroid heading to this planet in eight days?"
+      },
+      {
+        "start": 25.62,
+        "end": 25.78,
+        "timestamp": "0:26",
+        "text": "Yeah."
+      },
+      {
+        "start": 26.04,
+        "end": 29.76,
+        "timestamp": "0:26",
+        "text": "If we operate with extreme urgency, then we have a chance."
+      },
+      {
+        "start": 30.0,
+        "end": 32.0,
+        "timestamp": "0:30",
+        "text": "of making life multi-ventory."
+      },
+      {
+        "start": 32.0,
+        "end": 35.0,
+        "timestamp": "0:32",
+        "text": "It's still just a chance, not for sure."
+      }
+    ],
+    "full_text": "If we don't act with extreme urgency, that chance is probably zero. It's pretty amazing that on a project at this scale, you're still measuring things in days. You're still like a day, you know, I mean, that's impressive when other people are like months and hours. I mean, it's nonstop. It's not like you're doing that because there's a launch in two days. You're doing that the whole time this place has been developed. It's been like down to your counting every minute and second. I saw the grain operators. What would you do if there's an asteroid heading to this planet in eight days? Yeah. If we operate with extreme urgency, then we have a chance. of making life multi-ventory. It's still just a chance, not for sure.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 31,
+    "code": "DMbBd1sudxo",
+    "url": "https://www.instagram.com/founded/reel/DMbBd1sudxo/",
+    "canonical_url": "https://www.instagram.com/reel/DMbBd1sudxo/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Elon Musk’s 5-step model for building a successful business👇\n\n1. Make your requirements less dumb. \nIf something upfront is wrong, everything downstream will be too.\n\n2. Delete a part or process.\n\n3. Only then… optimize.\nMost smart people waste time making broken things faster.\n\n4. Now, accelerate.\nOnce it’s lean and working, increase the speed.\n\n5, Then automate.\nDon’t automate the mess, fix the system first.\n\nGreat founders don’t start by adding. They start by subtracting.",
+    "duration_seconds": 41.36,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 143,
+    "coverage_ratio": 0.993,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.1,
+        "timestamp": "0:00",
+        "text": "I have personally made the mistake of going backwards on all five steps, multiple times."
+      },
+      {
+        "start": 5.4,
+        "end": 7.54,
+        "timestamp": "0:05",
+        "text": "Step one, make your requirements less dumb."
+      },
+      {
+        "start": 7.64,
+        "end": 9.48,
+        "timestamp": "0:08",
+        "text": "Step two, delete the part or process step."
+      },
+      {
+        "start": 9.72,
+        "end": 12.2,
+        "timestamp": "0:10",
+        "text": "If you're not deleting a part or process step, at least 10% of the time."
+      },
+      {
+        "start": 12.44,
+        "end": 16.16,
+        "timestamp": "0:12",
+        "text": "Basically, if you're not adding things back in, 10% of the time, you're clearly not deleting enough."
+      },
+      {
+        "start": 16.34,
+        "end": 18.86,
+        "timestamp": "0:16",
+        "text": "The third step is simplify or optimize."
+      },
+      {
+        "start": 19.32,
+        "end": 20.18,
+        "timestamp": "0:19",
+        "text": "The third step."
+      },
+      {
+        "start": 20.8,
+        "end": 21.9,
+        "timestamp": "0:21",
+        "text": "The first step."
+      },
+      {
+        "start": 21.9,
+        "end": 24.42,
+        "timestamp": "0:22",
+        "text": "The reason is the third step is because it's very common."
+      },
+      {
+        "start": 24.68,
+        "end": 29.88,
+        "timestamp": "0:25",
+        "text": "It's possibly the most common error of a smart engineer is to optimize the thing that should not"
+      },
+      {
+        "start": 29.88,
+        "end": 34.6,
+        "timestamp": "0:30",
+        "text": "exist. Finally, you get to step four, which is accelerate cycle time. You're moving too"
+      },
+      {
+        "start": 34.6,
+        "end": 39.32,
+        "timestamp": "0:35",
+        "text": "slowly, go faster. But don't go faster until you have worked on the other three things first."
+      },
+      {
+        "start": 39.32,
+        "end": 41.08,
+        "timestamp": "0:39",
+        "text": "And then the final step is automate."
+      }
+    ],
+    "full_text": "I have personally made the mistake of going backwards on all five steps, multiple times. Step one, make your requirements less dumb. Step two, delete the part or process step. If you're not deleting a part or process step, at least 10% of the time. Basically, if you're not adding things back in, 10% of the time, you're clearly not deleting enough. The third step is simplify or optimize. The third step. The first step. The reason is the third step is because it's very common. It's possibly the most common error of a smart engineer is to optimize the thing that should not exist. Finally, you get to step four, which is accelerate cycle time. You're moving too slowly, go faster. But don't go faster until you have worked on the other three things first. And then the final step is automate.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 32,
+    "code": "DMV5QeYuNQT",
+    "url": "https://www.instagram.com/founded/reel/DMV5QeYuNQT/",
+    "canonical_url": "https://www.instagram.com/reel/DMV5QeYuNQT/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Everyone thinks Logan Paul and KSI built PRIME… but it actually started with two best friends from Kentucky.\n\n↳ In 2014, Max Clemons and Trey Steiger founded Congo Brands, a small fitness drink startup in Louisville, Kentucky.\n\n↳ By 2018, they’d helped launch wellness brand Alani Nu, which later sold for $1.8 billion.\n\n↳ Then in 2021, they pitched the idea for PRIME to Logan Paul and KSI:\n\nThey’d make the product. Logan and KSI would be the faces. Both sides would share equity.\n\nThe deal was done.\n\nIn 2022, Prime Hydration launched, and sold out instantly.\n\nToday, PRIME is one of the fastest growing drink brands in the world, generating over $1.2 billion in 2023 😳\n\nThe takeaway?\n\nCreators will post for a pay check, but bring them in on ownership?\n\nThey’ll help you build an empire.",
+    "duration_seconds": 35.97,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 94,
+    "coverage_ratio": 0.973,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "timestamp": "0:00",
+        "text": "Most people think that it was Logan Paul and KSI who created Prime,"
+      },
+      {
+        "start": 3.0,
+        "end": 6.0,
+        "timestamp": "0:03",
+        "text": "but it was actually two best friends you've never heard of."
+      },
+      {
+        "start": 6.0,
+        "end": 10.0,
+        "timestamp": "0:06",
+        "text": "In 2014, Max Clemens and Trey Stiger from Kentucky"
+      },
+      {
+        "start": 10.0,
+        "end": 13.0,
+        "timestamp": "0:10",
+        "text": "started a small beverage company called Congo Brands,"
+      },
+      {
+        "start": 13.0,
+        "end": 17.0,
+        "timestamp": "0:13",
+        "text": "launching fitness drinks, energy blends and supplements."
+      },
+      {
+        "start": 17.0,
+        "end": 19.0,
+        "timestamp": "0:17",
+        "text": "They pitched Logan Paul and KSI."
+      },
+      {
+        "start": 19.0,
+        "end": 20.0,
+        "timestamp": "0:19",
+        "text": "Congo would build the brand."
+      },
+      {
+        "start": 20.0,
+        "end": 23.0,
+        "timestamp": "0:20",
+        "text": "Logan and KSI would become the faces."
+      },
+      {
+        "start": 23.0,
+        "end": 29.0,
+        "timestamp": "0:23",
+        "text": "By 2022, Prime launched and instantly sold out in every store across America."
+      },
+      {
+        "start": 29.0,
+        "end": 32.0,
+        "timestamp": "0:29",
+        "text": "and the lesson, hire a creator and they'll post."
+      },
+      {
+        "start": 32.0,
+        "end": 35.0,
+        "timestamp": "0:32",
+        "text": "Give them equity and they'll build."
+      }
+    ],
+    "full_text": "Most people think that it was Logan Paul and KSI who created Prime, but it was actually two best friends you've never heard of. In 2014, Max Clemens and Trey Stiger from Kentucky started a small beverage company called Congo Brands, launching fitness drinks, energy blends and supplements. They pitched Logan Paul and KSI. Congo would build the brand. Logan and KSI would become the faces. By 2022, Prime launched and instantly sold out in every store across America. and the lesson, hire a creator and they'll post. Give them equity and they'll build.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  },
+  {
+    "index": 33,
+    "code": "DMIirAKNNK2",
+    "url": "https://www.instagram.com/founded/reel/DMIirAKNNK2/",
+    "canonical_url": "https://www.instagram.com/reel/DMIirAKNNK2/",
+    "status": "ok",
+    "title": "Video by founded",
+    "description": "Sam Altman says founders are in a once-in-a-generation window to start ↓\n\n→ “The ground is shaking” AI and tech are moving fast and that’s your advantage.\n\n→ Everyone’s facing the same shift. But startups win by iterating faster, cheaper, and bolder than bigger companies.\n\n→ In times of disruption agility beats scale. Startups have the advantage over bigger companies.\n\nFounders who move fast now will outpace giants tomorrow.\n\nIf you’ve ever thought about launching something? Now’s the time.",
+    "duration_seconds": 36.57,
+    "language": "en",
+    "language_probability": 1.0,
+    "word_count": 126,
+    "coverage_ratio": 0.998,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.34,
+        "timestamp": "0:00",
+        "text": "This is the best fucking time ever to start a company."
+      },
+      {
+        "start": 2.54,
+        "end": 6.96,
+        "timestamp": "0:03",
+        "text": "But part of the reason that's the best is because the ground is shaking, and it's true."
+      },
+      {
+        "start": 7.12,
+        "end": 8.26,
+        "timestamp": "0:07",
+        "text": "There are a lot of these challenges."
+      },
+      {
+        "start": 8.26,
+        "end": 12.66,
+        "timestamp": "0:08",
+        "text": "You can look at it and say, wow, this is going to happen, but it's going to happen to everybody."
+      },
+      {
+        "start": 13.08,
+        "end": 21.4,
+        "timestamp": "0:13",
+        "text": "And the way startups win is when they can iterate faster than big companies, and they can do it at a much lower cost."
+      },
+      {
+        "start": 21.6,
+        "end": 29.82,
+        "timestamp": "0:22",
+        "text": "You can look at all of these problems one way or another, but the way I would recommend looking at them is everybody is going to face the same challenges and opportunities."
+      },
+      {
+        "start": 30.0,
+        "end": 36.5,
+        "timestamp": "0:30",
+        "text": "But when the clock cycle of the industry changes this much, startups almost always win."
+      }
+    ],
+    "full_text": "This is the best fucking time ever to start a company. But part of the reason that's the best is because the ground is shaking, and it's true. There are a lot of these challenges. You can look at it and say, wow, this is going to happen, but it's going to happen to everybody. And the way startups win is when they can iterate faster than big companies, and they can do it at a much lower cost. You can look at all of these problems one way or another, but the way I would recommend looking at them is everybody is going to face the same challenges and opportunities. But when the clock cycle of the industry changes this much, startups almost always win.",
+    "transcription_engine": "faster-whisper distil-large-v3 int8 CPU"
+  }
+]
