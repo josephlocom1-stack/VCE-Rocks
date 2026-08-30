@@ -1,0 +1,74 @@
+name: Founded Shrybe upload transcription test
+
+on:
+  push:
+    branches: [zelro-render-theresia]
+    paths:
+      - '.github/workflows/founded-shrybe-upload-test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools
+        run: |
+          pip install yt-dlp playwright
+          playwright install --with-deps chromium
+      - name: Download Reel
+        run: |
+          mkdir -p /tmp/out
+          yt-dlp --no-playlist -o '/tmp/out/reel.%(ext)s' 'https://www.instagram.com/reel/DcYvSGMNKVU/'
+      - name: Upload to Shrybe and capture transcript
+        run: |
+          cat > /tmp/run.py <<'PY'
+          import asyncio, pathlib, json
+          from playwright.async_api import async_playwright
+          out=pathlib.Path('/tmp/out'); video=next(out.glob('reel.*'))
+          async def main():
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True)
+              page=await browser.new_page(viewport={'width':1440,'height':1200})
+              await page.goto('https://shrybe.com/transcribe-instagram/',wait_until='networkidle',timeout=120000)
+              inputs=await page.locator('input').evaluate_all('(els)=>els.map(e=>({type:e.type,accept:e.accept,placeholder:e.placeholder,name:e.name,id:e.id}))')
+              print('INPUTS',json.dumps(inputs))
+              fi=page.locator('input[type=file]')
+              print('FILE_INPUTS',await fi.count())
+              if not await fi.count():
+                body=await page.locator('body').inner_text(); print(body); raise RuntimeError('no file input')
+              await fi.first.set_input_files(str(video))
+              await page.wait_for_timeout(1500)
+              print('AFTER_UPLOAD', (await page.locator('body').inner_text())[:2500])
+              # find an enabled action button
+              for label in ['Transcribe','Upload','Go','Generate Transcript']:
+                b=page.get_by_role('button',name=label,exact=False)
+                if await b.count():
+                  try:
+                    if not await b.first.is_disabled():
+                      print('CLICK',label); await b.first.click(); break
+                  except: pass
+              for i in range(180):
+                await page.wait_for_timeout(1000)
+                body=await page.locator('body').inner_text(); low=body.lower()
+                if i%15==0: print('WAIT',i,body[-700:])
+                if ('transcript ready' in low or 'copy transcript' in low or 'download .txt' in low or 'download txt' in low) and len(body)>1200:
+                  await page.wait_for_timeout(1000); break
+                if "couldn't" in low or 'failed' in low:
+                  if i>5: break
+              body=await page.locator('body').inner_text(); (out/'shrybe-upload.txt').write_text(body,encoding='utf-8')
+              await page.screenshot(path=str(out/'shrybe-upload.png'),full_page=True)
+              print('---FINAL---'); print(body)
+              await browser.close()
+          asyncio.run(main())
+          PY
+          python /tmp/run.py
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: founded-shrybe-upload-test
+          path: /tmp/out
+          if-no-files-found: warn
