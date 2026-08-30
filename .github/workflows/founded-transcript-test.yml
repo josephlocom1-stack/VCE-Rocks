@@ -19,10 +19,10 @@ jobs:
         run: |
           pip install playwright
           playwright install --with-deps chromium
-      - name: Transcribe one Founded Reel with shrybe web UI
+      - name: Transcribe one Founded Reel with EzTranscript web UI
         run: |
           cat > /tmp/transcribe.py <<'PY'
-          import asyncio, json, pathlib
+          import asyncio, pathlib
           from playwright.async_api import async_playwright
 
           URL = 'https://www.instagram.com/founded/reel/DcYvSGMNKVU/'
@@ -33,26 +33,21 @@ jobs:
               async with async_playwright() as p:
                   browser = await p.chromium.launch(headless=True)
                   page = await browser.new_page(viewport={"width": 1440, "height": 1200})
-                  await page.goto('https://shrybe.com/transcribe-instagram/', wait_until='domcontentloaded', timeout=120000)
-                  inp = page.locator('input[placeholder*="instagram reel" i], input[placeholder*="paste" i]').first
+                  await page.goto('https://eztranscript.net/reels-to-text', wait_until='domcontentloaded', timeout=120000)
+                  inp = page.locator('input[placeholder*="Instagram Reel" i], input[placeholder*="instagram.com/reel" i], input[placeholder*="Paste" i]').first
                   await inp.fill(URL)
-                  # Prefer the actual form submit button nearest the input.
-                  buttons = page.get_by_role('button')
-                  clicked = False
-                  for label in ['Go', 'Transcribe', 'Submit']:
-                      b = page.get_by_role('button', name=label, exact=True)
-                      if await b.count():
-                          await b.first.click()
-                          clicked = True
-                          break
-                  if not clicked:
+                  b = page.get_by_role('button', name='Get transcript', exact=False)
+                  if await b.count():
+                      await b.first.click()
+                  else:
                       await inp.press('Enter')
-                  # Wait for result text; shrybe can take 20-60 seconds.
-                  for _ in range(120):
+                  for _ in range(180):
                       await page.wait_for_timeout(1000)
                       body = await page.locator('body').inner_text()
                       low = body.lower()
-                      if 'transcript ready' in low or ('found it!' in low and len(body) > 1000):
+                      if ('download txt' in low or 'copy transcript' in low or 'transcript' in low and len(body) > 3500) and 'paste and done' not in low[-500:]:
+                          # Give the UI a little extra time after first result signal.
+                          await page.wait_for_timeout(2000)
                           break
                   body = await page.locator('body').inner_text()
                   (OUT/'page.txt').write_text(body, encoding='utf-8')
