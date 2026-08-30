@@ -1,0 +1,84 @@
+name: Founded SnipSound transcription test
+
+on:
+  push:
+    branches: [zelro-render-theresia]
+    paths:
+      - '.github/workflows/founded-snipsound-test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install yt-dlp playwright
+          playwright install --with-deps chromium
+      - name: Download one Founded Reel
+        run: |
+          mkdir -p /tmp/out
+          yt-dlp --no-playlist -o '/tmp/out/reel.%(ext)s' 'https://www.instagram.com/reel/DcYvSGMNKVU/'
+          ls -lh /tmp/out
+      - name: Transcribe through SnipSound website
+        run: |
+          cat > /tmp/transcribe.py <<'PY'
+          import asyncio, pathlib, json
+          from playwright.async_api import async_playwright
+          out=pathlib.Path('/tmp/out')
+          video=next(out.glob('reel.*'))
+          async def main():
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True, args=['--enable-webassembly','--enable-unsafe-webgpu','--use-angle=swiftshader'])
+              page=await browser.new_page(viewport={'width':1440,'height':1200})
+              await page.goto('https://snipsound.com/tools/audio-transcription/',wait_until='networkidle',timeout=120000)
+              # Save initial HTML/inputs for debugging.
+              inputs=await page.locator('input').evaluate_all('(els)=>els.map(e=>({type:e.type,accept:e.accept,name:e.name,id:e.id,placeholder:e.placeholder}))')
+              print('INPUTS',json.dumps(inputs))
+              fis=page.locator('input[type=file]')
+              print('FILE_INPUTS',await fis.count())
+              if await fis.count()==0:
+                await page.screenshot(path=str(out/'snipsound-before.png'),full_page=True)
+                (out/'snipsound-before.txt').write_text(await page.locator('body').inner_text(),encoding='utf-8')
+                raise RuntimeError('no file input')
+              await fis.first.set_input_files(str(video))
+              await page.wait_for_timeout(1500)
+              # Choose English if exposed, then click Transcribe.
+              eng=page.get_by_role('button',name='English',exact=True)
+              if await eng.count():
+                try: await eng.first.click(timeout=3000)
+                except: pass
+              trans=page.get_by_role('button',name='Transcribe',exact=True)
+              if not await trans.count():
+                trans=page.get_by_text('Transcribe',exact=True)
+              print('TRANS_COUNT',await trans.count())
+              await trans.first.click(timeout=10000)
+              # Wait for transcript text or export controls.
+              for i in range(900):
+                await page.wait_for_timeout(1000)
+                body=await page.locator('body').inner_text(); low=body.lower()
+                if i%20==0: print('WAIT',i,body[-500:])
+                if ('copy text' in low and '.srt' in low and 'loading model' not in low) and len(body)>1500:
+                  # Make sure some transcript segment exists after heading.
+                  await page.wait_for_timeout(2000)
+                  break
+              body=await page.locator('body').inner_text()
+              (out/'snipsound.txt').write_text(body,encoding='utf-8')
+              await page.screenshot(path=str(out/'snipsound-after.png'),full_page=True)
+              print('---BODY---'); print(body)
+              await browser.close()
+          asyncio.run(main())
+          PY
+          python /tmp/transcribe.py
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: founded-snipsound-test
+          path: /tmp/out
+          if-no-files-found: warn
