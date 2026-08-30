@@ -1,0 +1,71 @@
+name: Founded transcript extraction test
+
+on:
+  push:
+    branches: [zelro-render-theresia]
+    paths:
+      - '.github/workflows/founded-transcript-test.yml'
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+      - name: Transcribe one Founded Reel with shrybe web UI
+        run: |
+          cat > /tmp/transcribe.py <<'PY'
+          import asyncio, json, pathlib
+          from playwright.async_api import async_playwright
+
+          URL = 'https://www.instagram.com/founded/reel/DcYvSGMNKVU/'
+          OUT = pathlib.Path('/tmp/out')
+          OUT.mkdir(exist_ok=True)
+
+          async def main():
+              async with async_playwright() as p:
+                  browser = await p.chromium.launch(headless=True)
+                  page = await browser.new_page(viewport={"width": 1440, "height": 1200})
+                  await page.goto('https://shrybe.com/transcribe-instagram/', wait_until='domcontentloaded', timeout=120000)
+                  inp = page.locator('input[placeholder*="instagram reel" i], input[placeholder*="paste" i]').first
+                  await inp.fill(URL)
+                  # Prefer the actual form submit button nearest the input.
+                  buttons = page.get_by_role('button')
+                  clicked = False
+                  for label in ['Go', 'Transcribe', 'Submit']:
+                      b = page.get_by_role('button', name=label, exact=True)
+                      if await b.count():
+                          await b.first.click()
+                          clicked = True
+                          break
+                  if not clicked:
+                      await inp.press('Enter')
+                  # Wait for result text; shrybe can take 20-60 seconds.
+                  for _ in range(120):
+                      await page.wait_for_timeout(1000)
+                      body = await page.locator('body').inner_text()
+                      low = body.lower()
+                      if 'transcript ready' in low or ('found it!' in low and len(body) > 1000):
+                          break
+                  body = await page.locator('body').inner_text()
+                  (OUT/'page.txt').write_text(body, encoding='utf-8')
+                  await page.screenshot(path=str(OUT/'page.png'), full_page=True)
+                  print(body)
+                  await browser.close()
+
+          asyncio.run(main())
+          PY
+          python /tmp/transcribe.py
+      - name: Upload transcript evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: founded-transcript-test
+          path: /tmp/out
+          if-no-files-found: error
