@@ -41,13 +41,18 @@ jobs:
                       await b.first.click()
                   else:
                       await inp.press('Enter')
-                  for _ in range(180):
+                  # Wait long enough for the site's own fetch/transcription job. Do not confuse marketing text containing
+                  # the word "transcript" with the actual result. Stop only after the loading label disappears, or after
+                  # an explicit result/error marker is visible.
+                  for _ in range(150):
                       await page.wait_for_timeout(1000)
                       body = await page.locator('body').inner_text()
                       low = body.lower()
-                      if ('download txt' in low or 'copy transcript' in low or 'transcript' in low and len(body) > 3500) and 'paste and done' not in low[-500:]:
-                          # Give the UI a little extra time after first result signal.
-                          await page.wait_for_timeout(2000)
+                      loading = 'finding the video...' in low or 'transcribing' in low or 'processing' in low
+                      result_marker = 'copy transcript' in low or 'download txt' in low or 'download srt' in low
+                      error_marker = any(x in low for x in ["couldn't fetch", 'failed to fetch', 'unable to fetch', 'video not found', 'something went wrong'])
+                      if (result_marker or error_marker) and not loading:
+                          await page.wait_for_timeout(1500)
                           break
                   body = await page.locator('body').inner_text()
                   (OUT/'page.txt').write_text(body, encoding='utf-8')
