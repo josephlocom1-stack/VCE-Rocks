@@ -1,0 +1,243 @@
+name: Founded 33 full transcripts
+
+on:
+  push:
+    branches: [zelro-render-theresia]
+    paths:
+      - '.github/workflows/founded-33-full-transcripts.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  transcribe:
+    name: transcribe-shard-${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: zelro-render-theresia
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install transcription tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          pip install --upgrade yt-dlp faster-whisper
+      - name: Download and transcribe shard
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: |
+          cat > /tmp/transcribe_shard.py <<'PY'
+          import json, os, pathlib, subprocess, sys, traceback
+          from faster_whisper import WhisperModel
+
+          # Original first-occurrence order from the user's 35-link list; two duplicate links were consolidated.
+          REELS = [
+              (1, 'DcYvSGMNKVU'),
+              (2, 'DcT81r7Otdh'),
+              (3, 'Db8Zevktfjv'),
+              (4, 'DbycTLMuMVx'),
+              (5, 'DbqdyhOta_B'),
+              (6, 'DbdstndtCUU'),
+              (7, 'Da5irTcNRzK'),
+              (8, 'DaAwCE_tulk'),
+              (9, 'DZ-QfsntL0b'),
+              (10, 'DZz3J40N_d9'),
+              (11, 'DZsJR6at9a0'),
+              (12, 'DZkbHvcN4dr'),
+              (13, 'DZSaSp8teyn'),
+              (14, 'DZIjXjOOd3o'),
+              (15, 'DYkElFVN6tv'),
+              (16, 'DYUlPUZsXom'),
+              (17, 'DYKQBwjtEr6'),
+              (18, 'DYAFU0TiAaO'),
+              (19, 'DX4TRYbMl-_'),
+              (20, 'DXzG-MosByN'),
+              (21, 'DXjqnHEjI8m'),
+              (22, 'DWT5-bKDEMH'),
+              (23, 'DVTTThCDMyA'),
+              (24, 'DVBw3GYjHaB'),
+              (25, 'DUn7x9-DDDG'),
+              (26, 'DUGU3j_DCSa'),
+              (27, 'DM3hevcN6nn'),
+              (28, 'DMvr92Tu8Xs'),
+              (29, 'DMkc1q4tyi8'),
+              (30, 'DMiW9nGtpyT'),
+              (31, 'DMbBd1sudxo'),
+              (32, 'DMV5QeYuNQT'),
+              (33, 'DMIirAKNNK2'),
+          ]
+          SHARDS = [REELS[0:6], REELS[6:12], REELS[12:18], REELS[18:24], REELS[24:29], REELS[29:33]]
+          shard = int(os.environ['SHARD'])
+          chosen = SHARDS[shard]
+          out_dir = pathlib.Path('/tmp/founded_transcripts')
+          out_dir.mkdir(parents=True, exist_ok=True)
+
+          # English-only distilled large model: much stronger on proper nouns/noisy speech than tiny/base while still CPU-friendly.
+          model = WhisperModel('distil-large-v3', device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
+
+          def run(cmd, **kwargs):
+              return subprocess.run(cmd, check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, **kwargs).stdout
+
+          def stamp(sec):
+              sec = max(0, int(round(float(sec))))
+              m, s = divmod(sec, 60)
+              h, m = divmod(m, 60)
+              return f'{h}:{m:02d}:{s:02d}' if h else f'{m}:{s:02d}'
+
+          results = []
+          for idx, code in chosen:
+              canonical = f'https://www.instagram.com/reel/{code}/'
+              supplied = f'https://www.instagram.com/founded/reel/{code}/'
+              item = {'index': idx, 'code': code, 'url': supplied, 'canonical_url': canonical, 'status': 'error'}
+              work = pathlib.Path(f'/tmp/reel_{code}')
+              work.mkdir(exist_ok=True)
+              try:
+                  tmpl = str(work / 'source.%(ext)s')
+                  info_json = work / 'info.json'
+                  # Current public Instagram extractor works on the canonical /reel/<code>/ form.
+                  cmd = ['yt-dlp', '--no-playlist', '--merge-output-format', 'mp4', '--write-info-json', '-o', tmpl, canonical]
+                  try:
+                      dl_log = run(cmd)
+                  except Exception:
+                      # One clean retry for Instagram's occasional empty response.
+                      dl_log = run(cmd)
+                  media = next((p for p in work.glob('source.*') if p.suffix.lower() in {'.mp4','.webm','.mkv','.mov'}), None)
+                  if media is None:
+                      raise RuntimeError('download produced no playable media file')
+                  wav = work / 'audio.wav'
+                  run(['ffmpeg','-y','-i',str(media),'-vn','-ac','1','-ar','16000','-c:a','pcm_s16le',str(wav)])
+                  dur = float(run(['ffprobe','-v','error','-show_entries','format=duration','-of','default=noprint_wrappers=1:nokey=1',str(media)]).strip())
+                  meta = {}
+                  sidecars = list(work.glob('*.info.json'))
+                  if sidecars:
+                      try: meta = json.loads(sidecars[0].read_text(encoding='utf-8'))
+                      except Exception: meta = {}
+
+                  def do_transcribe(vad):
+                      segs, info = model.transcribe(
+                          str(wav), language='en', beam_size=5, best_of=5,
+                          temperature=0.0, vad_filter=vad,
+                          condition_on_previous_text=True,
+                          without_timestamps=False,
+                      )
+                      segs = list(segs)
+                      return segs, info
+
+                  segs, info = do_transcribe(True)
+                  last_end = max([float(s.end) for s in segs], default=0.0)
+                  # Coverage gate: if VAD discarded too much speech, retry without VAD and keep the fuller pass.
+                  if dur > 15 and last_end < dur * 0.82:
+                      segs2, info2 = do_transcribe(False)
+                      last2 = max([float(s.end) for s in segs2], default=0.0)
+                      if last2 > last_end:
+                          segs, info, last_end = segs2, info2, last2
+
+                  transcript_segments = []
+                  for s in segs:
+                      text = ' '.join(str(s.text).strip().split())
+                      if not text:
+                          continue
+                      transcript_segments.append({
+                          'start': round(float(s.start), 2), 'end': round(float(s.end), 2),
+                          'timestamp': stamp(s.start), 'text': text
+                      })
+                  full_text = ' '.join(x['text'] for x in transcript_segments).strip()
+                  words = full_text.split()
+                  if len(words) < 12:
+                      raise RuntimeError(f'transcript unexpectedly short: {len(words)} words')
+                  item.update({
+                      'status': 'ok',
+                      'title': meta.get('title') or '',
+                      'description': meta.get('description') or '',
+                      'duration_seconds': round(dur, 2),
+                      'language': getattr(info, 'language', 'en'),
+                      'language_probability': round(float(getattr(info, 'language_probability', 0.0)), 4),
+                      'word_count': len(words),
+                      'coverage_ratio': round(min(1.0, last_end / dur) if dur else 0.0, 3),
+                      'segments': transcript_segments,
+                      'full_text': full_text,
+                      'transcription_engine': 'faster-whisper distil-large-v3 int8 CPU',
+                  })
+                  print(f'OK {idx:02d} {code}: {len(words)} words, {dur:.1f}s, coverage {item["coverage_ratio"]:.3f}')
+              except Exception as e:
+                  item['error'] = f'{type(e).__name__}: {e}'
+                  item['traceback'] = traceback.format_exc()[-4000:]
+                  print(f'ERROR {idx:02d} {code}: {item["error"]}', file=sys.stderr)
+              results.append(item)
+
+          path = out_dir / f'shard-{shard}.json'
+          path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding='utf-8')
+          print(path)
+          PY
+          python /tmp/transcribe_shard.py
+      - name: Upload shard transcript JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: founded-transcripts-shard-${{ matrix.shard }}
+          path: /tmp/founded_transcripts/shard-${{ matrix.shard }}.json
+          if-no-files-found: error
+
+  merge:
+    needs: transcribe
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: zelro-render-theresia
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: founded-transcripts-shard-*
+          path: /tmp/shards
+          merge-multiple: true
+      - name: Merge corpus and validate all 33
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          files=sorted(pathlib.Path('/tmp/shards').glob('shard-*.json'))
+          all_items=[]
+          for p in files:
+              all_items.extend(json.loads(p.read_text(encoding='utf-8')))
+          all_items=sorted(all_items,key=lambda x:x['index'])
+          pathlib.Path('transcripts').mkdir(exist_ok=True)
+          out=pathlib.Path('transcripts/founded_33_full_transcripts.json')
+          out.write_text(json.dumps(all_items,ensure_ascii=False,indent=2),encoding='utf-8')
+          lines=['# Founded — 33 unique Reel transcripts','','Generated from the 35 supplied links after consolidating the duplicate DaAwCE_tulk and DMV5QeYuNQT entries.','']
+          for x in all_items:
+              lines += [f"## {x['index']:02d} — {x['code']}", x['url'], '']
+              if x.get('status')!='ok':
+                  lines += [f"**TRANSCRIPTION ERROR:** {x.get('error','unknown error')}",'']
+              else:
+                  lines += [f"Duration: {x.get('duration_seconds')} s · Words: {x.get('word_count')} · Coverage: {x.get('coverage_ratio')}",'']
+                  lines += [f"[{s['timestamp']}] {s['text']}" for s in x['segments']]
+                  lines += ['']
+          pathlib.Path('transcripts/founded_33_full_transcripts.md').write_text('\n'.join(lines),encoding='utf-8')
+          if len(all_items)!=33:
+              raise SystemExit(f'Expected 33 items, got {len(all_items)}')
+          errors=[x for x in all_items if x.get('status')!='ok']
+          print('ITEMS',len(all_items),'ERRORS',len(errors))
+          for x in errors: print('ERROR_ITEM',x['index'],x['code'],x.get('error'))
+          PY
+      - name: Commit transcript corpus
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add transcripts/founded_33_full_transcripts.json transcripts/founded_33_full_transcripts.md
+          git commit -m 'Add full transcripts for 33 Founded Reels' || exit 0
+          git push origin HEAD:zelro-render-theresia
+      - name: Upload merged transcript corpus
+        uses: actions/upload-artifact@v4
+        with:
+          name: founded-33-full-transcripts
+          path: |
+            transcripts/founded_33_full_transcripts.json
+            transcripts/founded_33_full_transcripts.md
+          if-no-files-found: error
