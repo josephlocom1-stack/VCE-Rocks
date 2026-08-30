@@ -1,0 +1,64 @@
+name: Founded local-web transcription test
+
+on:
+  push:
+    branches: [zelro-render-theresia]
+    paths:
+      - '.github/workflows/founded-local-web-transcribe-test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools
+        run: |
+          pip install yt-dlp playwright
+          playwright install --with-deps chromium
+      - name: Download public Reel
+        run: |
+          mkdir -p /tmp/out
+          yt-dlp --no-playlist --merge-output-format mp4 -o '/tmp/out/reel.%(ext)s' 'https://www.instagram.com/reel/DcYvSGMNKVU/'
+          ls -lh /tmp/out
+      - name: Transcribe through FreeTranscribe website
+        run: |
+          cat > /tmp/transcribe.py <<'PY'
+          import asyncio, pathlib
+          from playwright.async_api import async_playwright
+          out=pathlib.Path('/tmp/out')
+          files=list(out.glob('reel.*'))
+          assert files, 'no downloaded Reel'
+          video=files[0]
+          async def main():
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True,args=['--enable-webassembly'])
+              page=await browser.new_page(viewport={'width':1440,'height':1200})
+              await page.goto('https://freetranscribe.net/',wait_until='domcontentloaded',timeout=120000)
+              fi=page.locator('input[type=file]').first
+              await fi.set_input_files(str(video))
+              for _ in range(600):
+                await page.wait_for_timeout(1000)
+                text=await page.locator('body').inner_text(); low=text.lower()
+                if 'your transcript is ready' in low and len(text)>500:
+                  await page.wait_for_timeout(1000); break
+                if 'error' in low and ('transcrib' in low or 'model' in low):
+                  pass
+              text=await page.locator('body').inner_text()
+              (out/'freetranscribe.txt').write_text(text,encoding='utf-8')
+              await page.screenshot(path=str(out/'freetranscribe.png'),full_page=True)
+              print(text)
+              await browser.close()
+          asyncio.run(main())
+          PY
+          python /tmp/transcribe.py
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: founded-local-web-test
+          path: /tmp/out
+          if-no-files-found: warn
