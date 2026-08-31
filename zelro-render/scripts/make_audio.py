@@ -1,81 +1,72 @@
 import subprocess
-import urllib.request
 from pathlib import Path
 
 OUT = Path('public/media')
-MUSIC = OUT / 'music-candidates'
 OUT.mkdir(parents=True, exist_ok=True)
-MUSIC.mkdir(parents=True, exist_ok=True)
-UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
-
-CANDIDATES = [
-    ('close-up', 'https://assets.mixkit.co/music/1167/1167.mp3', 'restrained documentary pulse'),
-    ('raising-higher', 'https://assets.mixkit.co/music/34/34.mp3', 'aspirational business lift'),
-    ('sci-fi-score', 'https://assets.mixkit.co/music/464/464.mp3', 'tense electronic texture'),
-]
 
 
-def duration(path: Path) -> float:
-    return float(subprocess.check_output([
-        'ffprobe', '-v', 'error', '-show_entries', 'format=duration',
-        '-of', 'default=nokey=1:noprint_wrappers=1', str(path),
-    ], text=True).strip())
+def run(*args):
+    subprocess.check_call(['ffmpeg', '-y', *args])
 
+# Original, self-contained documentary/business bed. No external music download or license dependency.
+run(
+    '-f', 'lavfi', '-i', 'sine=frequency=73.42:duration=90:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=110.00:duration=90:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=146.83:duration=90:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=220.00:duration=90:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'anoisesrc=color=pink:amplitude=0.018:duration=90:sample_rate=48000',
+    '-filter_complex',
+    '[0:a]volume=0.050,tremolo=f=0.125:d=0.28,lowpass=f=420[a0];'
+    '[1:a]volume=0.026,tremolo=f=0.25:d=0.35,lowpass=f=620[a1];'
+    '[2:a]volume=0.020,tremolo=f=0.125:d=0.22,lowpass=f=900[a2];'
+    '[3:a]volume=0.010,tremolo=f=0.5:d=0.65,highpass=f=150,lowpass=f=1800[a3];'
+    '[4:a]highpass=f=800,lowpass=f=5500,volume=0.13[a4];'
+    '[a0][a1][a2][a3][a4]amix=inputs=5:normalize=0,'
+    'acompressor=threshold=-28dB:ratio=1.8:attack=20:release=220,'
+    'afade=t=in:st=0:d=0.35,afade=t=out:st=86.5:d=3.0,'
+    'loudnorm=I=-24:LRA=5:TP=-3.0[out]',
+    '-map', '[out]', '-c:a', 'aac', '-b:a', '192k', str(OUT / 'music.m4a')
+)
 
-def download(name, url):
-    destination = MUSIC / f'{name}.mp3'
-    try:
-        request = urllib.request.Request(url, headers={'User-Agent': UA, 'Referer': 'https://mixkit.co/'})
-        with urllib.request.urlopen(request, timeout=180) as response, destination.open('wb') as output:
-            while True:
-                chunk = response.read(1024 * 1024)
-                if not chunk:
-                    break
-                output.write(chunk)
-        if destination.stat().st_size < 200_000 or duration(destination) < 30:
-            raise RuntimeError('incomplete track')
-        return destination
-    except Exception as exc:
-        destination.unlink(missing_ok=True)
-        print(name, 'unavailable', exc)
-        return None
+# Major reversal / hero-number impact.
+run(
+    '-f', 'lavfi', '-i', 'sine=frequency=68:duration=0.42:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=420:duration=0.20:sample_rate=48000',
+    '-filter_complex',
+    '[0:a]volume=.62,afade=t=out:st=.05:d=.34[lo];'
+    '[1:a]volume=.16,afade=t=out:st=.02:d=.15[hi];'
+    '[lo][hi]amix=inputs=2:normalize=0,alimiter=limit=.90[out]',
+    '-map', '[out]', '-c:a', 'pcm_s16le', str(OUT / 'impact.wav')
+)
 
+# Evidence tick for filings and transaction proof.
+run(
+    '-f', 'lavfi', '-i', 'sine=frequency=1120:duration=0.19:sample_rate=48000',
+    '-f', 'lavfi', '-i', 'sine=frequency=1680:duration=0.19:sample_rate=48000',
+    '-filter_complex',
+    '[0:a]volume=.28,afade=t=out:st=.035:d=.13[a];'
+    '[1:a]volume=.13,afade=t=out:st=.025:d=.13[b];'
+    '[a][b]amix=inputs=2:normalize=0[out]',
+    '-map', '[out]', '-c:a', 'pcm_s16le', str(OUT / 'proof.wav')
+)
 
-downloaded = []
-for name, url, character in CANDIDATES:
-    path = download(name, url)
-    if path:
-        downloaded.append((name, path, character, duration(path)))
-
-if not downloaded:
-    raise RuntimeError('No rights-compatible music candidate downloaded')
-
-preference = {'close-up': 0, 'raising-higher': 1, 'sci-fi-score': 2}
-selected = sorted(downloaded, key=lambda item: preference[item[0]])[0]
-selected_name, selected_path, selected_character, selected_duration = selected
-
-subprocess.check_call([
-    'ffmpeg', '-y', '-stream_loop', '-1', '-ss', '1.5', '-i', str(selected_path), '-t', '90',
-    '-af', 'highpass=f=65,lowpass=f=15800,equalizer=f=1800:t=q:w=1.1:g=1.2,'
-           'acompressor=threshold=-19dB:ratio=2.0:attack=10:release=145,'
-           'volume=0.90,afade=t=in:st=0:d=0.18,afade=t=out:st=87:d=2.6',
-    '-c:a', 'aac', '-b:a', '192k', str(OUT / 'music.m4a'),
-])
+# Restrained transition cue.
+run(
+    '-f', 'lavfi', '-i', 'sine=frequency=180:duration=0.72:sample_rate=48000',
+    '-filter_complex',
+    '[0:a]asetrate=56640,aresample=48000,highpass=f=140,volume=.18,'
+    'afade=t=in:st=0:d=.08,afade=t=out:st=.48:d=.20[out]',
+    '-map', '[out]', '-c:a', 'pcm_s16le', str(OUT / 'riser.wav')
+)
 
 report = [
-    'ELON PAYPAL MUSIC AUDITION',
-    *[f'{name}: {character}; duration={seconds:.2f}s; source=Mixkit' for name, _, character, seconds in downloaded],
-    f'selected={selected_name}; reason={selected_character} fits ownership-reversal documentary pacing',
-    'music_role=forward motion under narration, not trailer bombast',
-    'final master target=-14 LUFS; true peak below -1 dBTP',
+    'ELON PAYPAL MUSIC + SOUND DESIGN',
+    'music_source=original procedural instrumental generated locally in workflow',
+    'external_music_dependency=none',
+    'music_character=restrained documentary/business pulse; low harmonic bed; subtle air',
+    'sfx=original impact + proof tick + restrained transition cue',
+    'mix_role=voice remains dominant; music supplies forward motion rather than trailer bombast',
+    'delivery_master_target=-14 LUFS; true peak below -1 dBTP',
 ]
 (OUT / 'MUSIC_AUDITION_REPORT.txt').write_text('\n'.join(report) + '\n', encoding='utf-8')
 print('\n'.join(report))
-
-
-def ffmpeg(*args):
-    subprocess.check_call(['ffmpeg', '-y', *args])
-
-ffmpeg('-f','lavfi','-i','sine=frequency=70:duration=0.38:sample_rate=48000','-f','lavfi','-i','sine=frequency=480:duration=0.18:sample_rate=48000','-filter_complex','[0:a]volume=.7,afade=t=out:st=.05:d=.3[lo];[1:a]volume=.22,afade=t=out:st=.02:d=.14[hi];[lo][hi]amix=inputs=2,alimiter=limit=.9',str(OUT/'impact.wav'))
-ffmpeg('-f','lavfi','-i','aevalsrc=0.12*sin(2*PI*(190*t+1400*t*t)):d=0.7:s=48000','-af','highpass=f=130,afade=t=in:st=0:d=.04,afade=t=out:st=.55:d=.14,volume=1.0',str(OUT/'riser.wav'))
-ffmpeg('-f','lavfi','-i','sine=frequency=1180:duration=0.18:sample_rate=48000','-f','lavfi','-i','sine=frequency=1770:duration=0.18:sample_rate=48000','-filter_complex','[0:a]volume=.40[a];[1:a]volume=.22[b];[a][b]amix=inputs=2,afade=t=out:st=.04:d=.12',str(OUT/'proof.wav'))
