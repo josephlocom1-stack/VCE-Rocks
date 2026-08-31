@@ -31,6 +31,17 @@ jobs:
           python -m pip install --disable-pip-version-check edge-tts
           npm install
 
+      - name: Resolve preinstalled Chrome
+        run: |
+          BROWSER="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          if [ -z "$BROWSER" ]; then
+            echo "No preinstalled Chrome/Chromium executable found"
+            exit 1
+          fi
+          echo "Using browser: $BROWSER"
+          "$BROWSER" --version
+          echo "REMOTION_BROWSER_EXECUTABLE=$BROWSER" >> "$GITHUB_ENV"
+
       - name: Generate locked narration and word timings
         run: python scripts/generate_voice.py
 
@@ -43,7 +54,9 @@ jobs:
       - name: Render 1080x1920 reel
         run: |
           mkdir -p out/review
-          npm run render:full
+          npx remotion render src/index.tsx ZelroElonPayPal out/raw.mp4 \
+            --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p \
+            --browser-executable="$REMOTION_BROWSER_EXECUTABLE"
 
       - name: Master Instagram/iPad delivery
         run: |
