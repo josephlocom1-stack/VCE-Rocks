@@ -1,11 +1,11 @@
 {
-  "name": "zelro-elon-falcon-1-render",
+  "name": "zelro-elon-paypal-render",
   "private": true,
   "version": "1.0.0",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "render:prototype": "remotion render src/index.tsx ZelroElonFalconPrototype out/prototype.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p",
-    "render:full": "remotion render src/index.tsx ZelroElonFalcon out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p"
+    "render:prototype": "remotion render src/index.tsx ZelroElonPayPalPrototype out/prototype.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p",
+    "render:full": "remotion render src/index.tsx ZelroElonPayPal out/raw.mp4 --codec=h264 --audio-codec=aac --crf=17 --pixel-format=yuv420p"
   },
   "dependencies": {
     "@remotion/cli": "4.0.382",
