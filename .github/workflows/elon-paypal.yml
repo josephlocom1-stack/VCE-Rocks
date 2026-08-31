@@ -1,0 +1,89 @@
+name: Zelro Elon PayPal Premium Reel
+
+on:
+  push:
+    branches: [zelro-render-elon-paypal]
+    paths:
+      - 'zelro-render/**'
+      - '.github/workflows/elon-paypal.yml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        working-directory: zelro-render
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --disable-pip-version-check edge-tts
+          npm install
+
+      - name: Generate locked narration and word timings
+        run: python scripts/generate_voice.py
+
+      - name: Generate music and sound design
+        run: python scripts/make_audio.py
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Render 1080x1920 reel
+        run: |
+          mkdir -p out/review
+          npm run render:full
+
+      - name: Master Instagram/iPad delivery
+        run: |
+          ffmpeg -y -i out/raw.mp4 \
+            -vf "scale=1080:1920:flags=lanczos,format=yuv420p" \
+            -c:v libx264 -preset medium -profile:v high -level:v 4.1 -pix_fmt yuv420p \
+            -b:v 5200k -maxrate 6200k -bufsize 10400k -g 60 -keyint_min 30 -sc_threshold 0 \
+            -tag:v avc1 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
+            -af "loudnorm=I=-14:LRA=7:TP=-1.0" -c:a aac -profile:a aac_low -b:a 160k -ar 48000 -ac 2 \
+            -movflags +faststart -map_metadata -1 out/Zelro_Elon_PayPal_Premium.mp4
+
+      - name: Technical QA
+        run: |
+          ffprobe -v error -show_entries stream=codec_name,profile,width,height,pix_fmt,r_frame_rate,sample_rate,channels:format=duration,size,bit_rate -of json out/Zelro_Elon_PayPal_Premium.mp4 | tee out/TECHNICAL_REPORT.txt
+          ffmpeg -v error -i out/Zelro_Elon_PayPal_Premium.mp4 -f null -
+          ffmpeg -hide_banner -i out/Zelro_Elon_PayPal_Premium.mp4 -af "loudnorm=I=-14:TP=-1:LRA=7:print_format=summary" -f null - 2>&1 | tee out/AUDIO_REPORT.txt
+          ffmpeg -hide_banner -i out/Zelro_Elon_PayPal_Premium.mp4 -vf "blackdetect=d=0.20:pix_th=0.10" -an -f null - 2>&1 | tee out/BLACK_FRAME_REPORT.txt
+          if grep -q 'black_start' out/BLACK_FRAME_REPORT.txt; then
+            echo 'Unexpected black interval detected'
+            exit 1
+          fi
+          sha256sum out/Zelro_Elon_PayPal_Premium.mp4 > out/DELIVERY_SHA256.txt
+
+      - name: Create visual review sheets
+        run: |
+          ffmpeg -y -i out/Zelro_Elon_PayPal_Premium.mp4 -vf "fps=1/2,scale=180:-1,tile=6x6" -frames:v 1 out/review/FULL_2S_CONTACT.jpg
+          ffmpeg -y -i out/Zelro_Elon_PayPal_Premium.mp4 -vf "fps=1,scale=140:-1,tile=7x10" -frames:v 1 out/review/FULL_1S_CONTACT.jpg
+
+      - name: Upload premium reel
+        uses: actions/upload-artifact@v4
+        with:
+          name: zelro-elon-paypal-premium
+          path: |
+            zelro-render/out/Zelro_Elon_PayPal_Premium.mp4
+            zelro-render/out/TECHNICAL_REPORT.txt
+            zelro-render/out/AUDIO_REPORT.txt
+            zelro-render/out/BLACK_FRAME_REPORT.txt
+            zelro-render/out/DELIVERY_SHA256.txt
+            zelro-render/out/review/FULL_2S_CONTACT.jpg
+            zelro-render/out/review/FULL_1S_CONTACT.jpg
+            zelro-render/public/media/NARRATION_REPORT.txt
+            zelro-render/public/media/MUSIC_AUDITION_REPORT.txt
+          retention-days: 14
