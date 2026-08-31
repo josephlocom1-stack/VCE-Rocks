@@ -2,39 +2,39 @@ import asyncio
 import json
 import math
 import re
-import shutil
 import subprocess
 from pathlib import Path
 
 import edge_tts
 
 SENTENCES = [
-    "Elon Musk's first three rockets failed.",
-    "The fourth changed everything.",
-    "In 2002, SpaceX began building Falcon 1, then shipped it to tiny Omelek Island.",
-    "The whole launch site had one small hangar, an office trailer, and an outhouse.",
-    "Flight one lifted off, leaked fuel, caught fire, and fell into the reef.",
-    "Flight two reached space, then began rolling until its engine shut down before orbit.",
-    "Flight three got farther.",
-    "But after stage separation, leftover thrust pushed the first stage back into the second.",
-    "They collided.",
-    "SpaceX was nearly out of money.",
-    "One spare rocket was all the team had left.",
-    "They rented a cargo plane to save weeks.",
-    "During landing, the rocket's empty tank crumpled.",
-    "Engineers repaired it on the island.",
-    "Then they changed one small thing: wait longer before separating the stages, giving the first engine time to stop pushing.",
-    "On September 28, 2008, Flight four launched.",
-    "Nine and a half minutes later, Falcon 1 reached orbit—the first privately developed liquid-fuel rocket to do it.",
-    "Three failures did not make the fourth launch lucky.",
-    "Each failure revealed what to change.",
-    "Persistence is not repeating the same move.",
-    "It is learning faster than failure can finish you.",
+    "The board removed him as CEO of the company he started.",
+    "Two years later, eBay bought it for $1.5 billion.",
+    "He still owned roughly 12%.",
+    "Meet Elon Musk.",
+    "In 1995, Musk started Zip2 with his brother.",
+    "It helped newspapers put local business listings online.",
+    "Back then, he was showering at the YMCA.",
+    "Four years later, Compaq bought Zip2 for $307 million in cash.",
+    "Musk's 7% stake paid him $22 million.",
+    "Instead of stopping, he put most of that money into X.com, a new online bank.",
+    "The plan was huge: put banking, investments and payments on one website.",
+    "But users cared most about one simple feature—sending money to someone by email.",
+    "Another startup, Confinity, had built a similar payment service called PayPal.",
+    "The two companies merged in 2000, and Musk became CEO.",
+    "Then, in September, the board replaced him.",
+    "But losing the CEO job didn't erase his shares.",
+    "When PayPal went public in 2002, SEC filings still showed Musk owning about 12% of the company.",
+    "Eight months later, eBay bought PayPal for $1.5 billion.",
+    "He had lost the CEO job.",
+    "But he kept the shares.",
+    "Musk later said the sale left him with about $180 million after tax.",
 ]
 
 CANDIDATES = [
-    {'id': 'andrew', 'voice': 'en-US-AndrewMultilingualNeural', 'rate': '+4%', 'pitch': '-3Hz'},
-    {'id': 'brian', 'voice': 'en-US-BrianNeural', 'rate': '+2%', 'pitch': '-2Hz'},
+    {'id': 'andrew', 'voice': 'en-US-AndrewMultilingualNeural', 'rate': '+8%', 'pitch': '-3Hz'},
+    {'id': 'brian', 'voice': 'en-US-BrianNeural', 'rate': '+6%', 'pitch': '-2Hz'},
+    {'id': 'guy', 'voice': 'en-US-GuyNeural', 'rate': '+7%', 'pitch': '-2Hz'},
 ]
 
 FPS = 30
@@ -43,14 +43,14 @@ OUT = Path('public/media')
 RAW = OUT / 'voice-candidates'
 TIMING = Path('src/timings.ts')
 KEYWORDS = {
-    'failed', 'fourth', 'everything', 'spacex', 'falcon', 'one', 'two', 'three',
-    'fire', 'orbit', 'collided', 'money', 'spare', 'crumpled', 'repaired', 'changed',
-    'wait', 'longer', 'first', 'persistence', 'learning', 'failure', 'finish',
+    'board', 'removed', 'ceo', 'ebay', 'billion', 'owned', '12', 'elon', 'musk',
+    'zip2', 'ymca', 'compaq', '307', '7', '22', 'xcom', 'bank', 'payments', 'email',
+    'confinity', 'paypal', 'merged', 'september', 'shares', 'sec', 'kept', '180', 'tax',
 }
 
 
 def clean(text: str) -> str:
-    return re.sub(r"[^A-Za-z0-9'-]+", '', text).strip()
+    return re.sub(r"[^A-Za-z0-9%$.'-]+", '', text).strip()
 
 
 def duration(path: Path) -> float:
@@ -75,17 +75,17 @@ async def synth_sentence(text: str, voice: str, rate: str, pitch: str, base: Pat
                     boundaries.append({
                         'word': word,
                         'offset': int(chunk.get('offset', 0)) / 10_000_000,
-                        'duration': max(int(chunk.get('duration', 0)) / 10_000_000, 0.06),
+                        'duration': max(int(chunk.get('duration', 0)) / 10_000_000, 0.055),
                     })
     subprocess.check_call([
         'ffmpeg', '-y', '-i', str(raw_mp3),
-        '-af', 'silenceremove=start_periods=1:start_silence=0.02:start_threshold=-47dB,'
-               'areverse,silenceremove=start_periods=1:start_silence=0.045:start_threshold=-47dB,'
+        '-af', 'silenceremove=start_periods=1:start_silence=0.015:start_threshold=-47dB,'
+               'areverse,silenceremove=start_periods=1:start_silence=0.040:start_threshold=-47dB,'
                'areverse,aresample=48000',
         '-c:a', 'pcm_s16le', str(trimmed),
     ])
     if not boundaries:
-        raise RuntimeError(f'No word boundaries returned for {text}')
+        raise RuntimeError(f'No word boundaries returned for: {text}')
     return trimmed, boundaries
 
 
@@ -96,7 +96,7 @@ async def build_candidate(candidate):
     all_words = []
     sentence_starts = []
     cursor = 0.0
-    overlap = 0.12
+    overlap = 0.105
     for sentence_index, sentence in enumerate(SENTENCES):
         chunk_path, boundaries = await synth_sentence(
             sentence, candidate['voice'], candidate['rate'], candidate['pitch'], candidate_dir / f'{sentence_index:02d}'
@@ -115,18 +115,21 @@ async def build_candidate(candidate):
         cursor += duration(chunk_path) - (overlap if sentence_index < len(SENTENCES) - 1 else 0)
 
     output = RAW / f"candidate-{candidate['id']}.mp3"
-    inputs = []
-    for chunk in chunks:
-        inputs.extend(['-i', str(chunk)])
-    chain = '[0:a][1:a]acrossfade=d=0.12:c1=tri:c2=tri[x1];'
-    for index in range(2, len(chunks)):
-        incoming = f'[x{index - 1}]'
-        outgoing = f'[x{index}]' if index < len(chunks) - 1 else '[out]'
-        chain += f'{incoming}[{index}:a]acrossfade=d=0.12:c1=tri:c2=tri{outgoing};'
-    subprocess.check_call([
-        'ffmpeg', '-y', *inputs, '-filter_complex', chain.rstrip(';'),
-        '-map', '[out]', '-c:a', 'libmp3lame', '-b:a', '192k', str(output),
-    ])
+    if len(chunks) == 1:
+        subprocess.check_call(['ffmpeg', '-y', '-i', str(chunks[0]), '-c:a', 'libmp3lame', '-b:a', '192k', str(output)])
+    else:
+        inputs = []
+        for chunk in chunks:
+            inputs.extend(['-i', str(chunk)])
+        chain_parts = [f'[0:a][1:a]acrossfade=d={overlap}:c1=tri:c2=tri[x1]']
+        for index in range(2, len(chunks)):
+            incoming = f'[x{index - 1}]'
+            outgoing = f'[x{index}]' if index < len(chunks) - 1 else '[out]'
+            chain_parts.append(f'{incoming}[{index}:a]acrossfade=d={overlap}:c1=tri:c2=tri{outgoing}')
+        subprocess.check_call([
+            'ffmpeg', '-y', *inputs, '-filter_complex', ';'.join(chain_parts),
+            '-map', '[out]', '-c:a', 'libmp3lame', '-b:a', '192k', str(output),
+        ])
     return {**candidate, 'path': output, 'duration': duration(output), 'words': all_words, 'sentence_starts': sentence_starts}
 
 
@@ -137,15 +140,14 @@ def phrase_rows(words):
         cursor = 0
         while cursor < len(sentence_words):
             remaining = len(sentence_words) - cursor
-            size = 4
-            if remaining in {1, 2} and cursor > 0:
-                size = remaining
-            elif remaining == 5:
-                size = 5
+            size = 3 if remaining >= 3 else remaining
+            if remaining == 4:
+                size = 2
             group = sentence_words[cursor:cursor + size]
             emphasis = len(group) - 1
             for index, word in enumerate(group):
-                if clean(word['word']).lower() in KEYWORDS:
+                normalized = re.sub(r'[^a-z0-9]', '', word['word'].lower())
+                if normalized in {re.sub(r'[^a-z0-9]', '', k.lower()) for k in KEYWORDS}:
                     emphasis = index
             phrases.append((group, emphasis))
             cursor += size
@@ -155,13 +157,22 @@ def phrase_rows(words):
 async def main():
     OUT.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
-    results = [await build_candidate(candidate) for candidate in CANDIDATES]
-    chosen = min(results, key=lambda item: abs(item['duration'] - TARGET_SECONDS) + (20 if not 61 <= item['duration'] <= 75 else 0))
+    results = []
+    failures = []
+    for candidate in CANDIDATES:
+        try:
+            results.append(await build_candidate(candidate))
+        except Exception as exc:
+            failures.append(f"{candidate['id']}: {exc}")
+    if not results:
+        raise RuntimeError('All TTS candidates failed: ' + ' | '.join(failures))
+
+    chosen = min(results, key=lambda item: abs(item['duration'] - TARGET_SECONDS) + (30 if not 60 <= item['duration'] <= 78 else 0))
     narration = OUT / 'narration.mp3'
     subprocess.check_call([
         'ffmpeg', '-y', '-i', str(chosen['path']),
-        '-af', 'highpass=f=72,lowpass=f=15800,acompressor=threshold=-18dB:ratio=2.3:attack=7:release=95,'
-               'equalizer=f=2600:t=q:w=1.2:g=1.4,loudnorm=I=-15:LRA=6:TP=-1.2',
+        '-af', 'highpass=f=72,lowpass=f=15800,acompressor=threshold=-18dB:ratio=2.25:attack=7:release=95,'
+               'equalizer=f=2500:t=q:w=1.15:g=1.2,loudnorm=I=-15:LRA=6:TP=-1.2',
         '-c:a', 'libmp3lame', '-b:a', '192k', str(narration),
     ])
     master_duration = duration(narration)
@@ -171,13 +182,13 @@ async def main():
         end = max(start + 2, round(word['end'] * FPS))
         timed.append({**word, 'startFrame': start, 'endFrame': end})
 
+    phrases = phrase_rows(timed)
     phrase_lines = []
     caption_json = []
-    phrases = phrase_rows(timed)
     for index, (group, emphasis) in enumerate(phrases):
         start = group[0]['startFrame']
         next_start = phrases[index + 1][0][0]['startFrame'] if index + 1 < len(phrases) else math.ceil(master_duration * FPS)
-        end = max(group[-1]['endFrame'] + 8, next_start - 1)
+        end = max(group[-1]['endFrame'] + 7, next_start - 1)
         words_js = ', '.join(
             '{word: ' + json.dumps(word['word']) + f", startFrame: {word['startFrame']}, endFrame: {word['endFrame']}, sentence: {word['sentence']}" + '}'
             for word in group
@@ -195,7 +206,7 @@ async def main():
         '  {word: ' + json.dumps(word['word']) + f", startFrame: {word['startFrame']}, endFrame: {word['endFrame']}, sentence: {word['sentence']}" + '},'
         for word in timed
     ]
-    total_frames = math.ceil(master_duration * FPS) + 12
+    total_frames = max(math.ceil(master_duration * FPS) + 12, chosen['sentence_starts'][-1] + 60)
     TIMING.write_text(
         "export type TimedWord = {word: string; startFrame: number; endFrame: number; sentence: number};\n"
         "export type CaptionPhrase = {words: TimedWord[]; startFrame: number; endFrame: number; emphasis: number};\n"
@@ -207,11 +218,13 @@ async def main():
     )
     (OUT / 'captions.json').write_text(json.dumps(caption_json, indent=2), encoding='utf-8')
     report = [
-        'ELON FALCON 1 NARRATION AUDITION',
+        'ELON PAYPAL PREMIUM NARRATION AUDITION',
         *[f"{item['id']}: {item['voice']} {item['rate']} duration={item['duration']:.3f}s words={len(item['words'])}" for item in results],
+        *[f'failed_candidate={failure}' for failure in failures],
         f"selected={chosen['id']} target={TARGET_SECONDS:.1f}s master_duration={master_duration:.3f}s total_frames={total_frames}",
-        'sentence_join=120ms crossfade; dead air removed without rushing individual words',
-        'caption_source=exact Edge word boundaries grouped into readable 2-5 word phrases',
+        'script_state=USER APPROVED + LOCKED; wording unchanged',
+        'sentence_join=105ms crossfade; dead air trimmed conservatively',
+        'caption_source=exact Edge WordBoundary timing grouped into 2-3 word authored phrases',
     ]
     (OUT / 'NARRATION_REPORT.txt').write_text('\n'.join(report) + '\n', encoding='utf-8')
     print('\n'.join(report))
