@@ -1,13 +1,13 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {ElonFalconReel} from './ElonFalcon';
+import {ElonPayPalReel} from './ElonPayPal';
 import {TOTAL_FRAMES} from './timings';
 
 export const Root: React.FC = () => (
   <>
     <Composition
-      id="ZelroElonFalconPrototype"
-      component={ElonFalconReel}
+      id="ZelroElonPayPalPrototype"
+      component={ElonPayPalReel}
       defaultProps={{prototype: true}}
       durationInFrames={450}
       fps={30}
@@ -15,8 +15,8 @@ export const Root: React.FC = () => (
       height={1920}
     />
     <Composition
-      id="ZelroElonFalcon"
-      component={ElonFalconReel}
+      id="ZelroElonPayPal"
+      component={ElonPayPalReel}
       defaultProps={{prototype: false}}
       durationInFrames={TOTAL_FRAMES}
       fps={30}
