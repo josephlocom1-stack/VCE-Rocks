@@ -2,9 +2,10 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  Img,
+  OffthreadVideo,
   Sequence,
   interpolate,
-  spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
@@ -15,175 +16,330 @@ const YELLOW = '#FFD400';
 const CREAM = '#F2EDDF';
 const BLACK = '#10100E';
 const WHITE = '#FFFFFF';
-const RED = '#E84B42';
 const clamp = {extrapolateLeft: 'clamp' as const, extrapolateRight: 'clamp' as const};
-const start = (i: number) => SENTENCE_STARTS[i] ?? TOTAL_FRAMES;
 
-type Beat = {
-  kicker: string;
-  hero: string;
-  detail: string;
-  palette: 'dark' | 'cream' | 'yellow';
-  visual: 'board' | 'money' | 'equity' | 'timeline' | 'browser' | 'ymca' | 'xcom' | 'stack' | 'email' | 'merge' | 'filing' | 'callback';
+const s = (index: number) => SENTENCE_STARTS[index] ?? TOTAL_FRAMES;
+const duration = (fromSentence: number, toSentence: number) => Math.max(1, s(toSentence) - s(fromSentence));
+
+const MEDIA = {
+  a01: 'media/paypal/a01.mp4',
+  a03: 'media/paypal/a03.mp4',
+  a04: 'media/paypal/a04.mp4',
+  a05: 'media/paypal/a05.mp4',
+  a06: 'media/paypal/a06.mp4',
+  a07: 'media/paypal/a07.mp4',
+  a08: 'media/paypal/a08.mp4',
+  a09: 'media/paypal/a09.mp4',
+  a10: 'media/paypal/a10.mp4',
+  a11: 'media/paypal/a11.mp4',
+  a12: 'media/paypal/a12.mp4',
+  a13: 'media/paypal/a13.mp4',
+  a14: 'media/paypal/a14.mp4',
+  a15: 'media/paypal/a15.png',
+  a16: 'media/paypal/a16.mp4',
+  a17: 'media/paypal/a17.mp4',
+} as const;
+
+type RealClipProps = {
+  src: string;
+  position?: string;
+  startFrom?: number;
+  label?: string;
 };
 
-const beats: Beat[] = [
-  {kicker:'SEPTEMBER 2000',hero:'REMOVED\nAS CEO',detail:'The board removed him from the top job.',palette:'dark',visual:'board'},
-  {kicker:'TWO YEARS LATER',hero:'$1.5B',detail:'eBay buys PayPal.',palette:'cream',visual:'money'},
-  {kicker:'BUT OWNERSHIP REMAINED',hero:'≈12%',detail:'He still owned roughly twelve percent.',palette:'yellow',visual:'equity'},
-  {kicker:'MEET',hero:'ELON\nMUSK',detail:'The ownership story starts years earlier.',palette:'dark',visual:'timeline'},
-  {kicker:'1995',hero:'ZIP2',detail:'Musk and his brother build local-business software.',palette:'cream',visual:'browser'},
-  {kicker:'THE PRODUCT',hero:'LISTINGS\n→ ONLINE',detail:'Newspapers could put local business directories on the web.',palette:'dark',visual:'browser'},
-  {kicker:'FOUNDER MODE',hero:'OFFICE BED.\nYMCA SHOWER.',detail:'A direct recollection from his early Silicon Valley years.',palette:'yellow',visual:'ymca'},
-  {kicker:'1999',hero:'$307M',detail:'Compaq buys Zip2 for cash.',palette:'cream',visual:'money'},
-  {kicker:'MUSK OWNED 7%',hero:'7% → $22M',detail:'The stake funds his next move.',palette:'dark',visual:'money'},
-  {kicker:'HE PUT MOST OF IT BACK IN',hero:'X.COM',detail:'A new online bank.',palette:'yellow',visual:'xcom'},
-  {kicker:'THE PLAN WAS HUGE',hero:'ONE WEBSITE',detail:'Banking + investments + payments.',palette:'dark',visual:'stack'},
-  {kicker:'USERS WANTED ONE SIMPLE THING',hero:'SEND MONEY\nBY EMAIL',detail:'The simplest feature became the behavior that mattered.',palette:'cream',visual:'email'},
-  {kicker:'ANOTHER STARTUP',hero:'CONFINITY',detail:'It had a similar payment service called PayPal.',palette:'dark',visual:'merge'},
-  {kicker:'2000',hero:'X.COM +\nCONFINITY',detail:'The companies merge. Musk becomes CEO.',palette:'yellow',visual:'merge'},
-  {kicker:'THEN THE BOARD ACTED',hero:'CEO → OUT',detail:'The title disappeared.',palette:'dark',visual:'board'},
-  {kicker:'THE KEY DISTINCTION',hero:'THE JOB ≠\nTHE SHARES',detail:'Losing the CEO role did not erase ownership.',palette:'yellow',visual:'equity'},
-  {kicker:'PAYPAL S-1/A • FEB 2002',hero:'13.0% → 11.9%',detail:'SEC principal-stockholders figures: before / after offering.',palette:'cream',visual:'filing'},
-  {kicker:'OCTOBER 2002',hero:'$1.5 BILLION',detail:'eBay completes the PayPal acquisition.',palette:'dark',visual:'money'},
-  {kicker:'THE CALLBACK',hero:'LOST THE\nCEO JOB',detail:'Position gone.',palette:'cream',visual:'callback'},
-  {kicker:'BUT',hero:'KEPT THE\nSHARES',detail:'Ownership stayed.',palette:'yellow',visual:'callback'},
-  {kicker:'MUSK LATER SAID',hero:'≈$180M',detail:'After tax from the PayPal sale.',palette:'dark',visual:'money'},
-];
+const RealClip: React.FC<RealClipProps> = ({src, position = '50% 50%', startFrom = 0, label}) => {
+  const frame = useCurrentFrame();
+  const {durationInFrames} = useVideoConfig();
+  const scale = interpolate(frame, [0, Math.max(1, durationInFrames - 1)], [1.015, 1.055], clamp);
 
-const palette = (name: Beat['palette']) => {
-  if (name === 'yellow') return {bg:YELLOW, fg:BLACK, accent:BLACK};
-  if (name === 'cream') return {bg:CREAM, fg:BLACK, accent:RED};
-  return {bg:BLACK, fg:WHITE, accent:YELLOW};
+  return (
+    <AbsoluteFill style={{overflow: 'hidden', backgroundColor: BLACK}}>
+      <OffthreadVideo
+        src={staticFile(src)}
+        startFrom={startFrom}
+        muted
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: position,
+          transform: `scale(${scale})`,
+        }}
+      />
+      <AbsoluteFill
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(8,8,8,.12) 0%, rgba(8,8,8,.02) 30%, rgba(8,8,8,.10) 55%, rgba(8,8,8,.42) 100%)',
+        }}
+      />
+      {label ? (
+        <div
+          style={{
+            position: 'absolute',
+            top: 72,
+            left: 58,
+            padding: '10px 16px',
+            background: 'rgba(0,0,0,.55)',
+            color: WHITE,
+            fontFamily: 'Arial, sans-serif',
+            fontWeight: 800,
+            fontSize: 24,
+            letterSpacing: 1.3,
+            borderLeft: `5px solid ${YELLOW}`,
+          }}
+        >
+          {label}
+        </div>
+      ) : null}
+    </AbsoluteFill>
+  );
 };
 
-const Texture: React.FC<{dark:boolean}> = ({dark}) => (
-  <AbsoluteFill style={{
-    opacity: dark ? 0.10 : 0.07,
-    backgroundImage: 'radial-gradient(circle at 20% 15%, rgba(255,255,255,.32) 0 1px, transparent 1.4px),radial-gradient(circle at 77% 61%, rgba(0,0,0,.30) 0 1px, transparent 1.4px)',
-    backgroundSize:'20px 20px, 29px 29px',
-    mixBlendMode: dark ? 'screen' : 'multiply',
-  }}/>
+const BrandChrome: React.FC = () => (
+  <>
+    <div
+      style={{
+        position: 'absolute',
+        left: 54,
+        top: 52,
+        color: WHITE,
+        fontFamily: 'Arial Black, Arial, sans-serif',
+        fontSize: 22,
+        letterSpacing: 3.5,
+        textShadow: '0 2px 12px rgba(0,0,0,.45)',
+      }}
+    >
+      ZELRO
+    </div>
+    <div style={{position: 'absolute', left: 54, top: 87, width: 82, height: 5, background: YELLOW}} />
+  </>
 );
 
-const Chrome: React.FC<{accent:string}> = ({accent}) => {
-  const frame = useCurrentFrame();
-  const w = interpolate(frame,[0,12],[0,1],clamp);
-  return <>
-    <div style={{position:'absolute',left:54,right:54,top:58,height:6,background:accent,transform:`scaleX(${w})`,transformOrigin:'left center'}}/>
-    <div style={{position:'absolute',left:54,right:54,bottom:67,height:2,background:'currentColor',opacity:.22}}/>
-    <div style={{position:'absolute',left:54,bottom:29,fontFamily:'Arial, sans-serif',fontSize:19,fontWeight:900,letterSpacing:4}}>ZELRO / BUSINESS STORIES</div>
-  </>;
-};
-
-const BoardGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame = useCurrentFrame();
-  const strike = interpolate(frame,[16,30],[0,1],clamp);
-  return <div style={{position:'absolute',left:78,right:78,top:930,height:430}}>
-    <div style={{height:125,border:'4px solid currentColor',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'0 34px',fontFamily:'Arial Black, Arial, sans-serif',fontSize:42}}><span>CHIEF EXECUTIVE</span><span>CEO</span></div>
-    <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:16,marginTop:42}}>{[0,1,2,3,4].map(i=><div key={i} style={{height:120,border:'3px solid currentColor',opacity:.28+i*.10}}/>)}</div>
-    <div style={{position:'absolute',left:8,right:8,top:69,height:18,background:accent,transform:`rotate(-7deg) scaleX(${strike})`,transformOrigin:'center'}}/>
-  </div>;
-};
-
-const MoneyGraphic: React.FC<{accent:string; hero:string}> = ({accent,hero}) => {
-  const frame = useCurrentFrame();
-  const p = spring({frame,fps:30,config:{damping:17,stiffness:95}});
-  return <div style={{position:'absolute',left:82,right:82,top:950,height:400,border:'5px solid currentColor',padding:36,overflow:'hidden'}}>
-    <div style={{fontFamily:'Arial, sans-serif',fontSize:24,fontWeight:950,letterSpacing:5}}>VALUE / OWNERSHIP PAYOFF</div>
-    <div style={{fontFamily:'Arial Black, Impact, sans-serif',fontSize:hero.length>8?105:150,fontWeight:950,letterSpacing:-7,color:accent,marginTop:38,transform:`scale(${.84+p*.16})`,transformOrigin:'left center'}}>{hero.replace('\n',' ')}</div>
-    <div style={{position:'absolute',left:36,right:36,bottom:38,height:16,background:'currentColor',opacity:.14}}><div style={{height:'100%',width:`${interpolate(frame,[8,48],[0,100],clamp)}%`,background:accent,opacity:1}}/></div>
-  </div>;
-};
-
-const EquityGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame = useCurrentFrame();
-  const pct = interpolate(frame,[7,35],[0,12],clamp);
-  return <div style={{position:'absolute',left:135,right:135,top:910,height:500,display:'flex',alignItems:'center',justifyContent:'center'}}>
-    <div style={{position:'absolute',width:470,height:470,borderRadius:'50%',border:'64px solid currentColor',opacity:.12}}/>
-    <div style={{textAlign:'center'}}><div style={{fontFamily:'Arial Black, Impact, sans-serif',fontSize:165,letterSpacing:-9,color:accent}}>{pct.toFixed(0)}%</div><div style={{fontFamily:'Arial, sans-serif',fontSize:28,fontWeight:950,letterSpacing:6}}>EQUITY DOESN'T VANISH WITH A TITLE</div></div>
-  </div>;
-};
-
-const TimelineGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame = useCurrentFrame();
-  const items = ['1995\nZIP2','1999\nX.COM','2000\nPAYPAL','2002\n$1.5B'];
-  return <div style={{position:'absolute',left:68,right:68,top:980,display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12}}>{items.map((x,i)=>{
-    const y=interpolate(frame,[i*5,i*5+12],[36,0],clamp); const o=interpolate(frame,[i*5,i*5+8],[0,1],clamp);
-    return <div key={x} style={{height:260,border:`4px solid ${i===3?accent:'currentColor'}`,opacity:o,padding:18,fontFamily:'Arial Black, Arial, sans-serif',fontSize:31,lineHeight:1.05,whiteSpace:'pre-line',transform:`translateY(${y}px)`}}>{x}</div>;
-  })}</div>;
-};
-
-const BrowserGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame = useCurrentFrame();
-  return <div style={{position:'absolute',left:72,right:72,top:900,height:525,border:'5px solid currentColor',padding:28}}>
-    <div style={{display:'flex',gap:10,marginBottom:30}}>{[0,1,2].map(i=><div key={i} style={{width:18,height:18,borderRadius:20,background:i===0?accent:'currentColor',opacity:.65}}/>)}</div>
-    <div style={{fontFamily:'Courier New, monospace',fontSize:30,fontWeight:900}}>ZIP2 / CITY DIRECTORY</div>
-    {[0,1,2,3].map(i=>{const x=interpolate(frame,[i*5,i*5+10],[-28,0],clamp);return <div key={i} style={{marginTop:26,display:'grid',gridTemplateColumns:'85px 1fr 150px',gap:18,alignItems:'center',opacity:interpolate(frame,[i*5,i*5+8],[0,1],clamp),transform:`translateX(${x}px)`}}><div style={{height:55,background:i===0?accent:'currentColor',opacity:.68}}/><div style={{height:14,background:'currentColor',opacity:.42}}/><div style={{height:14,background:'currentColor',opacity:.20}}/></div>})}
-  </div>;
-};
-
-const YmcaGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame = useCurrentFrame();
-  const water = interpolate(frame,[5,45],[0,1],clamp);
-  return <div style={{position:'absolute',left:104,right:104,top:980,display:'grid',gridTemplateColumns:'1fr 1fr',gap:28}}>
-    <div style={{height:380,border:'5px solid currentColor',padding:28}}><div style={{fontFamily:'Arial Black',fontSize:29}}>OFFICE</div><div style={{marginTop:78,width:270,height:105,border:'8px solid currentColor'}}/><div style={{marginTop:15,width:325,height:26,background:'currentColor',opacity:.36}}/></div>
-    <div style={{height:380,border:'5px solid currentColor',padding:28,position:'relative'}}><div style={{fontFamily:'Arial Black',fontSize:29}}>YMCA</div><div style={{position:'absolute',left:92,top:130,width:190,height:22,background:'currentColor'}}/><div style={{position:'absolute',left:236,top:130,width:22,height:85,background:'currentColor'}}/><div style={{position:'absolute',left:126,top:207,width:12,height:105*water,borderRadius:9,background:accent,opacity:.75}}/><div style={{position:'absolute',left:190,top:215,width:12,height:125*water,borderRadius:9,background:accent,opacity:.46}}/></div>
-  </div>;
-};
-
-const XcomGraphic: React.FC = () => {
-  const frame=useCurrentFrame(); const p=spring({frame,fps:30,config:{damping:18,stiffness:85}});
-  return <div style={{position:'absolute',left:108,right:108,top:940,height:500,border:'7px solid currentColor',display:'flex',alignItems:'center',justifyContent:'center'}}><div style={{fontFamily:'Arial Black, Impact, sans-serif',fontSize:205,letterSpacing:-15,transform:`scale(${.9+p*.1})`}}>X.COM</div></div>;
-};
-
-const StackGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame=useCurrentFrame(); return <div style={{position:'absolute',left:82,right:82,top:930,display:'grid',gap:17}}>{['BANKING','INVESTMENTS','PAYMENTS'].map((x,i)=>{const dx=interpolate(frame,[i*6,i*6+12],[-65,0],clamp);return <div key={x} style={{height:126,border:`4px solid ${i===2?accent:'currentColor'}`,padding:'0 32px',display:'flex',alignItems:'center',justifyContent:'space-between',fontFamily:'Arial Black, Arial, sans-serif',fontSize:44,opacity:interpolate(frame,[i*6,i*6+8],[0,1],clamp),transform:`translateX(${dx}px)`}}><span>{x}</span><span style={{color:accent}}>0{i+1}</span></div>})}</div>;
-};
-
-const EmailGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame=useCurrentFrame(); const p=interpolate(frame,[10,50],[0,1],clamp);
-  return <div style={{position:'absolute',left:78,right:78,top:1010,display:'grid',gridTemplateColumns:'1fr 180px 1fr',gap:16,alignItems:'center'}}><div style={{height:220,border:'5px solid currentColor',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Arial Black',fontSize:38}}>YOU</div><div style={{height:145,border:`5px solid ${accent}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:68,color:accent,transform:`scale(${.84+p*.16})`}}>✉</div><div style={{height:220,border:'5px solid currentColor',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Arial Black',fontSize:38}}>FRIEND</div></div>;
-};
-
-const MergeGraphic: React.FC<{accent:string}> = ({accent}) => {
-  const frame=useCurrentFrame(); const p=interpolate(frame,[8,42],[0,1],clamp);
-  return <div style={{position:'absolute',left:68,right:68,top:980,height:390}}><div style={{position:'absolute',left:0,top:50,width:350,height:160,border:'5px solid currentColor',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Arial Black',fontSize:45,transform:`translateX(${p*105}px)`}}>X.COM</div><div style={{position:'absolute',right:0,top:50,width:350,height:160,border:'5px solid currentColor',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Arial Black',fontSize:39,transform:`translateX(${-p*105}px)`}}>CONFINITY</div><div style={{position:'absolute',left:280,right:280,bottom:12,height:105,background:accent,color:accent===BLACK?WHITE:BLACK,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Arial Black',fontSize:42,opacity:interpolate(frame,[28,42],[0,1],clamp)}}>PAYPAL</div></div>;
-};
-
-const FilingGraphic: React.FC = () => {
-  const frame=useCurrentFrame(); const reveal=interpolate(frame,[8,28],[0,1],clamp);
-  return <div style={{position:'absolute',left:68,right:68,top:875,height:575,border:'4px solid #111',background:WHITE,color:BLACK,padding:32,boxShadow:'0 18px 0 rgba(0,0,0,.10)'}}><div style={{fontFamily:'Times New Roman, serif',fontWeight:900,fontSize:31}}>PAYPAL, INC. — FORM S-1/A</div><div style={{marginTop:8,fontFamily:'Arial, sans-serif',fontSize:20,fontWeight:900,letterSpacing:3}}>PRINCIPAL STOCKHOLDERS • 14 FEB 2002</div><div style={{marginTop:48,borderTop:'4px solid #111',borderBottom:'4px solid #111',display:'grid',gridTemplateColumns:'1.5fr 1fr 1fr',padding:'20px 8px',fontFamily:'Arial Black',fontSize:25}}><span>NAME</span><span>BEFORE</span><span>AFTER</span></div><div style={{display:'grid',gridTemplateColumns:'1.5fr 1fr 1fr',padding:'29px 8px',fontFamily:'Arial Black',fontSize:34,background:`rgba(255,212,0,${.16+reveal*.52})`}}><span>ELON MUSK</span><span>13.0%</span><span>11.9%</span></div><div style={{marginTop:30,fontFamily:'Arial, sans-serif',fontSize:24,fontWeight:700,lineHeight:1.35}}>Evidence graphic using the figures from PayPal's SEC filing. It is not presented as a historical screenshot.</div></div>;
-};
-
-const Visual: React.FC<{beat:Beat; accent:string}> = ({beat,accent}) => {
-  if(beat.visual==='board') return <BoardGraphic accent={accent}/>;
-  if(beat.visual==='money') return <MoneyGraphic accent={accent} hero={beat.hero}/>;
-  if(beat.visual==='equity') return <EquityGraphic accent={accent}/>;
-  if(beat.visual==='timeline') return <TimelineGraphic accent={accent}/>;
-  if(beat.visual==='browser') return <BrowserGraphic accent={accent}/>;
-  if(beat.visual==='ymca') return <YmcaGraphic accent={accent}/>;
-  if(beat.visual==='xcom') return <XcomGraphic/>;
-  if(beat.visual==='stack') return <StackGraphic accent={accent}/>;
-  if(beat.visual==='email') return <EmailGraphic accent={accent}/>;
-  if(beat.visual==='merge') return <MergeGraphic accent={accent}/>;
-  if(beat.visual==='filing') return <FilingGraphic/>;
-  return <MoneyGraphic accent={accent} hero={beat.hero}/>;
-};
-
-const Scene: React.FC<{beat:Beat}> = ({beat}) => {
-  const frame=useCurrentFrame(); const {fps}=useVideoConfig(); const c=palette(beat.palette); const p=spring({frame,fps,config:{damping:19,stiffness:100,mass:.9}}); const y=interpolate(p,[0,1],[62,0],clamp);
-  return <AbsoluteFill style={{background:c.bg,color:c.fg,overflow:'hidden'}}><Texture dark={beat.palette==='dark'}/><Chrome accent={c.accent}/><div style={{position:'absolute',left:68,right:68,top:145}}><div style={{fontFamily:'Arial, sans-serif',fontSize:26,fontWeight:950,letterSpacing:6,color:c.accent,opacity:interpolate(frame,[0,7],[0,1],clamp)}}>{beat.kicker}</div><div style={{marginTop:24,fontFamily:'Arial Black, Impact, sans-serif',fontSize:beat.hero.length>18?103:120,lineHeight:.88,letterSpacing:-6,whiteSpace:'pre-line',opacity:interpolate(frame,[0,9],[0,1],clamp),transform:`translateY(${y}px)`}}>{beat.hero}</div><div style={{marginTop:27,maxWidth:865,fontFamily:'Georgia, Times New Roman, serif',fontSize:38,lineHeight:1.16,fontWeight:700,fontStyle:'italic',opacity:interpolate(frame,[9,20],[0,1],clamp)}}>{beat.detail}</div></div><Visual beat={beat} accent={c.accent}/></AbsoluteFill>;
-};
-
 const CaptionLayer: React.FC = () => {
-  const frame=useCurrentFrame(); const phrase=PHRASES.find(p=>frame>=p.startFrame&&frame<=p.endFrame); if(!phrase)return null;
-  return <div style={{position:'absolute',left:62,right:62,bottom:128,zIndex:80,display:'flex',justifyContent:'center'}}><div style={{maxWidth:950,display:'flex',flexWrap:'wrap',justifyContent:'center',gap:16,padding:'17px 23px 15px',background:'rgba(16,16,14,.86)',boxShadow:'0 12px 40px rgba(0,0,0,.22)'}}>{phrase.words.map((word,i)=>{const d=frame-word.startFrame;const visible=d>=0;const emph=i===phrase.emphasis;const dy=visible?interpolate(d,[0,5],[emph?22:10,0],clamp):20;const sc=visible?interpolate(d,[0,4],[emph?.91:.97,1],clamp):.96;return <span key={`${word.word}-${word.startFrame}`} style={{fontFamily:emph?'Arial Black, Impact, sans-serif':'Arial, sans-serif',fontWeight:emph?950:800,fontSize:emph?78:65,lineHeight:.96,color:emph?YELLOW:WHITE,letterSpacing:emph?-2:-1,opacity:visible?interpolate(d,[0,3],[0,1],clamp):0,transform:`translateY(${dy}px) scale(${sc})`}}>{word.word}</span>})}</div></div>;
+  const frame = useCurrentFrame();
+  const phrase = PHRASES.find((item) => frame >= item.startFrame && frame <= item.endFrame);
+  if (!phrase) return null;
+
+  const local = frame - phrase.startFrame;
+  const opacity = interpolate(local, [0, 6], [0, 1], clamp);
+  const y = interpolate(local, [0, 7], [12, 0], clamp);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 78,
+        right: 78,
+        top: '46%',
+        transform: `translateY(${y}px)`,
+        opacity,
+        textAlign: 'center',
+        fontFamily: 'Arial Black, Arial, sans-serif',
+        fontSize: 66,
+        lineHeight: 1.03,
+        letterSpacing: -2.5,
+        textTransform: 'uppercase',
+        color: WHITE,
+        textShadow: '0 4px 22px rgba(0,0,0,.86), 0 1px 3px rgba(0,0,0,.95)',
+      }}
+    >
+      {phrase.words.map((word, index) => (
+        <React.Fragment key={`${word.word}-${index}`}>
+          <span style={{color: index === phrase.emphasis ? YELLOW : WHITE}}>{word.word}</span>
+          {index < phrase.words.length - 1 ? ' ' : ''}
+        </React.Fragment>
+      ))}
+    </div>
+  );
 };
 
-const SoundDesign: React.FC = () => <>{[0,14,18].map(i=><Sequence key={`impact-${i}`} from={start(i)} durationInFrames={28}><Audio src={staticFile('media/impact.wav')} volume={0.32}/></Sequence>)}{[1,7,8,16,17,20].map(i=><Sequence key={`proof-${i}`} from={start(i)} durationInFrames={20}><Audio src={staticFile('media/proof.wav')} volume={0.22}/></Sequence>)}{[9,12,13,19].map(i=><Sequence key={`riser-${i}`} from={Math.max(0,start(i)-7)} durationInFrames={25}><Audio src={staticFile('media/riser.wav')} volume={0.16}/></Sequence>)}</>;
+const CompactOverlay: React.FC<{children: React.ReactNode; tone?: 'dark' | 'yellow'}> = ({children, tone = 'dark'}) => {
+  const frame = useCurrentFrame();
+  const p = interpolate(frame, [4, 12], [0, 1], clamp);
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 90,
+        right: 90,
+        top: 310,
+        padding: '22px 26px',
+        background: tone === 'yellow' ? YELLOW : 'rgba(0,0,0,.72)',
+        color: tone === 'yellow' ? BLACK : WHITE,
+        borderRadius: 10,
+        fontFamily: 'Arial Black, Arial, sans-serif',
+        fontSize: 40,
+        lineHeight: 1.05,
+        textAlign: 'center',
+        transform: `translateY(${(1 - p) * 18}px)`,
+        opacity: p,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
-export const ElonPayPalReel: React.FC<{prototype?:boolean}> = ({prototype=false}) => {
-  const count=prototype?5:beats.length;
-  return <AbsoluteFill style={{background:BLACK}}>{beats.slice(0,count).map((beat,i)=><Sequence key={i} from={start(i)} durationInFrames={Math.max(24,start(i+1)-start(i)+3)}><Scene beat={beat}/></Sequence>)}<Audio src={staticFile('media/music.m4a')} volume={0.16}/><Audio src={staticFile('media/narration.mp3')} volume={1}/><SoundDesign/><CaptionLayer/></AbsoluteFill>;
+const OwnershipGraphic: React.FC = () => {
+  const frame = useCurrentFrame();
+  const p = interpolate(frame, [4, 28], [0, 1], clamp);
+  const q = interpolate(frame, [26, 48], [0, 1], clamp);
+  return (
+    <AbsoluteFill style={{background: BLACK, color: WHITE, alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{position: 'absolute', top: 72, left: 58, fontFamily: 'Arial Black', fontSize: 22, letterSpacing: 3}}>ZELRO</div>
+      <div style={{fontFamily: 'Arial Black, Arial, sans-serif', fontSize: 142, letterSpacing: -7, transform: `scale(${0.88 + p * 0.12})`}}>
+        <span style={{color: YELLOW}}>7%</span>
+        <span style={{padding: '0 34px', opacity: p}}>→</span>
+        <span style={{opacity: q}}>$22M</span>
+      </div>
+      <div style={{marginTop: 34, fontFamily: 'Arial, sans-serif', fontSize: 30, fontWeight: 800, letterSpacing: 2, opacity: 0.78}}>
+        OWNERSHIP → PERSONAL PROCEEDS
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+const EditorialCard: React.FC<{text: string; tone: 'cream' | 'yellow'}> = ({text, tone}) => {
+  const frame = useCurrentFrame();
+  const p = interpolate(frame, [0, 8], [0.96, 1], clamp);
+  const bg = tone === 'yellow' ? YELLOW : CREAM;
+  return (
+    <AbsoluteFill style={{background: bg, color: BLACK, alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{position: 'absolute', top: 72, left: 58, fontFamily: 'Arial Black', fontSize: 22, letterSpacing: 3}}>ZELRO</div>
+      <div
+        style={{
+          width: 870,
+          fontFamily: 'Arial Black, Arial, sans-serif',
+          fontSize: 92,
+          lineHeight: 0.98,
+          letterSpacing: -4,
+          textAlign: 'center',
+          transform: `scale(${p})`,
+        }}
+      >
+        {text}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+const FilingProof: React.FC = () => (
+  <AbsoluteFill style={{background: CREAM, alignItems: 'center', justifyContent: 'center'}}>
+    <Img
+      src={staticFile(MEDIA.a15)}
+      style={{width: 900, maxHeight: 1240, objectFit: 'contain', filter: 'drop-shadow(0 18px 45px rgba(0,0,0,.16))'}}
+    />
+    <div
+      style={{
+        position: 'absolute',
+        top: 135,
+        right: 72,
+        padding: '14px 18px',
+        background: YELLOW,
+        color: BLACK,
+        fontFamily: 'Arial Black, Arial, sans-serif',
+        fontSize: 30,
+      }}
+    >
+      ≈12% OWNERSHIP
+    </div>
+  </AbsoluteFill>
+);
+
+const ClipSequence: React.FC<{
+  fromSentence: number;
+  toSentence: number;
+  src: string;
+  position?: string;
+  label?: string;
+  overlay?: React.ReactNode;
+}> = ({fromSentence, toSentence, src, position, label, overlay}) => (
+  <Sequence from={s(fromSentence)} durationInFrames={duration(fromSentence, toSentence)}>
+    <RealClip src={src} position={position} label={label} />
+    {overlay}
+  </Sequence>
+);
+
+const Sfx: React.FC<{from: number; file: string; volume?: number}> = ({from, file, volume = 0.35}) => (
+  <Sequence from={from} durationInFrames={30}>
+    <Audio src={staticFile(`media/${file}`)} volume={volume} />
+  </Sequence>
+);
+
+export const ElonPayPalReel: React.FC<{prototype?: boolean}> = () => {
+  return (
+    <AbsoluteFill style={{background: BLACK}}>
+      <Audio src={staticFile('media/narration.mp3')} volume={1} />
+      <Audio src={staticFile('media/music.m4a')} volume={0.20} />
+
+      <ClipSequence fromSentence={0} toSentence={1} src={MEDIA.a01} position="52% 42%" label="X.COM / 2000" overlay={<CompactOverlay>BOARD REMOVED HIM AS CEO</CompactOverlay>} />
+      <ClipSequence fromSentence={1} toSentence={2} src={MEDIA.a03} label="PAYPAL × EBAY" overlay={<CompactOverlay tone="yellow">$1.5 BILLION</CompactOverlay>} />
+      <ClipSequence fromSentence={2} toSentence={3} src={MEDIA.a04} position="45% 42%" label="PAYPAL OWNERSHIP" overlay={<CompactOverlay>≈12% STILL OWNED</CompactOverlay>} />
+      <ClipSequence fromSentence={3} toSentence={4} src={MEDIA.a05} position="42% 40%" label="MEET ELON MUSK" />
+      <ClipSequence fromSentence={4} toSentence={6} src={MEDIA.a06} position="52% 42%" label="ZIP2 / 1995" />
+      <ClipSequence fromSentence={6} toSentence={7} src={MEDIA.a07} position="48% 42%" label="EARLY SILICON VALLEY" />
+      <ClipSequence fromSentence={7} toSentence={8} src={MEDIA.a08} label="ZIP2 → COMPAQ" overlay={<CompactOverlay tone="yellow">$307M CASH</CompactOverlay>} />
+
+      <Sequence from={s(8)} durationInFrames={duration(8, 9)}>
+        <OwnershipGraphic />
+      </Sequence>
+
+      <ClipSequence fromSentence={9} toSentence={10} src={MEDIA.a09} position="48% 42%" label="X.COM" />
+      <ClipSequence
+        fromSentence={10}
+        toSentence={11}
+        src={MEDIA.a10}
+        label="X.COM"
+        overlay={<CompactOverlay>BANKING · INVESTMENTS · PAYMENTS</CompactOverlay>}
+      />
+      <ClipSequence
+        fromSentence={11}
+        toSentence={12}
+        src={MEDIA.a11}
+        label="EARLY ONLINE PAYMENTS"
+        overlay={<CompactOverlay tone="yellow">SENDER → EMAIL → RECIPIENT</CompactOverlay>}
+      />
+      <ClipSequence fromSentence={12} toSentence={13} src={MEDIA.a12} position="50% 42%" label="CONFINITY / PAYPAL" />
+      <ClipSequence
+        fromSentence={13}
+        toSentence={14}
+        src={MEDIA.a13}
+        label="2000"
+        overlay={<CompactOverlay tone="yellow">X.COM + CONFINITY → PAYPAL</CompactOverlay>}
+      />
+      <ClipSequence fromSentence={14} toSentence={15} src={MEDIA.a14} position="50% 42%" label="BOARD REPLACED MUSK" />
+
+      <Sequence from={s(15)} durationInFrames={duration(15, 16)}>
+        <EditorialCard tone="yellow" text="LOSING THE CEO JOB DIDN'T ERASE HIS SHARES." />
+      </Sequence>
+
+      <Sequence from={s(16)} durationInFrames={duration(16, 17)}>
+        <FilingProof />
+      </Sequence>
+
+      <ClipSequence fromSentence={17} toSentence={18} src={MEDIA.a16} label="PAYPAL → EBAY" overlay={<CompactOverlay tone="yellow">$1.5 BILLION</CompactOverlay>} />
+
+      <Sequence from={s(18)} durationInFrames={duration(18, 19)}>
+        <EditorialCard tone="cream" text="LOST THE CEO JOB." />
+      </Sequence>
+      <Sequence from={s(19)} durationInFrames={duration(19, 20)}>
+        <EditorialCard tone="yellow" text="KEPT THE SHARES." />
+      </Sequence>
+
+      <Sequence from={s(20)} durationInFrames={Math.max(1, TOTAL_FRAMES - s(20))}>
+        <RealClip src={MEDIA.a17} position="50% 40%" label="MUSK LATER SAID" />
+        <CompactOverlay tone="yellow">≈$180M AFTER TAX</CompactOverlay>
+      </Sequence>
+
+      <BrandChrome />
+      <CaptionLayer />
+
+      <Sfx from={s(1)} file="impact.wav" volume={0.30} />
+      <Sfx from={s(8)} file="impact.wav" volume={0.28} />
+      <Sfx from={s(13)} file="riser.wav" volume={0.20} />
+      <Sfx from={s(16)} file="proof.wav" volume={0.22} />
+      <Sfx from={s(19)} file="impact.wav" volume={0.22} />
+      <Sfx from={s(20)} file="impact.wav" volume={0.28} />
+    </AbsoluteFill>
+  );
 };
