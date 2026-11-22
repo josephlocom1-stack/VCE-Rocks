@@ -276,3 +276,49 @@ Use short scenarios involving genetic testing, cloning or conservation only as p
 3. Quiz the learner on ethical application, gel electrophoresis, pedigrees, monohybrid crosses and graph interpretation.
 4. Use errors to decide whether any further cards are genuinely necessary.
 5. Keep the deck compact. Do not add generic cards just to make the deck look comprehensive.
+
+
+## Correction and final compact deck plan (supersedes the earlier ADD-01 to ADD-20 list above)
+
+To keep revision efficient, do not add all 20 earlier proposed cards as separate cards. Use this merged set of **15 cards maximum**, and merge with an existing card whenever it already tests the same knowledge.
+
+### Corrected audit of original cards
+- Keep #1–5, #6 (xylem/phloem is explicitly examinable), #8–10, #12–16, #18–20, #25–35, #38–40, but revise/remove any wording that tests excluded content.
+- Archive #7 and #11 (transpiration / kidney water balance), #17 (test cross not on teacher checklist), #21 and #36–37 (not required by the teacher checklist as standalone cards).
+- #8 negative feedback may remain only insofar as it helps explain glucose regulation; do not revise broader human homeostasis.
+- #5 mitosis/meiosis remains in scope; exclude binary fission.
+- #19 adaptation types and #20 keystone species remain in scope.
+- Ethical definitions #25–35 are useful but should be compressed if repetitive; application is the priority.
+
+### Final compact additions (15)
+
+| ID | Front | Back |
+|---|---|---|
+| C01 | Compare endocytosis, exocytosis and pinocytosis. | Endocytosis brings material into the cell in membrane vesicles; pinocytosis is endocytosis of extracellular fluid and dissolved substances; exocytosis releases vesicle contents when vesicles fuse with the membrane. These are energy-requiring bulk transport. |
+| C02 | What do totipotent, pluripotent and multipotent stem cells mean? | Totipotent: can form all cell types including extra-embryonic tissues; pluripotent: almost all body cell types; multipotent: a restricted range of related cell types. |
+| C03 | Summarise the cell cycle and apoptosis. | G1: growth; S: DNA replication; G2: preparation; M phase: mitosis and cytokinesis. Apoptosis is controlled programmed cell death that removes unnecessary or damaged cells. |
+| C04 | How do root hair cells, xylem and phloem support plant function? | Root hair extensions increase surface area for water/mineral uptake; xylem transports water/mineral ions; phloem transports sugars/organic nutrients. Do not add transpiration or plant water-balance detail. |
+| C05 | How does the digestive system turn food into absorbable nutrients? | Mechanical and chemical digestion break food down; enzymes hydrolyse large molecules into small soluble molecules, which are absorbed mainly through the small intestine. |
+| C06 | How does the endocrine system communicate, and how do insulin and glucagon regulate glucose? | Glands release hormones into blood; only target cells with matching receptors respond. Insulin lowers blood glucose by promoting uptake/storage; glucagon raises it by promoting glucose release. |
+| C07 | Compare asexual and sexual reproduction, and explain cloning. | Asexual: one parent, no gamete fusion, offspring usually genetically similar. Sexual: gamete fusion, greater genetic variation. Cloning produces a genetically near-identical copy; know the basic cloning process/technology taught in class and its application. |
+| C08 | Distinguish structural, behavioural and physiological adaptations. | Structural: physical feature; behavioural: action; physiological: internal process. Link each adaptation to how it improves survival/reproductive success in its environment. |
+| C09 | Compare parasitism, commensalism, mutualism and predator–prey interactions; distinguish food chains and webs. | Parasitism: parasite benefits/host harmed; commensalism: one benefits/other unaffected; mutualism: both benefit; predation: predator consumes prey. A food chain is one feeding pathway; a food web links multiple pathways. |
+| C10 | What makes a species a keystone species? | Its effect on ecosystem structure is disproportionately large relative to its abundance; removing it can cause major changes to other populations and food-web relationships. |
+| C11 | How do you interpret a karyotype and distinguish genes, alleles and chromosomes? | A chromosome is a DNA structure carrying genes; a gene is a DNA sequence; alleles are versions of a gene. A karyotype displays chromosomes in pairs, allowing comparison of number/size/structure and sex chromosomes. |
+| C12 | How do you solve a monohybrid cross and interpret a pedigree? | Assign allele symbols and parental genotypes; place gametes on a Punnett square; derive offspring genotype/phenotype probabilities. In pedigrees, use affected/unaffected patterns across generations to assess autosomal versus sex-linked and dominant versus recessive inheritance. |
+| C13 | How do you identify variables and analyse a biological graph? | IV is changed; DV is measured; controls are kept constant. On a graph, identify variables/units, describe trend using data, compare groups, note anomalies and state a conclusion supported by the pattern. |
+| C14 | Explain the process and interpretation of gel electrophoresis. | Load DNA samples and a size standard into gel wells; apply an electric field; negatively charged DNA moves towards the positive electrode. Smaller fragments travel farther. Compare band positions/patterns with the ladder and between samples. |
+| C15 | How do you apply ethical approaches and principles to a biology scenario? | Identify the decision and stakeholders; apply consequences-based reasoning (benefits/harms), duty/rule-based reasoning (rights/obligations) or virtue-based reasoning (character/values). Consider relevant principles—beneficence, non-maleficence, justice, respect and integrity—then justify a position using scenario details. |
+
+### What remains from the original deck
+The existing cards already cover cell structure, SA:V, membrane transport basics, mitosis/meiosis, glucose regulation, genes/alleles/genome, homologous chromosomes, variation, genotype/phenotype, dominance patterns, sexual reproduction, adaptation types, keystone species, and ethical vocabulary. Do not create duplicates for these.
+
+### Active priority order
+1. Ethical approaches/principles applied to scenarios (main weak area).
+2. Gel electrophoresis process and band interpretation.
+3. Pedigree and monohybrid cross practice.
+4. Bulk transport, stem-cell potency, cell cycle/apoptosis.
+5. Digestive/endocrine systems and plant root hair/xylem/phloem.
+6. Food webs/interactions, karyotypes, variables and graph analysis.
+
+Use a short diagnostic before adding any further cards. The teacher checklist is the exam boundary; no excluded content should be added.
