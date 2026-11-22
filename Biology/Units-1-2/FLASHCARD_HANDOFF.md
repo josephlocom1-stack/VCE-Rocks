@@ -182,3 +182,97 @@ Only add cards for demonstrated gaps or clearly required key knowledge. Avoid ex
 ## Study-design caution
 
 This handoff is a planning map, not a substitute for the exact VCAA key-knowledge wording or the teacher's course scope. Check the school's prescribed study design and class materials before treating optional textbook detail as examinable.
+
+
+---
+
+## IMPORTANT UPDATE — Teacher's 2026 exam checklist (23 November 2026)
+
+**This teacher-issued checklist overrides the broader topic map above for this particular exam.** Use it as the active scope. Do not spend revision time on anything explicitly marked NOT TESTED. Keep the broader VCAA map only as background, not as an instruction to make cards.
+
+### Exam format
+- 15 minutes reading + 90 minutes writing.
+- Section A: multiple-choice questions, 25 marks.
+- Section B: short-answer questions, 50 marks.
+
+### Active examinable scope from the teacher's checklist
+
+| Area | Must revise |
+|---|---|
+| Chapter 1 | Prokaryotic and eukaryotic cell structure; surface-area-to-volume ratio; plant and animal cell structure; organelle structure/function; plasma membrane structure. |
+| Chapter 2 | Diffusion; osmosis; active transport; bulk transport: endocytosis, exocytosis and pinocytosis. |
+| Chapter 3 | Stem-cell properties and potency; cell cycle; apoptosis. |
+| Chapter 4 | Digestive system; endocrine system; plant systems limited to xylem, phloem and root hair cells. |
+| Chapter 5 | Glucose regulation; diabetes. |
+| Chapter 7 | Mitosis and meiosis; asexual and sexual reproduction; cloning technologies; structural, behavioural and physiological adaptations; parasitism, commensalism, mutualism and predator–prey interactions; food chains/webs; keystone species. |
+| Chapter 8 | Genes, alleles and chromosomes; autosomes and sex chromosomes; chromosome variation in different organisms; karyotypes; dominant/recessive phenotypes including codominance and incomplete dominance; monohybrid Punnett squares; pedigrees and autosomal/sex-linked inheritance. |
+| Chapter 6 key science skills | Identifying variables; graph and data analysis. |
+| Bioethics | Ethical approaches and principles. |
+| Gel electrophoresis | Process and interpretation of results. |
+
+### Explicit exclusions for this exam
+
+Do not create active flashcards or spend revision time on:
+- Binary fission; cell-cycle regulation; cancer.
+- Excretory system; plant transpiration; plant water balance.
+- Human water balance and thermoregulation.
+- Hypoglycaemia and hyperthyroidism.
+- Aboriginal and Indigenous perspectives.
+- Population distribution, density and size.
+- Epigenetics.
+- Dihybrid crosses; linked/unlinked genes.
+
+If an existing card covers a mixed topic, retain only the examinable part. For example, keep mitosis/meiosis but do not revise binary fission. Keep glucose regulation and diabetes, but not hypoglycaemia. Keep xylem/phloem/root hair cells, but not transpiration or plant water balance.
+
+### Audit of the original 40 cards
+
+The earlier 40-card deck is not a fully aligned active deck. Apply these decisions:
+- **Keep (within scope):** #1–5, #8–10, #12–16, #18–20, #25–35, #38–40.
+- **Remove from active revision / archive:** #6–7, #11, #17, #21, #36–37. These are either explicitly excluded, not listed in the teacher checklist, or unnecessary for this exam. (The active deck can still reuse a fact if it is essential to answer an in-scope question.)
+- Cards #25–35 provide useful ethical vocabulary, but definitions alone are insufficient: practise applying ethical approaches and principles to short unfamiliar scenarios.
+
+### Compact new cards required to close checklist gaps
+
+Add only these high-value cards; do not expand into a giant deck. Merge with existing cards where appropriate.
+
+| ID | Front | Back |
+|---|---|---|
+| ADD-01 | Compare endocytosis and exocytosis. | Endocytosis uses the cell membrane to enclose material in a vesicle and bring it into the cell; exocytosis fuses a vesicle with the membrane to release material outside. Both are bulk transport and require energy. |
+| ADD-02 | What is pinocytosis? | A type of endocytosis in which the cell takes in extracellular fluid and dissolved substances in small vesicles. |
+| ADD-03 | What do stem-cell potency terms mean? | Totipotent cells can form all cell types including extra-embryonic tissues; pluripotent cells can form almost all body cell types; multipotent cells can form a limited range of related cell types. |
+| ADD-04 | What are the key stages of the cell cycle? | Interphase (G1: growth; S: DNA replication; G2: preparation) followed by M phase (mitosis and cytokinesis). |
+| ADD-05 | What is apoptosis, and why is it important? | Programmed cell death that removes damaged, unnecessary or potentially harmful cells in a controlled way. |
+| ADD-06 | How do root hair cells help plants absorb water and mineral ions? | Their long extensions increase surface area for absorption; water enters by osmosis and mineral ions may enter by active transport. |
+| ADD-07 | What are the main stages of digestion and absorption? | Food is mechanically and chemically broken down; enzymes hydrolyse large molecules into small soluble molecules, which are absorbed through the small intestine into blood or lymph. |
+| ADD-08 | How does the endocrine system communicate with target cells? | Endocrine glands release hormones into the bloodstream; hormones bind to specific receptors on target cells and change their activity. |
+| ADD-09 | Explain the roles of insulin and glucagon in blood-glucose regulation. | High blood glucose stimulates insulin release, promoting uptake/storage; low blood glucose stimulates glucagon release, promoting glucose release into blood. |
+| ADD-10 | Distinguish asexual and sexual reproduction. | Asexual reproduction involves one parent and no gamete fusion, usually producing genetically similar offspring; sexual reproduction involves fusion of gametes and generates genetic variation. |
+| ADD-11 | What is the difference between cloning and selective breeding? | Cloning produces genetically near-identical copies of an organism/cell; selective breeding chooses parents with desired traits so offspring inherit a selected combination of alleles. |
+| ADD-12 | How do food chains and food webs differ? | A food chain shows one pathway of energy transfer; a food web shows interconnected feeding relationships in an ecosystem. Arrows point from the organism eaten to the consumer. |
+| ADD-13 | How do parasitism, commensalism, mutualism and predation differ? | Parasitism: one benefits, host harmed; commensalism: one benefits, other unaffected; mutualism: both benefit; predation: predator kills/eats prey. |
+| ADD-14 | How do you interpret a karyotype? | Arrange chromosomes into homologous pairs by size, banding and centromere position; inspect number and structure, and identify sex chromosomes where possible. |
+| ADD-15 | How do you identify variables in an experiment? | Independent variable: deliberately changed; dependent variable: measured outcome; controlled variables: kept constant to make the test fair. |
+| ADD-16 | What does a DNA gel electrophoresis result show? | DNA fragments separate by size: smaller fragments generally travel farther through the gel towards the positive electrode; compare band patterns between samples and a size ladder. |
+| ADD-17 | What are the essential steps in gel electrophoresis? | Load DNA samples and a size ladder into wells in an agarose gel; apply an electric field; negatively charged DNA moves towards the positive electrode; stain/visualise bands and compare their positions. |
+| ADD-18 | How should a graph be analysed in a biology question? | Identify variables and units; describe the overall trend with data; compare groups; identify anomalies; calculate changes if asked; make a conclusion tied to the data. |
+| ADD-19 | How do you apply an ethical approach to a biology scenario? | State the approach, identify the relevant facts/stakeholders, apply its reasoning to the specific decision, and explain the resulting judgement. Consequences weighs outcomes; duty/rule considers obligations and rights; virtue considers character and values. |
+| ADD-20 | How do beneficence, non-maleficence, justice, respect and integrity guide a biological decision? | Beneficence: promote good; non-maleficence: avoid harm; justice: fairness; respect: dignity/autonomy; integrity: honesty and responsible conduct. Apply the principle to the actual scenario, not just define it. |
+
+### AOS3 / bioethics practice — learner's main weak area
+
+The teacher checklist names **ethical approaches and principles**; it does not specify a particular contemporary case study. Therefore, practise applying the approaches to unfamiliar short scenarios rather than memorising a long catalogue of case studies. A compact answer structure:
+
+1. Identify the biological decision and the ethical tension.
+2. Name the affected stakeholders.
+3. Apply one ethical approach or principle to the facts (not just define it).
+4. State a justified position and acknowledge a relevant competing consideration.
+
+Use short scenarios involving genetic testing, cloning or conservation only as practice contexts, not as claims that those exact examples must appear on the exam.
+
+### Revised next steps
+
+1. Treat the teacher checklist as the exam scope and archive out-of-scope cards.
+2. Add/merge the 20 cards above, prioritising ADD-01 to ADD-09, ADD-14 to ADD-20.
+3. Quiz the learner on ethical application, gel electrophoresis, pedigrees, monohybrid crosses and graph interpretation.
+4. Use errors to decide whether any further cards are genuinely necessary.
+5. Keep the deck compact. Do not add generic cards just to make the deck look comprehensive.
