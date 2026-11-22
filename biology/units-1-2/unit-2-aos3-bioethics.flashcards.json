@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "title": "VCE Biology Unit 2 AOS3 — Bioethics and Evidence",
+  "cards": [
+    {
+      "id": "bio-u2-aos3-001",
+      "topic": "Ethical frameworks",
+      "front": "A new genetic test could prevent serious inherited disease, but it is expensive and may widen inequality. How would the three ethical approaches assess it?",
+      "back": "Consequences-based: weigh health benefits against harms such as anxiety, discrimination and unequal access. Duty/rule-based: consider informed consent, privacy, rights and fair treatment. Virtue-based: ask whether offering it reflects compassion, fairness, honesty and responsibility. A strong answer applies each approach to the facts, not just names it."
+    },
+    {
+      "id": "bio-u2-aos3-002",
+      "topic": "Ethical frameworks",
+      "front": "A research team wants to use stored patient DNA for a new study. What would a duty-based analysis focus on?",
+      "back": "Whether the researchers meet obligations such as obtaining valid informed consent, protecting privacy, following relevant rules and respecting participants' rights. Potential benefits do not automatically override these duties."
+    },
+    {
+      "id": "bio-u2-aos3-003",
+      "topic": "Ethical frameworks",
+      "front": "A conservation program proposes removing an introduced predator to protect native species. How would a consequences-based approach assess this?",
+      "back": "Compare likely benefits (native species recovery, ecosystem stability) with harms (animal welfare impacts, food-web disruption, unintended effects and costs). Consider short- and long-term consequences for all affected parties and use evidence about likely outcomes."
+    },
+    {
+      "id": "bio-u2-aos3-004",
+      "topic": "Ethical frameworks",
+      "front": "What is the difference between saying an action has good consequences and saying it is the right duty to perform?",
+      "back": "Consequences-based reasoning judges the likely outcomes. Duty-based reasoning judges whether obligations, rights, rules or principles are respected, even when breaking them might produce a benefit."
+    },
+    {
+      "id": "bio-u2-aos3-005",
+      "topic": "Ethical concepts",
+      "front": "A genetic screening program benefits many people but is only available to wealthy families. Which ethical concept is most directly challenged, and why?",
+      "back": "Justice: access and benefits may be distributed unfairly. Explain who can access the service, who is excluded and whether the unequal distribution is justified."
+    },
+    {
+      "id": "bio-u2-aos3-006",
+      "topic": "Ethical concepts",
+      "front": "How do beneficence and non-maleficence differ when evaluating a medical genetic test?",
+      "back": "Beneficence means actively promoting wellbeing, such as enabling earlier treatment. Non-maleficence means avoiding or minimising harm, such as psychological distress, privacy breaches or inappropriate medical decisions."
+    },
+    {
+      "id": "bio-u2-aos3-007",
+      "topic": "Stakeholders",
+      "front": "For a proposed embryo genetic test, identify at least four stakeholder groups and one concern each may have.",
+      "back": "Prospective parents: reproductive choices and emotional impact. Future child: health, autonomy and privacy implications. Clinicians/researchers: safety, accuracy and professional duties. Wider community/government: fairness, regulation and healthcare costs. Different stakeholders may value benefits and risks differently."
+    },
+    {
+      "id": "bio-u2-aos3-008",
+      "topic": "Evidence evaluation",
+      "front": "A company claims its genetic test is '99% accurate' in an advertisement. What questions should you ask before accepting the claim?",
+      "back": "What does 99% mean (sensitivity, specificity or overall accuracy)? What population and sample size were tested? Was the study independent and peer-reviewed? What is the false-positive/false-negative rate? Does the evidence apply to the people being tested? Who funded the research and what limitations were reported?"
+    },
+    {
+      "id": "bio-u2-aos3-009",
+      "topic": "Evidence evaluation",
+      "front": "A peer-reviewed study has a small sample and was funded by the company selling the technology. Is it automatically unreliable?",
+      "back": "No. Peer review and funding source are relevant, but neither alone proves reliability or bias. Examine methods, sample size, conflicts of interest, transparency, replication, data quality and whether conclusions exceed the evidence."
+    },
+    {
+      "id": "bio-u2-aos3-010",
+      "topic": "Evidence evaluation",
+      "front": "Distinguish primary data from secondary data in a bioethical investigation.",
+      "back": "Primary data is collected first-hand by the investigator, such as original survey or experimental results. Secondary data is information already collected or published by others, such as journal articles, government reports or existing datasets."
+    },
+    {
+      "id": "bio-u2-aos3-011",
+      "topic": "Evidence evaluation",
+      "front": "A news article reports one family's experience with a genetic condition. Why is this not enough to establish how common the condition is or whether a test works?",
+      "back": "An individual story is anecdotal evidence. It may illustrate an experience but cannot establish prevalence or effectiveness. Those claims need systematic data from suitable populations and methods."
+    },
+    {
+      "id": "bio-u2-aos3-012",
+      "topic": "Evidence evaluation",
+      "front": "Two credible studies reach different conclusions about an environmental intervention. What should you do?",
+      "back": "Compare their research questions, populations, methods, sample sizes, measures, dates, funding/conflicts and limitations. Consider whether differences in context explain the results. Do not simply choose the study that supports your preferred position."
+    },
+    {
+      "id": "bio-u2-aos3-013",
+      "topic": "Bioethical analysis",
+      "front": "What is a reliable structure for analysing an unfamiliar contemporary bioethical issue in an exam?",
+      "back": "1. Briefly explain the relevant biology. 2. Identify the ethical issue and stakeholders. 3. Explain likely benefits and harms. 4. Apply relevant ethical approaches/concepts. 5. Evaluate evidence and limitations. 6. Consider wider social, economic, legal and political factors. 7. State and justify a balanced conclusion."
+    },
+    {
+      "id": "bio-u2-aos3-014",
+      "topic": "Bioethical analysis",
+      "front": "Why is 'there are benefits and risks, so it depends' a weak conclusion?",
+      "back": "It does not make a judgement or weigh the evidence. A strong conclusion states a position, identifies the most important benefits and risks, applies ethical reasoning, supports the judgement with evidence and acknowledges a meaningful limitation or counterargument."
+    },
+    {
+      "id": "bio-u2-aos3-015",
+      "topic": "Bioethical analysis",
+      "front": "A proposed use of Indigenous ecological knowledge could help commercialise a biological product. What ethical considerations should be discussed?",
+      "back": "Respect for knowledge holders, free and informed consent, cultural protocols, ownership and control of knowledge, fair recognition and benefit-sharing, risk of exploitation or biopiracy, and effects on communities. Avoid treating Indigenous knowledge as freely available just because it is publicly known."
+    },
+    {
+      "id": "bio-u2-aos3-016",
+      "topic": "Bioethical analysis",
+      "front": "Why must a bioethical conclusion consider social, economic, legal and political factors as well as biological evidence?",
+      "back": "A biologically effective option may be unaffordable, inaccessible, legally restricted or socially unacceptable. These factors shape who benefits, who bears risks and whether implementation is fair and practical."
+    },
+    {
+      "id": "bio-u2-aos3-017",
+      "topic": "Models and limitations",
+      "front": "A model predicts the effects of releasing a biological control species, but it simplifies the ecosystem. How should its results be used?",
+      "back": "Treat predictions as conditional, not certain. Identify assumptions and omitted interactions, compare predictions with empirical evidence, consider uncertainty and unintended effects, and avoid claiming the model proves what will happen."
+    },
+    {
+      "id": "bio-u2-aos3-018",
+      "topic": "Justified conclusions",
+      "front": "What makes a bioethical argument stronger than simply listing pros and cons?",
+      "back": "It weighs the importance and likelihood of impacts, links claims to credible evidence, identifies affected stakeholders, applies ethical principles consistently, recognises uncertainty and reaches a reasoned judgement."
+    }
+  ]
+}
