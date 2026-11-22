@@ -117,7 +117,7 @@ Potential practice contexts (use as examples, not as a requirement to memorise e
 - [x] Initial foundation deck generated in chat.
 - [x] Student identified Unit 2 AOS3 as the main weakness.
 - [ ] Audit initial cards against the applicable study design.
-- [ ] Build dedicated Unit 2 AOS3 scenario/application cards.
+- [x] Build dedicated Unit 2 AOS3 scenario/application cards (18-card first batch committed to `biology/units-1-2/unit-2-aos3-bioethics.flashcards.json`).
 - [ ] Build any missing cards for Units 1 and 2.
 - [ ] Test the student with unfamiliar AOS3 scenarios.
 - [ ] Update confidence/weakness notes based on actual answers.
