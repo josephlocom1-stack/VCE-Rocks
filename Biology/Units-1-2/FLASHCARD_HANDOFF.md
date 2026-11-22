@@ -396,3 +396,127 @@ A good answer explains **why** your choice is justified.
 ## Scope note
 
 This deck follows the teacher-provided checklist. Where the checklist does not specify depth (for example, cloning technologies or diabetes), use class notes/textbook to confirm what the teacher expects. Do not assume extra detail is required. The ChatGPT interactive deck does not automatically synchronise with GitHub; this file is the durable record.
+
+
+---
+
+# Learning routine update — example-first explanations
+
+**This section updates how the existing 45 cards must be taught. It does not add extra cards or expand the exam scope.** Where an existing back is only a definition, keep it concise. Where it explains reasoning, application, a process, a comparison or a judgement, add a concrete example or analogy so the learner can understand what the idea looks like.
+
+## Rules for teaching every existing card
+
+- **Definitions:** short, plain-English meaning; retain the exact scientific keywords needed for marks.
+- **Anything beyond a definition:** explain the idea in everyday language, then give a concrete example or analogy. Do not assume a definition alone creates understanding.
+- **Bioethics:** always use a realistic scenario. Explain who is affected, what the competing concerns are, and exactly why a principle or approach applies. Avoid abstract lists of values with no application.
+- **Exam wording:** after the simple explanation/example, show a concise VCE-style sentence that uses the correct terminology.
+- **Keep it efficient:** add only the example needed to make the concept click; do not turn every card into a long textbook explanation.
+- **Check understanding:** follow explanations with a fresh application question. Do not count reading or recognising an answer as mastery.
+
+## Revised G01 — Three ethical approaches
+
+**Front:** What question does each ethical approach ask, and how would each apply to a genetics decision?
+
+**Back:**
+
+Imagine a clinic wants to offer a genetic test that can identify a risk of an inherited disease. The test could help people plan their healthcare, but it may also cause worry and reveal information about relatives.
+
+- **Consequences-based:** Which option gives the best overall balance of benefits and harms? Example: compare the health benefits of early information with possible anxiety, privacy problems or discrimination.
+- **Duty/rule-based:** What rights and duties must be respected, even if breaking them might produce a useful result? Example: the clinic must obtain informed consent and protect confidential results.
+- **Virtue-based:** What would an honest, compassionate and responsible person do? Example: a responsible doctor would explain the test's limits honestly rather than pressure someone to take it.
+
+**Remember:** consequences = outcomes; duty = obligations and rights; virtue = character. In an exam, connect the approach to a specific detail in the scenario.
+
+## Revised G02 — Ethical principles
+
+**Front:** What do the five ethical principles mean, and what would each look like in a genetics example?
+
+**Back:**
+
+Imagine a school is considering a voluntary genetic screening program for a serious inherited condition.
+
+- **Beneficence — do good:** offer reliable information that may help students and families make informed health decisions.
+- **Non-maleficence — avoid harm:** reduce risks such as unnecessary distress, inaccurate results or misuse of private data.
+- **Justice — be fair:** make access fair and avoid excluding people who cannot afford testing.
+- **Respect — protect choice and dignity:** make participation voluntary and obtain informed consent; do not pressure students.
+- **Integrity — be honest and responsible:** explain what the test can and cannot show, and handle results honestly.
+
+**Exam sentence:** “The principle of respect is relevant because students should be able to make a voluntary, informed decision about whether to participate.”
+
+## Revised G03 — Ethical approach vs ethical principle
+
+**Front:** How is an ethical approach different from an ethical principle? Use one example to show the difference.
+
+**Back:**
+
+Imagine a hospital is deciding whether to share a patient's genetic result with their relatives.
+
+- An **ethical approach** is the way you reason through the decision. A consequences-based approach asks whether sharing the result would produce more overall benefit than harm.
+- An **ethical principle** is a value used to judge the decision. **Respect** supports the patient's choice and privacy; **beneficence** may support warning relatives about a serious health risk.
+
+Think of it this way: the approach is the *reasoning method*; the principle is the *value being considered*. You can use both in one answer.
+
+## Revised G04 — Applying ethics to an unfamiliar scenario
+
+**Front:** What steps should you follow when answering an unfamiliar bioethical scenario? Apply them to a genetic-testing example.
+
+**Back:**
+
+Scenario: A company offers a genetic test to predict disease risk. It wants to share customers' results with researchers.
+
+1. **Identify the decision:** Should the company share the genetic data?
+2. **Name the stakeholders:** customers, their relatives, researchers and the company.
+3. **Identify benefits and harms:** research may improve medical knowledge, but sharing data may reduce privacy or cause distress.
+4. **Apply a principle or approach:** respect supports informed consent; a consequences-based approach weighs research benefits against privacy risks.
+5. **Make a justified judgement:** for example, sharing should happen only with clear informed consent and strong privacy protections.
+
+Do not just name a principle. Explain which fact in the scenario makes it relevant.
+
+## Revised G05 — Applying approaches to a scenario
+
+**Front:** A genetic test may help a person make health decisions, but it could reveal private information about relatives. Give one consequences-based point and one duty-based point.
+
+**Back:**
+
+- **Consequences-based:** The test could help the person seek early medical advice, but the result might also cause anxiety or family conflict. Weigh the likely benefits and harms for everyone affected.
+- **Duty-based:** The clinic has a duty to respect the person's **informed consent** and **confidentiality**. It should not share the result without appropriate permission.
+
+**Analogy:** consequences-based reasoning is like comparing the likely upsides and downsides of a decision. Duty-based reasoning asks, “What obligations must we follow, even if ignoring them seems convenient?”
+
+## Revised G06 — Strong ethical conclusion
+
+**Front:** What makes a bioethical conclusion convincing? Compare a weak answer with a stronger one.
+
+**Back:**
+
+Scenario: A hospital wants to use genetic information in research.
+
+- **Weak:** “I think it is good because research helps people.”
+- **Stronger:** “The research may benefit future patients, supporting beneficence. However, participants' respect and privacy must be protected through informed consent and confidentiality. I would support the research only if participants freely agree and their data is securely protected.”
+
+A strong conclusion:
+- clearly states a position;
+- uses a relevant ethical principle or approach;
+- links the reasoning to facts in the scenario;
+- recognises an important competing concern;
+- explains why the final decision is justified.
+
+## Example-first prompts for other existing cards
+
+Use these examples when teaching the relevant cards; they are explanation aids, not extra cards:
+
+- **A04 surface-area-to-volume ratio:** Compare a small cube with a much larger cube. The larger cube has more total surface, but less surface area for each unit of its volume. This helps explain why exchange becomes less efficient as cells get larger.
+- **A06 transport:** A drop of food colouring spreading through water is diffusion. Water moving through a selectively permeable membrane is osmosis. A cell using ATP to pump ions against their concentration gradient is active transport.
+- **A07 bulk transport:** A cell engulfing a large particle is endocytosis; taking in droplets of fluid is pinocytosis; releasing a packaged substance outside the cell is exocytosis.
+- **B04 apoptosis:** During development, controlled cell death removes cells that are no longer needed. It is a planned process, not accidental cell damage.
+- **C05 glucose regulation:** After a meal, blood glucose rises and insulin helps lower it. Between meals, glucagon helps raise blood glucose by signalling the liver to release glucose.
+- **C06 diabetes:** In type 1 diabetes, the pancreas makes little or no insulin because beta cells are destroyed. In type 2, body cells respond less effectively to insulin. Both can lead to high blood glucose, but for different reasons.
+- **D04 species interactions:** A bee gets nectar while pollinating a flower (mutualism); a tick feeds on a dog (parasitism); a lion catches a zebra (predation).
+- **D06 keystone species:** If a predator keeps one prey population from becoming too large, removing that predator may allow the prey to increase and affect many other species. The predator's ecosystem effect is larger than its population size might suggest.
+- **E06 inheritance patterns:** In codominance, both coat-colour alleles may be visible as distinct patches. In incomplete dominance, a red and white flower may produce pink offspring. Use the exact examples given in a question if they differ.
+- **E07 Punnett squares:** For Aa × Aa, each parent can pass on A or a. The possible genotypes are AA, Aa, Aa and aa, giving a 3:1 dominant-to-recessive phenotype ratio under complete dominance. The ratio is a probability, not a promise for every family.
+- **E08 pedigrees:** If two unaffected parents have a child with a recessive condition, both parents must be carriers (Aa) under simple autosomal recessive inheritance. Use the whole pedigree before deciding the inheritance pattern.
+- **F02 graph analysis:** If plant growth rises from 2 cm to 8 cm as light intensity increases, describe the increase and quote the values. Do not claim light caused the change unless the experiment supports that conclusion.
+- **F03–F04 gel electrophoresis:** Think of the gel as a sieve. Smaller DNA fragments move through it more easily and travel further. If a sample band lines up with a ladder band, it has a similar fragment length.
+
+These examples support understanding. The learner must still practise applying the idea to new scenarios rather than memorising the example itself.
